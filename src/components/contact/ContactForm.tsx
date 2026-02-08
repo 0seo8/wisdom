@@ -13,7 +13,7 @@ const contactSchema = z.object({
   name: z.string().min(2, "이름을 2자 이상 입력해주세요"),
   organization: z.string().optional(),
   email: z.string().email("올바른 이메일 주소를 입력해주세요"),
-  phone: z.string().optional(),
+  phone: z.string().min(1, "전화번호를 입력해주세요"),
   message: z.string().min(10, "문의 내용을 10자 이상 입력해주세요"),
   privacyConsent: z.literal(true, {
     message: "개인정보 수집에 동의해주세요",
@@ -178,15 +178,24 @@ export function ContactForm() {
 
           <div>
             <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1.5">
-              전화번호
+              전화번호 <span className="text-red-500">*</span>
             </label>
             <input
               id="phone"
               type="tel"
               placeholder="010-0000-0000"
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[var(--color-orange)] focus:ring-opacity-50 transition-colors"
+              className={`w-full px-4 py-3 rounded-xl border ${
+                errors.phone ? "border-red-300 focus:ring-red-500" : "border-gray-200 focus:ring-[var(--color-orange)]"
+              } focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors`}
               {...register("phone")}
+              aria-invalid={errors.phone ? "true" : "false"}
+              aria-describedby={errors.phone ? "phone-error" : undefined}
             />
+            {errors.phone && (
+              <p id="phone-error" className="mt-1.5 text-sm text-red-500" role="alert">
+                {errors.phone.message}
+              </p>
+            )}
           </div>
         </div>
 

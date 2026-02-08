@@ -104,37 +104,52 @@ export function HomeContact() {
           )}
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-            {/* Name */}
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5">
-                이름 <span className="text-red-500">*</span>
-              </label>
-              <input
-                id="name"
-                type="text"
-                placeholder="홍길동"
-                className={`w-full px-4 py-3 rounded-xl border ${
-                  errors.name ? "border-red-300 focus:ring-red-500" : "border-gray-200 focus:ring-[var(--color-orange)]"
-                } focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors bg-gray-50`}
-                {...register("name")}
-                aria-invalid={errors.name ? "true" : "false"}
-                aria-describedby={errors.name ? "name-error" : undefined}
-              />
-              {errors.name && (
-                <p id="name-error" className="mt-1.5 text-sm text-red-500" role="alert">
-                  {errors.name.message}
-                </p>
-              )}
+            {/* Name and Organization Row */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="home-name" className="block text-sm font-medium text-gray-700 mb-1.5">
+                  이름 <span className="text-red-500">*</span>
+                </label>
+                <input
+                  id="home-name"
+                  type="text"
+                  placeholder="홍길동"
+                  className={`w-full px-4 py-3 rounded-xl border ${
+                    errors.name ? "border-red-300 focus:ring-red-500" : "border-gray-200 focus:ring-[var(--color-orange)]"
+                  } focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors bg-gray-50`}
+                  {...register("name")}
+                  aria-invalid={errors.name ? "true" : "false"}
+                  aria-describedby={errors.name ? "home-name-error" : undefined}
+                />
+                {errors.name && (
+                  <p id="home-name-error" className="mt-1.5 text-sm text-red-500" role="alert">
+                    {errors.name.message}
+                  </p>
+                )}
+              </div>
+
+              <div>
+                <label htmlFor="home-organization" className="block text-sm font-medium text-gray-700 mb-1.5">
+                  소속(단체)
+                </label>
+                <input
+                  id="home-organization"
+                  type="text"
+                  placeholder="회사/단체명"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[var(--color-orange)] focus:ring-opacity-50 transition-colors bg-gray-50"
+                  {...register("organization")}
+                />
+              </div>
             </div>
 
             {/* Email and Phone Row */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1.5">
+                <label htmlFor="home-email" className="block text-sm font-medium text-gray-700 mb-1.5">
                   이메일 <span className="text-red-500">*</span>
                 </label>
                 <input
-                  id="email"
+                  id="home-email"
                   type="email"
                   placeholder="example@email.com"
                   className={`w-full px-4 py-3 rounded-xl border ${
@@ -142,36 +157,45 @@ export function HomeContact() {
                   } focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors bg-gray-50`}
                   {...register("email")}
                   aria-invalid={errors.email ? "true" : "false"}
-                  aria-describedby={errors.email ? "email-error" : undefined}
+                  aria-describedby={errors.email ? "home-email-error" : undefined}
                 />
                 {errors.email && (
-                  <p id="email-error" className="mt-1.5 text-sm text-red-500" role="alert">
+                  <p id="home-email-error" className="mt-1.5 text-sm text-red-500" role="alert">
                     {errors.email.message}
                   </p>
                 )}
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1.5">
-                  전화번호 (선택)
+                <label htmlFor="home-phone" className="block text-sm font-medium text-gray-700 mb-1.5">
+                  전화번호 <span className="text-red-500">*</span>
                 </label>
                 <input
-                  id="phone"
+                  id="home-phone"
                   type="tel"
                   placeholder="010-0000-0000"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[var(--color-orange)] focus:ring-opacity-50 transition-colors bg-gray-50"
+                  className={`w-full px-4 py-3 rounded-xl border ${
+                    errors.phone ? "border-red-300 focus:ring-red-500" : "border-gray-200 focus:ring-[var(--color-orange)]"
+                  } focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors bg-gray-50`}
                   {...register("phone")}
+                  aria-invalid={errors.phone ? "true" : "false"}
+                  aria-describedby={errors.phone ? "home-phone-error" : undefined}
                 />
+                {errors.phone && (
+                  <p id="home-phone-error" className="mt-1.5 text-sm text-red-500" role="alert">
+                    {errors.phone.message}
+                  </p>
+                )}
               </div>
             </div>
 
             {/* Message */}
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1.5">
+              <label htmlFor="home-message" className="block text-sm font-medium text-gray-700 mb-1.5">
                 문의 내용 <span className="text-red-500">*</span>
               </label>
               <textarea
-                id="message"
+                id="home-message"
                 rows={5}
                 placeholder="문의하실 내용을 입력해주세요"
                 className={`w-full px-4 py-3 rounded-xl border ${
