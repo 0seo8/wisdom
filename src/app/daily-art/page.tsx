@@ -3,12 +3,12 @@ import {
   DailyArtHero,
   IntroSection,
   ProgramCard,
-  ValuesSection,
+  GallerySection,
 } from "@/components/daily-art";
 import { images } from "@/constants/images";
 
 export const metadata: Metadata = {
-  title: "일상의 예술 - 쉽고, 재미있고, 안전한 예술 경험 | 지혜의밭",
+  title: "일상의 예술 - 쉽고, 재미있고, 안전한 예술 경험",
   description:
     "일상의 예술은 누구나 예술가가 될 수 있는 참여형 예술 프로그램입니다. 무늬만(소통극장), 넋두리(공감극장), 내비춤(춤명상)을 통해 소통, 공감, 해소를 경험하세요.",
   keywords: [
@@ -110,7 +110,7 @@ export default function DailyArtPage() {
         ))}
       </div>
 
-      <ValuesSection />
+      <GallerySection />
 
       {/* Contact CTA Section */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-[var(--color-blue-light)]/30 via-white to-[var(--color-green-light)]/20">

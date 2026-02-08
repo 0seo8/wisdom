@@ -22,14 +22,14 @@ const slides = [
     image: images.hero.slide2,
   },
   {
-    title: "몸과 마음을 연구",
+    title: "소매틱랩",
     subtitle: "Somatic Laboratory",
     cta: "/somatic-lab",
     image: images.hero.slide3,
   },
   {
-    title: "지속 가능한 ESG 실천",
-    subtitle: "Sustainable Growth",
+    title: "기업교육 및 행사",
+    subtitle: "Educational Event",
     cta: "/business",
     image: images.hero.main,
   },

@@ -7,15 +7,19 @@ import { MapPin, Navigation } from "lucide-react";
 const transportInfo = [
   {
     type: "지하철",
-    details: "2호선 대림역 5번 출구 도보 5분",
+    details: "7호선 대림역 12번 출구 / 2호선 대림역 5번 출구 → 마을버스 04번 (도보 3분)",
+  },
+  {
+    type: "지하철",
+    details: "1·2호선 신도림역 2번 출구 → 버스 5611 이용",
   },
   {
     type: "버스",
-    details: "대림역 정류장 하차 (6513, 6515, 6516)",
+    details: "신영초등학교 정류장(19275) / 명지춘혜병원 정류장(19327)",
   },
   {
     type: "주차",
-    details: "건물 내 지하주차장 이용 가능 (2시간 무료)",
+    details: "건물 내 지하주차장 이용 가능",
   },
 ];
 
@@ -66,7 +70,7 @@ export function MapSection() {
               <div>
                 <h3 className="font-bold text-gray-900 mb-1">주소</h3>
                 <p className="text-gray-600">
-                  서울시 영등포구 대림로 231 MG 빌딩 3층
+                  서울특별시 영등포구 대림로 231, MG빌딩 3층
                 </p>
               </div>
             </div>

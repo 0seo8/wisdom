@@ -44,6 +44,36 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className="antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "지혜의밭",
+              alternateName: "Artswisdom",
+              url: "https://artswisdom.com",
+              logo: "https://artswisdom.com/images/logo/logo-square.png",
+              description:
+                "예술의 힘으로 본래의 인간성을 회복하여 삶의 터전을 지혜롭게 가꾸는 소셜벤처·사회적기업",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "대림로 231, MG빌딩 3층",
+                addressLocality: "영등포구",
+                addressRegion: "서울특별시",
+                addressCountry: "KR",
+              },
+              telephone: "070-8264-6477",
+              email: "info@artswisdom.com",
+              sameAs: [
+                "https://www.youtube.com/channel/UCR8ZIwOtV1cAFgMaXe8EO6g",
+                "https://www.instagram.com/artswisdom_official/",
+                "https://www.facebook.com/artswisdom/",
+                "https://blog.naver.com/artswisdom",
+              ],
+            }),
+          }}
+        />
         <Header />
         <main className="min-h-screen pt-20">{children}</main>
         <Footer />

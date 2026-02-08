@@ -8,22 +8,32 @@ const certifications = [
   {
     category: "상표등록증",
     items: [
-      { name: "지혜의밭 상표", year: "2018" },
-      { name: "아트힐링 상표", year: "2019" },
-    ],
-  },
-  {
-    category: "저작권등록증",
-    items: [
-      { name: "아트테라피 프로그램", year: "2019" },
-      { name: "웰니스 콘텐츠", year: "2020" },
+      { name: "넋두리", number: "#40-1665119", year: "2021" },
+      { name: "무늬만", number: "#40-1665118", year: "2021" },
+      { name: "내비춤", number: "#40-1677526", year: "2021" },
+      { name: "소통극장", number: "#40-1677528", year: "2021" },
+      { name: "공감극장", number: "#40-1677524", year: "2021" },
+      { name: "지혜의밭", number: "#40-1705149", year: "2021" },
     ],
   },
   {
     category: "기업인증서",
     items: [
-      { name: "사회적기업 인증", year: "2020" },
-      { name: "소셜벤처 인증", year: "2021" },
+      { name: "사회적기업 인증", number: "#2021-058", year: "2021" },
+      { name: "소셜벤처기업 확인", number: "#2023-01-1008", year: "2023" },
+      { name: "여성기업 확인", number: "#0111-2022-20045", year: "2022" },
+      { name: "창업기업 확인", number: "#202109-90191", year: "2021" },
+      { name: "연구개발전담부서 인정", number: "#2023155581", year: "2023" },
+      { name: "사회적가치(SVI) 우수등급", number: "", year: "2025" },
+    ],
+  },
+  {
+    category: "저작권등록증",
+    items: [
+      { name: "넋두리", number: "#C-2018-011080", year: "2018" },
+      { name: "무늬만 가족", number: "#C-2017-024230", year: "2017" },
+      { name: "네 이름이 뭐니?", number: "#C-2021-005812", year: "2021" },
+      { name: "공감UP", number: "#C-2021-009720", year: "2021" },
     ],
   },
 ];
@@ -69,10 +79,17 @@ export function Certification() {
                       transition={{ duration: 0.3, delay: index * 0.1 + itemIndex * 0.05 }}
                       className="flex items-center justify-between p-3 bg-gray-50 rounded-lg"
                     >
-                      <span className="text-gray-700 text-sm font-medium">
-                        {item.name}
-                      </span>
-                      <span className="text-gray-500 text-xs bg-white px-2 py-1 rounded">
+                      <div className="flex-1 min-w-0">
+                        <span className="text-gray-700 text-sm font-medium block">
+                          {item.name}
+                        </span>
+                        {item.number && (
+                          <span className="text-gray-400 text-xs">
+                            {item.number}
+                          </span>
+                        )}
+                      </div>
+                      <span className="text-gray-500 text-xs bg-white px-2 py-1 rounded flex-shrink-0">
                         {item.year}
                       </span>
                     </motion.li>

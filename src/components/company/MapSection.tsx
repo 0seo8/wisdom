@@ -7,14 +7,20 @@ const contactInfo = [
   {
     icon: "location",
     label: "주소",
-    value: "서울시 영등포구 대림로 231 MG 빌딩 3층",
-    link: "https://map.kakao.com/?q=서울시 영등포구 대림로 231",
+    value: "서울특별시 영등포구 대림로 231, MG빌딩 3층",
+    link: "https://map.kakao.com/?q=서울특별시 영등포구 대림로 231",
   },
   {
     icon: "phone",
     label: "전화",
     value: "070-8264-6477",
     link: "tel:070-8264-6477",
+  },
+  {
+    icon: "fax",
+    label: "팩스",
+    value: "0504-387-6477",
+    link: undefined,
   },
   {
     icon: "email",
@@ -27,15 +33,19 @@ const contactInfo = [
 const transportInfo = [
   {
     type: "지하철",
-    details: "2호선 대림역 5번 출구 도보 5분",
+    details: "7호선 대림역 12번 출구 / 2호선 대림역 5번 출구 → 마을버스 04번 (도보 3분)",
+  },
+  {
+    type: "지하철",
+    details: "1·2호선 신도림역 2번 출구 → 버스 5611 이용",
   },
   {
     type: "버스",
-    details: "대림역 정류장 하차 (6513, 6515, 6516)",
+    details: "신영초등학교 정류장(19275) / 명지춘혜병원 정류장(19327)",
   },
   {
     type: "주차",
-    details: "건물 내 지하주차장 이용 가능 (2시간 무료)",
+    details: "건물 내 지하주차장 이용 가능",
   },
 ];
 
@@ -114,24 +124,40 @@ export function MapSection() {
               <ul className="space-y-4">
                 {contactInfo.map((item) => (
                   <li key={item.label}>
-                    <a
-                      href={item.link}
-                      target={item.icon === "location" ? "_blank" : undefined}
-                      rel={item.icon === "location" ? "noopener noreferrer" : undefined}
-                      className="flex items-start gap-3 group"
-                    >
-                      <div className="w-8 h-8 rounded-lg bg-[var(--color-orange-light)] flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <ContactIcon type={item.icon} />
+                    {item.link ? (
+                      <a
+                        href={item.link}
+                        target={item.icon === "location" ? "_blank" : undefined}
+                        rel={item.icon === "location" ? "noopener noreferrer" : undefined}
+                        className="flex items-start gap-3 group"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-[var(--color-orange-light)] flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <ContactIcon type={item.icon} />
+                        </div>
+                        <div>
+                          <span className="text-xs text-gray-500 block">
+                            {item.label}
+                          </span>
+                          <span className="text-gray-700 group-hover:text-[var(--color-orange)] transition-colors text-sm">
+                            {item.value}
+                          </span>
+                        </div>
+                      </a>
+                    ) : (
+                      <div className="flex items-start gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-[var(--color-orange-light)] flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <ContactIcon type={item.icon} />
+                        </div>
+                        <div>
+                          <span className="text-xs text-gray-500 block">
+                            {item.label}
+                          </span>
+                          <span className="text-gray-700 text-sm">
+                            {item.value}
+                          </span>
+                        </div>
                       </div>
-                      <div>
-                        <span className="text-xs text-gray-500 block">
-                          {item.label}
-                        </span>
-                        <span className="text-gray-700 group-hover:text-[var(--color-orange)] transition-colors text-sm">
-                          {item.value}
-                        </span>
-                      </div>
-                    </a>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -189,6 +215,12 @@ function ContactIcon({ type }: { type: string }) {
       return (
         <svg className={iconClass} fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+        </svg>
+      );
+    case "fax":
+      return (
+        <svg className={iconClass} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
         </svg>
       );
     case "email":

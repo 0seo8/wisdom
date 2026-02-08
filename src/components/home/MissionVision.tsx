@@ -17,7 +17,7 @@ const items: { icon: React.ComponentType<{ className?: string }>; title: string;
     icon: Eye,
     title: "비전",
     subtitle: "Vision",
-    description: "웰니스 문화 선도 기업",
+    description: "건강한 사회를 위해 웰니스 문화를 선도하는 소셜벤처 · 사회적기업",
     color: "green",
   },
   {

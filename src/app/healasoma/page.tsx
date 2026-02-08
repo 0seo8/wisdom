@@ -7,7 +7,7 @@ import {
 import { images } from "@/constants/images";
 
 export const metadata: Metadata = {
-  title: "힐소마 - 온전한 쉼 | 지혜의밭",
+  title: "힐소마 - 온전한 쉼",
   description:
     "힐소마는 치유(HEAL)와 몸(SOMA)의 합성어로, 몸과 마음의 통합적 회복을 추구하는 웰니스 프로그램입니다. 바디풀니스, 마인드풀니스, 테라피, 표현 예술, 집단 상담, 연극 놀이 프로그램을 제공합니다.",
   keywords: [

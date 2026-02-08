@@ -1,54 +1,40 @@
 "use server";
 
+import { createClient } from "@/lib/supabase/server";
+
 export async function submitContactForm(formData: FormData) {
-  // Extract form data
   const data = {
     name: formData.get("name") as string,
-    organization: formData.get("organization") as string | null,
     email: formData.get("email") as string,
-    phone: formData.get("phone") as string | null,
+    phone: (formData.get("phone") as string) || null,
     message: formData.get("message") as string,
-    privacyConsent: formData.get("privacyConsent") === "true",
   };
 
-  // Log for debugging (remove in production or integrate with actual service)
-  console.log("Contact form submitted:", {
-    name: data.name,
-    organization: data.organization,
-    email: data.email,
-    phone: data.phone,
-    message: data.message.substring(0, 100) + (data.message.length > 100 ? "..." : ""),
-    submittedAt: new Date().toISOString(),
-  });
+  if (!data.name || !data.email || !data.message) {
+    return { success: false, error: "필수 항목을 입력해주세요." };
+  }
 
-  // TODO: Integrate with Supabase or email service
-  // Example Supabase integration:
-  // const supabase = createClient();
-  // const { error } = await supabase
-  //   .from('contact_inquiries')
-  //   .insert({
-  //     name: data.name,
-  //     organization: data.organization,
-  //     email: data.email,
-  //     phone: data.phone,
-  //     message: data.message,
-  //     created_at: new Date().toISOString(),
-  //   });
-  //
-  // if (error) {
-  //   return { success: false, error: error.message };
-  // }
+  try {
+    const supabase = await createClient();
 
-  // TODO: Send email notification
-  // Example email integration:
-  // await sendEmail({
-  //   to: 'info@artswisdom.com',
-  //   subject: `새로운 문의 - ${data.name}`,
-  //   body: formatContactEmail(data),
-  // });
+    const insertPayload = {
+      name: data.name,
+      email: data.email,
+      phone: data.phone,
+      message: data.message,
+    };
 
-  // Simulate async operation
-  await new Promise((resolve) => setTimeout(resolve, 500));
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { error } = await (supabase as any).from("inquiries").insert(insertPayload);
 
-  return { success: true };
+    if (error) {
+      console.error("Supabase insert error:", error);
+      return { success: false, error: "문의 접수 중 오류가 발생했습니다." };
+    }
+
+    return { success: true };
+  } catch (err) {
+    console.error("Contact form error:", err);
+    return { success: false, error: "서버 오류가 발생했습니다. 잠시 후 다시 시도해주세요." };
+  }
 }
