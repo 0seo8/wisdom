@@ -15,17 +15,17 @@ const coreValues: CoreValueItem[] = [
   {
     imageSrc: images.values.differentiation,
     title: "차별성",
-    description: "디테일의 차이가 감동으로",
+    description: "디테일의 차이가 감동으로 이어진다",
   },
   {
     imageSrc: images.values.inclusivity,
     title: "포용성",
-    description: "변화를 수용하는 열린 자세",
+    description: "지속 가능한 성장을 위하여 변화를 수용한다",
   },
   {
     imageSrc: images.values.connectivity,
     title: "연결성",
-    description: "모든 에너지는 연결되어 있습니다",
+    description: "모든 에너지는 서로 연결되어 있으므로 우리는 하나다",
   },
 ];
 

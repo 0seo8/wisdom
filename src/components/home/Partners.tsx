@@ -4,10 +4,11 @@ const PARTNERS = [
   "서울특별시",
   "영등포구",
   "한국사회적기업진흥원",
-  "사회적기업",
-  "소셜벤처기업",
-  "지역사회서비스",
-  "사회서비스",
+  "한국사회적기업중앙회",
+  "서울사회적경제지원센터",
+  "한국콘텐츠진흥원",
+  "한국문화예술교육진흥원",
+  "한국문화예술위원회",
 ];
 
 export function Partners() {
@@ -21,7 +22,7 @@ export function Partners() {
             PARTNERS
           </p>
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-            함께하는 파트너
+            함께한 기업, 기관
           </h2>
         </div>
       </div>

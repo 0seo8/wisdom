@@ -218,6 +218,51 @@ h6 {
   display: none;
 }
 
+/* Timeline vertical layout */
+.timeline-vertical {
+  position: relative;
+  padding-left: 1rem;
+}
+
+@media (min-width: 768px) {
+  .timeline-vertical {
+    padding-left: 0;
+  }
+}
+
+.timeline-vertical::before {
+  content: "";
+  position: absolute;
+  left: 0.25rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-orange);
+  opacity: 0.3;
+}
+
+@media (min-width: 768px) {
+  .timeline-vertical::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.timeline-dot {
+  width: 14px;
+  height: 14px;
+  background: var(--color-orange);
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
 /* Partner logo scroll animation */
 @keyframes partner-scroll {
   0% {

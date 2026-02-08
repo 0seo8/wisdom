@@ -136,9 +136,6 @@ export function Footer() {
               <Link href="/privacy" className="hover:text-gray-300 transition-colors">
                 개인정보처리방침
               </Link>
-              <Link href="/terms" className="hover:text-gray-300 transition-colors">
-                이용약관
-              </Link>
             </div>
           </div>
         </div>

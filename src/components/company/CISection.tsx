@@ -7,34 +7,38 @@ import { images } from "@/constants/images";
 
 const brandColors = [
   {
-    name: "Yellow",
-    hex: "#ffd700",
+    name: "Bright Yellow",
+    hex: "#FFCC00",
+    cmyk: "C0 M20 Y100 K0",
     meaning: "긍정",
-    description: "밝은 에너지와 희망을 상징합니다",
+    description: "밝은 에너지와 긍정의 힘을 상징합니다",
     cssVar: "var(--color-yellow)",
     image: images.ci.yellow,
   },
   {
-    name: "Orange",
-    hex: "#ff8c00",
+    name: "Warm Orange",
+    hex: "#FF6600",
+    cmyk: "C0 M85 Y100 K0",
     meaning: "온정",
-    description: "따뜻한 마음과 배려를 상징합니다",
+    description: "따뜻한 온정과 배려를 상징합니다",
     cssVar: "var(--color-orange)",
     image: images.ci.orange,
   },
   {
-    name: "Green",
-    hex: "#228b22",
+    name: "Calm Green",
+    hex: "#8CBA2A",
+    cmyk: "C45 M10 Y100 K0",
     meaning: "안정",
-    description: "성장과 조화를 상징합니다",
+    description: "마음의 안정과 자연의 조화를 상징합니다",
     cssVar: "var(--color-green)",
     image: images.ci.green,
   },
   {
-    name: "Blue",
-    hex: "#4169e1",
+    name: "Deep Blue",
+    hex: "#1A0EDA",
+    cmyk: "C100 M100 Y0 K15",
     meaning: "치유",
-    description: "신뢰와 평온을 상징합니다",
+    description: "내면의 치유와 깊은 신뢰를 상징합니다",
     cssVar: "var(--color-blue)",
     image: images.ci.blue,
   },
@@ -148,13 +152,18 @@ export function CISection() {
 
                   {/* Color Info */}
                   <div className="p-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="font-semibold text-gray-900">
+                    <div className="mb-2">
+                      <span className="font-semibold text-gray-900 block mb-1">
                         {color.name}
                       </span>
-                      <span className="text-xs font-mono text-gray-500 bg-gray-100 px-2 py-1 rounded">
-                        {color.hex.toUpperCase()}
-                      </span>
+                      <div className="flex flex-wrap gap-1">
+                        <span className="text-xs font-mono text-gray-500 bg-gray-100 px-2 py-0.5 rounded">
+                          {color.hex}
+                        </span>
+                        <span className="text-xs font-mono text-gray-500 bg-gray-100 px-2 py-0.5 rounded">
+                          {color.cmyk}
+                        </span>
+                      </div>
                     </div>
                     <p className="text-gray-600 text-xs leading-relaxed">
                       {color.description}

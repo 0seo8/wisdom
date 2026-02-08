@@ -1,35 +1,35 @@
-// 지혜의밭 CI 기반 색상 팔레트
+// 지혜의밭 CI 기반 색상 팔레트 (CMYK → HEX 정밀 변환)
 export const colors = {
   // Primary Colors (CI 기반)
   primary: {
     yellow: {
-      DEFAULT: "#FFD700",
-      light: "#FFF3CD",
-      dark: "#B8860B",
+      DEFAULT: "#FFCC00",
+      light: "#FFF8E1",
+      dark: "#C69C00",
     },
     orange: {
-      DEFAULT: "#FF8C00",
-      light: "#FFE4B5",
-      dark: "#CC7000",
+      DEFAULT: "#FF6600",
+      light: "#FFF0E6",
+      dark: "#CC5200",
     },
     green: {
-      DEFAULT: "#228B22",
-      light: "#90EE90",
-      dark: "#006400",
+      DEFAULT: "#8CBA2A",
+      light: "#F1F8E4",
+      dark: "#5C7E1A",
     },
     blue: {
-      DEFAULT: "#4169E1",
-      light: "#87CEEB",
-      dark: "#00008B",
+      DEFAULT: "#1A0EDA",
+      light: "#E8E6FD",
+      dark: "#0F0A8A",
     },
   },
 
   // Semantic Colors
   semantic: {
-    positive: "#FFD700", // 긍정의 에너지
-    warmth: "#FF8C00", // 따뜻한 온정
-    stability: "#228B22", // 마음의 안정
-    healing: "#4169E1", // 내면의 치유
+    positive: "#FFCC00", // 긍정의 에너지
+    warmth: "#FF6600", // 따뜻한 온정
+    stability: "#8CBA2A", // 마음의 안정
+    healing: "#1A0EDA", // 내면의 치유
   },
 } as const;
 

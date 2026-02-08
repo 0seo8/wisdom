@@ -11,24 +11,28 @@ const slides = [
   {
     title: "일상의 예술",
     subtitle: "Arts of Living",
+    description: "예술이 힐링이 되는 곳! 쉽고, 재미있고, 안전한 예술 경험",
     cta: "/daily-art",
     image: images.hero.slide1,
   },
   {
     title: "온전한 쉼",
     subtitle: "Healsoma",
+    description: "일상의 쉼을 더하는 곳, 당신도 온전한 쉼이 필요하다",
     cta: "/healasoma",
     image: images.hero.slide2,
   },
   {
     title: "소매틱랩",
     subtitle: "Somatic Laboratory",
+    description: "Holistic 관점의 소매틱을 연구하고 실천합니다",
     cta: "/somatic-lab",
     image: images.hero.slide3,
   },
   {
     title: "기업교육 및 행사",
     subtitle: "Educational Event",
+    description: "지속가능한 성장을 위해 ESG를 실천하는 곳!",
     cta: "/business",
     image: images.hero.main,
   },
@@ -87,11 +91,14 @@ export function Hero() {
                 <div className="text-center px-4 sm:px-6 max-w-3xl mx-auto">
                   {selectedIndex === index && (
                     <div className="animate-fade-in">
-                      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight">
+                      <p className="text-sm sm:text-base md:text-lg text-white/80 mb-3 tracking-widest uppercase font-medium">
+                        {slide.subtitle}
+                      </p>
+                      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-5 leading-tight">
                         {slide.title}
                       </h1>
-                      <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 md:mb-8">
-                        {slide.subtitle}
+                      <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 md:mb-8 max-w-xl mx-auto">
+                        {slide.description}
                       </p>
                       <Button href={slide.cta} size="lg">
                         바로가기

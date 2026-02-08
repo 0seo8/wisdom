@@ -5,56 +5,70 @@ import { Section, SectionTitle } from "@/components/common";
 import { motion } from "framer-motion";
 import { images } from "@/constants/images";
 
-const sdgsItems = [
+const sdgsGoals = [
   {
     number: 3,
-    title: "건강과 웰빙",
-    description: "모든 연령대의 건강한 삶 보장과 웰빙 증진",
+    sdgLabel: "SDG 3",
+    title: "건강불평등 해소",
+    description:
+      "소외계층과 취약계층을 위한 문화예술 기반 웰니스 프로그램을 제공하여 건강불평등을 해소합니다.",
     color: "#4C9F38",
   },
   {
     number: 4,
-    title: "양질의 교육",
-    description: "포용적이고 공평한 양질의 교육 보장",
+    sdgLabel: "SDG 4",
+    title: "지속가능한 실천",
+    description:
+      "포용적이고 공평한 양질의 교육을 통해 지속가능한 사회를 만들어갑니다.",
     color: "#C5192D",
   },
   {
     number: 5,
+    sdgLabel: "SDG 5",
     title: "성평등",
-    description: "성평등 달성과 모든 여성 및 여아의 권익 신장",
+    description:
+      "성별에 관계없이 모든 사람이 참여할 수 있는 프로그램을 운영합니다.",
     color: "#FF3A21",
   },
   {
     number: 8,
-    title: "양질의 일자리",
-    description: "지속적이고 포용적인 경제성장 및 완전고용",
+    sdgLabel: "SDG 8",
+    title: "일자리 창출",
+    description:
+      "예술분야 전문인력 양성과 일자리 창출을 통해 지속적인 경제성장에 기여합니다.",
     color: "#A21942",
   },
   {
     number: 10,
-    title: "불평등 감소",
-    description: "국내 및 국가 간 불평등 감소",
+    sdgLabel: "SDG 10",
+    title: "공동체 협력",
+    description:
+      "지역사회와 공동체 간의 협력을 통해 포용적인 도시와 커뮤니티를 조성합니다.",
     color: "#DD1367",
   },
   {
     number: 11,
-    title: "지속가능한 도시",
-    description: "포용적이고 안전한 도시와 주거지 조성",
+    sdgLabel: "SDG 11",
+    title: "기후행동",
+    description:
+      "지속가능한 환경을 위한 책임감 있는 경영과 기후행동을 실천합니다.",
     color: "#FD9D24",
   },
   {
     number: 17,
-    title: "파트너십",
-    description: "이행 수단 강화와 글로벌 파트너십 활성화",
+    sdgLabel: "SDG 17",
+    title: "자선기부",
+    description:
+      "글로벌 파트너십을 통해 사회적 가치를 확산하고 자선활동에 참여합니다.",
     color: "#19486A",
   },
 ];
 
 export function SDGs() {
   return (
-    <Section background="white">
+    <Section id="sdgs" background="white">
       <SectionTitle
-        title="SDGs 약속"
+        title="SDGs 경영"
         subtitle="지혜의밭은 UN 지속가능발전목표 달성을 위해 노력합니다"
       />
 
@@ -76,47 +90,39 @@ export function SDGs() {
         </div>
       </motion.div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
-        {sdgsItems.map((item, index) => (
+      {/* Goals List - "하나," format */}
+      <div className="max-w-3xl mx-auto space-y-6">
+        {sdgsGoals.map((goal, index) => (
           <motion.div
-            key={item.number}
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            key={goal.number}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: index * 0.05 }}
+            transition={{ duration: 0.4, delay: index * 0.08 }}
+            className="flex items-start gap-4 md:gap-6"
           >
-            <SDGCard {...item} />
+            {/* Number Badge */}
+            <div
+              className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-lg flex items-center justify-center text-white font-bold text-sm md:text-base"
+              style={{ backgroundColor: goal.color }}
+            >
+              {goal.number}
+            </div>
+
+            {/* Content */}
+            <div className="flex-1">
+              <p className="text-gray-900">
+                <span className="font-bold text-base md:text-lg">
+                  하나, {goal.title}
+                </span>
+              </p>
+              <p className="text-sm md:text-base text-gray-600 mt-1">
+                {goal.description}
+              </p>
+            </div>
           </motion.div>
         ))}
       </div>
     </Section>
-  );
-}
-
-interface SDGCardProps {
-  number: number;
-  title: string;
-  description: string;
-  color: string;
-}
-
-function SDGCard({ number, title, description, color }: SDGCardProps) {
-  return (
-    <div
-      className="group relative aspect-square rounded-xl overflow-hidden cursor-pointer"
-      style={{ backgroundColor: color }}
-    >
-      <div className="absolute inset-0 p-4 flex flex-col justify-between text-white">
-        <span className="text-3xl font-bold opacity-80">{number}</span>
-        <span className="text-sm font-medium leading-tight">{title}</span>
-      </div>
-
-      {/* Hover Tooltip */}
-      <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-center justify-center">
-        <p className="text-white text-xs text-center leading-relaxed">
-          {description}
-        </p>
-      </div>
-    </div>
   );
 }
