@@ -55,7 +55,7 @@ const timelineData = [
 
 export function Timeline() {
   return (
-    <Section background="gray">
+    <Section id="history" background="gray">
       <SectionTitle
         title="연혁"
         subtitle="지혜의밭이 걸어온 길"
@@ -75,7 +75,7 @@ export function Timeline() {
                   {isLeft ? (
                     <>
                       <div className="text-right pr-4">
-                        <span className="text-2xl font-bold text-[var(--color-orange)]">
+                        <span className="text-2xl font-bold text-[var(--color-accent)]">
                           {item.year}
                         </span>
                         <h3 className="text-lg font-bold text-gray-900 mt-1">
@@ -111,7 +111,7 @@ export function Timeline() {
                       </div>
                       <div className="timeline-dot" />
                       <div className="pl-4">
-                        <span className="text-2xl font-bold text-[var(--color-orange)]">
+                        <span className="text-2xl font-bold text-[var(--color-accent)]">
                           {item.year}
                         </span>
                         <h3 className="text-lg font-bold text-gray-900 mt-1">
@@ -136,7 +136,7 @@ export function Timeline() {
                     />
                   </div>
                   <div className="flex-1">
-                    <span className="text-[var(--color-orange)] font-bold text-lg">
+                    <span className="text-[var(--color-accent)] font-bold text-lg">
                       {item.year}
                     </span>
                     <h3 className="font-bold text-gray-900">{item.title}</h3>

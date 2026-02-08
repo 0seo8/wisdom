@@ -4,7 +4,7 @@ interface SectionProps {
   id?: string;
   children: ReactNode;
   className?: string;
-  background?: "white" | "gray" | "primary";
+  background?: "white" | "gray" | "primary" | "transparent";
 }
 
 export function Section({
@@ -17,6 +17,7 @@ export function Section({
     white: "bg-white",
     gray: "bg-gray-50",
     primary: "bg-[var(--color-yellow-light)]",
+    transparent: "bg-transparent",
   };
 
   return (

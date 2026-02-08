@@ -11,7 +11,9 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <Logo className="mb-4 [&_span]:text-white [&_rect]:stroke-white [&_line]:stroke-white [&_circle]:fill-white" />
+            <Link href="/" className="inline-block">
+              <Logo className="mb-4 [&_span]:text-white [&_rect]:stroke-white [&_line]:stroke-white [&_circle]:fill-white" />
+            </Link>
             <p className="text-sm text-gray-400 mb-4">
               {companyInfo.slogan}
             </p>
@@ -156,7 +158,7 @@ function SocialLink({ href, icon, label }: SocialLinkProps) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 text-gray-400 hover:bg-[var(--color-orange)] hover:text-white transition-all"
+      className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 text-gray-400 hover:bg-[var(--color-accent)] hover:text-white transition-all"
       aria-label={label}
     >
       {icon}

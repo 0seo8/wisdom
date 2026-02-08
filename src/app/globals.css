@@ -7,22 +7,17 @@
 }
 
 :root {
-  /* Colors - Primary (CI CMYK-based) */
-  --color-yellow: #ffcc00;
-  --color-yellow-light: #fff8e1;
-  --color-yellow-dark: #c69c00;
+  /* Colors - ArtsWisdom Palette */
+  --color-primary: #4a7c8c;
+  --color-primary-light: #6b94a3;
+  --color-primary-dark: #355e6b;
 
-  --color-orange: #ff6600;
-  --color-orange-light: #fff0e6;
-  --color-orange-dark: #cc5200;
+  --color-accent: #8c5a5a;
+  --color-accent-light: #a37272;
+  --color-accent-dark: #704444;
 
-  --color-green: #8cba2a;
-  --color-green-light: #f1f8e4;
-  --color-green-dark: #5c7e1a;
-
-  --color-blue: #1a0eda;
-  --color-blue-light: #e8e6fd;
-  --color-blue-dark: #0f0a8a;
+  --color-cream: #f5f1e6;
+  --color-white: #ffffff;
 
   /* Colors - Neutral */
   --color-gray-50: #f9fafb;
@@ -37,12 +32,12 @@
   --color-gray-900: #111827;
 
   /* Background & Foreground */
-  --background: #ffffff;
-  --foreground: #1f2937;
+  --background: #f5f1e6; /* Cream background */
+  --foreground: #374151; /* Dark gray text */
 
   /* Layout */
   --header-height: 80px;
-  --container-max-width: 1280px;
+  --container-max-width: 1200px;
 }
 
 @theme inline {
@@ -50,10 +45,9 @@
   --color-foreground: var(--foreground);
 
   /* CI Colors */
-  --color-brand-yellow: var(--color-yellow);
-  --color-brand-orange: var(--color-orange);
-  --color-brand-green: var(--color-green);
-  --color-brand-blue: var(--color-blue);
+  --color-brand-primary: var(--color-primary);
+  --color-brand-accent: var(--color-accent);
+  --color-brand-cream: var(--color-cream);
 
   /* Font */
   --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui,

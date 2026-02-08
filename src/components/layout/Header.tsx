@@ -54,7 +54,7 @@ export function Header() {
               >
                 <Link
                   href={item.href}
-                  className="flex items-center gap-1 px-4 py-2 text-gray-700 hover:text-[var(--color-orange)] transition-colors font-medium"
+                  className="flex items-center gap-1 px-4 py-2 text-gray-700 hover:text-[var(--color-accent)] transition-colors font-medium"
                 >
                   {item.label}
                   {item.children && (
@@ -74,7 +74,7 @@ export function Header() {
                         <Link
                           key={child.label}
                           href={child.href}
-                          className="block px-4 py-2 text-gray-600 hover:text-[var(--color-orange)] hover:bg-gray-50 transition-colors"
+                          className="block px-4 py-2 text-gray-600 hover:text-[var(--color-accent)] hover:bg-gray-50 transition-colors"
                         >
                           {child.label}
                         </Link>
@@ -89,7 +89,7 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-gray-700 hover:text-[var(--color-orange)] transition-colors"
+            className="lg:hidden p-2 text-gray-700 hover:text-[var(--color-accent)] transition-colors"
             aria-label={isOpen ? "메뉴 닫기" : "메뉴 열기"}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -125,7 +125,7 @@ function MobileMenu({ items, onClose }: MobileMenuProps) {
   };
 
   return (
-    <div className="lg:hidden bg-white border-t border-gray-100">
+    <div className="lg:hidden bg-white border-t border-gray-100 h-screen overflow-y-auto pb-20">
       <nav className="container py-4">
         {items.map((item) => (
           <div key={item.label} className="border-b border-gray-100 last:border-0">
@@ -133,14 +133,14 @@ function MobileMenu({ items, onClose }: MobileMenuProps) {
               <Link
                 href={item.href}
                 onClick={onClose}
-                className="flex-1 py-3 text-gray-700 font-medium"
+                className="flex-1 py-3 text-gray-700 font-medium hover:text-[var(--color-accent)]"
               >
                 {item.label}
               </Link>
               {item.children && (
                 <button
                   onClick={() => toggleExpand(item.label)}
-                  className="p-3 text-gray-500"
+                  className="p-3 text-gray-500 hover:text-[var(--color-accent)]"
                   aria-label="하위 메뉴 펼치기"
                 >
                   <ChevronDown
@@ -153,13 +153,13 @@ function MobileMenu({ items, onClose }: MobileMenuProps) {
             </div>
 
             {item.children && expandedItems.includes(item.label) && (
-              <div className="pl-4 pb-3">
+              <div className="pl-4 pb-3 bg-gray-50/50">
                 {item.children.map((child) => (
                   <Link
                     key={child.label}
                     href={child.href}
                     onClick={onClose}
-                    className="block py-2 text-gray-600 hover:text-[var(--color-orange)]"
+                    className="block py-2 text-gray-600 hover:text-[var(--color-accent)]"
                   >
                     {child.label}
                   </Link>

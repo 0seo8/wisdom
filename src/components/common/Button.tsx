@@ -27,11 +27,11 @@ export function Button({
 
   const variantClasses = {
     primary:
-      "bg-[var(--color-orange)] text-white hover:bg-[var(--color-orange-dark)] focus:ring-[var(--color-orange)]",
+      "bg-[var(--color-accent)] text-white hover:bg-[var(--color-accent-dark)] focus:ring-[var(--color-accent)]",
     secondary:
       "bg-gray-900 text-white hover:bg-gray-800 focus:ring-gray-900",
     outline:
-      "border-2 border-[var(--color-orange)] text-[var(--color-orange)] hover:bg-[var(--color-orange)] hover:text-white focus:ring-[var(--color-orange)]",
+      "border-2 border-[var(--color-accent)] text-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white focus:ring-[var(--color-accent)]",
     ghost:
       "text-gray-700 hover:bg-gray-100 focus:ring-gray-500",
   };

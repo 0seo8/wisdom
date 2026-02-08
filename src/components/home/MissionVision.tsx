@@ -31,28 +31,28 @@ const items = [
 
 const colorMap = {
   orange: {
-    bg: "bg-[var(--color-orange)]",
-    bgLight: "bg-[var(--color-orange-light)]",
-    text: "text-[var(--color-orange)]",
-    border: "border-[var(--color-orange)]",
+    bg: "bg-[var(--color-accent)]",
+    bgLight: "bg-[var(--color-accent-light)]",
+    text: "text-[var(--color-accent)]",
+    border: "border-[var(--color-accent)]",
   },
   green: {
-    bg: "bg-[var(--color-green)]",
-    bgLight: "bg-[var(--color-green-light)]",
-    text: "text-[var(--color-green)]",
-    border: "border-[var(--color-green)]",
+    bg: "bg-[var(--color-primary)]",
+    bgLight: "bg-[var(--color-primary-light)]",
+    text: "text-[var(--color-primary)]",
+    border: "border-[var(--color-primary)]",
   },
   blue: {
-    bg: "bg-[var(--color-blue)]",
-    bgLight: "bg-[var(--color-blue-light)]",
-    text: "text-[var(--color-blue)]",
-    border: "border-[var(--color-blue)]",
+    bg: "bg-[var(--color-primary-dark)]",
+    bgLight: "bg-[var(--color-primary-light)]",
+    text: "text-[var(--color-primary-dark)]",
+    border: "border-[var(--color-primary-dark)]",
   },
 };
 
 export function MissionVision() {
   return (
-    <section className="py-16 md:py-24">
+    <section id="vision" className="py-16 md:py-24">
       <div className="container">
         <div className="space-y-0">
           {items.map((item, index) => {

@@ -85,24 +85,31 @@ export function Hero() {
                 sizes="100vw"
               />
 
-              <div className="absolute inset-0 bg-black/30" />
+              <div className="absolute inset-0 bg-black/40" />
 
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center px-4 sm:px-6 max-w-3xl mx-auto">
+                <div className="text-center px-4 sm:px-6 max-w-4xl mx-auto">
                   {selectedIndex === index && (
-                    <div className="animate-fade-in">
-                      <p className="text-sm sm:text-base md:text-lg text-white/80 mb-3 tracking-widest uppercase font-medium">
+                    <div className="animate-fade-in space-y-6">
+                      <p className="text-base sm:text-lg md:text-xl text-white/90 tracking-[0.2em] uppercase font-light">
                         {slide.subtitle}
                       </p>
-                      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-5 leading-tight">
+                      <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight font-serif">
                         {slide.title}
                       </h1>
-                      <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 md:mb-8 max-w-xl mx-auto">
+                      <div className="w-24 h-[1px] bg-white/50 mx-auto my-8" />
+                      <p className="text-lg sm:text-xl md:text-2xl text-white/95 max-w-2xl mx-auto font-light leading-relaxed">
                         {slide.description}
                       </p>
-                      <Button href={slide.cta} size="lg">
-                        바로가기
-                      </Button>
+                      <div className="pt-8">
+                        <Button 
+                          href={slide.cta} 
+                          size="lg"
+                          className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[var(--color-primary)] transition-all duration-300 min-w-[200px]"
+                        >
+                          자세히 보기
+                        </Button>
+                      </div>
                     </div>
                   )}
                 </div>
@@ -113,16 +120,16 @@ export function Hero() {
       </div>
 
       {/* Dot Indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex gap-3">
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 flex gap-4">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => scrollTo(index)}
             aria-label={`${index + 1}번 슬라이드로 이동`}
-            className={`w-3 h-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-black/30 ${
+            className={`w-3 h-3 rounded-full transition-all duration-500 focus:outline-none ${
               selectedIndex === index
-                ? "bg-white scale-110"
-                : "bg-white/50 hover:bg-white/70"
+                ? "bg-white scale-125"
+                : "bg-white/40 hover:bg-white/60"
             }`}
           />
         ))}
