@@ -10,8 +10,9 @@ import { submitContactForm } from "@/app/contact/actions";
 
 const homeContactSchema = z.object({
   name: z.string().min(2, "이름을 2자 이상 입력해주세요"),
+  organization: z.string().optional(),
   email: z.string().email("올바른 이메일 주소를 입력해주세요"),
-  phone: z.string().optional(),
+  phone: z.string().min(1, "전화번호를 입력해주세요"),
   message: z.string().min(10, "문의 내용을 10자 이상 입력해주세요"),
   privacyConsent: z.literal(true, {
     message: "개인정보 수집에 동의해주세요",
@@ -32,6 +33,7 @@ export function HomeContact() {
     resolver: zodResolver(homeContactSchema),
     defaultValues: {
       name: "",
+      organization: "",
       email: "",
       phone: "",
       message: "",

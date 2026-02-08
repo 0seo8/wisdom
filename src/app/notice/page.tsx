@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { getNotices } from "@/lib/queries/notices";
 import {
-  NoticeHero,
   NoticeSearch,
   NoticeList,
   NoticePagination,
