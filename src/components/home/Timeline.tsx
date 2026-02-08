@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
 import { Section, SectionTitle } from "@/components/common";
-import { motion } from "framer-motion";
 import { images } from "@/constants/images";
 
 const timelineData = [
@@ -64,107 +61,93 @@ export function Timeline() {
         subtitle="지혜의밭이 걸어온 길"
       />
 
-      {/* Desktop Timeline - Horizontal Scroll */}
-      <div className="hidden md:block">
-        <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-[var(--color-orange)] opacity-30 -translate-y-1/2" />
-
-          <div className="flex overflow-x-auto gap-6 pb-4 snap-x snap-mandatory scrollbar-hide">
-            {timelineData.map((item, index) => (
-              <motion.div
+      <div className="max-w-4xl mx-auto">
+        <div className="timeline-vertical">
+          {timelineData.map((item, index) => {
+            const isLeft = index % 2 === 0;
+            return (
+              <div
                 key={item.year}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex-shrink-0 w-64 snap-center"
+                className={`timeline-item ${isLeft ? "timeline-left" : "timeline-right"}`}
               >
-                <TimelineCard {...item} />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
+                {/* Desktop: alternating layout */}
+                <div className="hidden md:grid md:grid-cols-[1fr_auto_1fr] md:gap-6 items-center">
+                  {isLeft ? (
+                    <>
+                      <div className="text-right pr-4">
+                        <span className="text-2xl font-bold text-[var(--color-orange)]">
+                          {item.year}
+                        </span>
+                        <h3 className="text-lg font-bold text-gray-900 mt-1">
+                          {item.title}
+                        </h3>
+                        <p className="text-sm text-gray-600 mt-1">
+                          {item.description}
+                        </p>
+                      </div>
+                      <div className="timeline-dot" />
+                      <div className="pl-4">
+                        <div className="relative w-48 h-32 rounded-lg overflow-hidden">
+                          <Image
+                            src={item.image}
+                            alt={`${item.year}년 ${item.title}`}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="text-right pr-4">
+                        <div className="relative w-48 h-32 rounded-lg overflow-hidden ml-auto">
+                          <Image
+                            src={item.image}
+                            alt={`${item.year}년 ${item.title}`}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                      </div>
+                      <div className="timeline-dot" />
+                      <div className="pl-4">
+                        <span className="text-2xl font-bold text-[var(--color-orange)]">
+                          {item.year}
+                        </span>
+                        <h3 className="text-lg font-bold text-gray-900 mt-1">
+                          {item.title}
+                        </h3>
+                        <p className="text-sm text-gray-600 mt-1">
+                          {item.description}
+                        </p>
+                      </div>
+                    </>
+                  )}
+                </div>
 
-      {/* Mobile Timeline - Vertical */}
-      <div className="md:hidden space-y-6">
-        {timelineData.map((item, index) => (
-          <motion.div
-            key={item.year}
-            initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <MobileTimelineCard {...item} />
-          </motion.div>
-        ))}
+                {/* Mobile: simple list */}
+                <div className="flex gap-4 md:hidden">
+                  <div className="relative w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden">
+                    <Image
+                      src={item.image}
+                      alt={`${item.year}년 ${item.title}`}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <span className="text-[var(--color-orange)] font-bold text-lg">
+                      {item.year}
+                    </span>
+                    <h3 className="font-bold text-gray-900">{item.title}</h3>
+                    <p className="text-sm text-gray-600">{item.description}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </Section>
-  );
-}
-
-interface TimelineCardProps {
-  year: number;
-  title: string;
-  description: string;
-  image: string;
-}
-
-function TimelineCard({ year, title, description, image }: TimelineCardProps) {
-  return (
-    <div className="relative group">
-      {/* Year Marker */}
-      <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
-        <div className="w-6 h-6 bg-[var(--color-orange)] rounded-full border-4 border-white shadow" />
-      </div>
-
-      {/* Card */}
-      <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow pt-6">
-        {/* Image */}
-        <div className="relative aspect-[4/3] overflow-hidden">
-          <Image
-            src={image}
-            alt={`${year}년 ${title}`}
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-          <span className="absolute bottom-3 left-3 text-white text-2xl font-bold">
-            {year}
-          </span>
-        </div>
-
-        {/* Content */}
-        <div className="p-4">
-          <h3 className="font-bold text-gray-900 mb-1">{title}</h3>
-          <p className="text-sm text-gray-600 line-clamp-2">{description}</p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function MobileTimelineCard({ year, title, description, image }: TimelineCardProps) {
-  return (
-    <div className="flex gap-4">
-      {/* Image */}
-      <div className="relative w-24 h-24 flex-shrink-0 rounded-lg overflow-hidden">
-        <Image
-          src={image}
-          alt={`${year}년 ${title}`}
-          fill
-          className="object-cover"
-        />
-      </div>
-
-      {/* Content */}
-      <div className="flex-1">
-        <span className="text-[var(--color-orange)] font-bold text-lg">{year}</span>
-        <h3 className="font-bold text-gray-900">{title}</h3>
-        <p className="text-sm text-gray-600">{description}</p>
-      </div>
-    </div>
   );
 }

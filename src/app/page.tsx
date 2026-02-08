@@ -4,7 +4,6 @@ import {
   Greeting,
   MissionVision,
   CoreValues,
-  Programs,
   Timeline,
   SDGs,
   NoticePreview,
@@ -27,7 +26,7 @@ export default function Home() {
       <CoreValues />
       <Timeline />
       <SDGs />
-      <Programs />
+      <Overview />
       <Certification />
       <CISection />
       <MapSection />
