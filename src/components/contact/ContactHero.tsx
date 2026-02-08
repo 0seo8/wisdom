@@ -1,0 +1,32 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+export function ContactHero() {
+  return (
+    <section className="relative bg-gradient-to-br from-[var(--color-orange-light)] via-white to-[var(--color-yellow-light)] py-16 md:py-24">
+      <div className="container">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-2xl mx-auto"
+        >
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            Contact us
+          </h1>
+          <p className="text-lg md:text-xl text-gray-600 mb-2">
+            경험을 통한 성장, 지금 시작해 보세요!
+          </p>
+          <p className="text-base text-gray-500">
+            맞춤형 콘텐츠 기반 워크샵, 공연, 교육 및 행사 기획
+          </p>
+        </motion.div>
+      </div>
+
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 w-32 h-32 bg-[var(--color-orange)] opacity-5 rounded-full -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 right-0 w-48 h-48 bg-[var(--color-yellow)] opacity-5 rounded-full translate-x-1/3 translate-y-1/3" />
+    </section>
+  );
+}

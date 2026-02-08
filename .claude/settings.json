@@ -1,0 +1,171 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/moai/handle-post-tool.sh",
+            "timeout": 60
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/moai/handle-compact.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/moai/handle-pre-tool.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/moai/handle-session-end.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/moai/handle-session-start.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/moai/handle-stop.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": ".moai/status_line.sh"
+  },
+  "outputStyle": "MoAI",
+  "cleanupPeriodDays": 30,
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
+    "ENABLE_TOOL_SEARCH": "1",
+    "PATH": "/Users/rohyeongseo/go/bin:/Users/rohyeongseo/.local/bin:/opt/homebrew/share/google-cloud-sdk/bin:/Users/rohyeongseo/.opencode/bin:/Users/rohyeongseo/.local/bin:/Users/rohyeongseo/.antigravity/antigravity/bin:/Users/rohyeongseo/.nvm/versions/node/v22.16.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/Users/rohyeongseo/Library/Application Support/JetBrains/Toolbox/scripts:/Users/rohyeongseo/flutter/bin:/Users/rohyeongseo/Library/Android/sdk/platform-tools:/Users/rohyeongseo/Library/Android/sdk/platform-tools"
+  },
+  "permissions": {
+    "defaultMode": "default",
+    "allow": [
+      "AskUserQuestion",
+      "BashOutput",
+      "Edit",
+      "Glob",
+      "Grep",
+      "KillShell",
+      "MultiEdit",
+      "NotebookEdit",
+      "Read",
+      "Skill",
+      "Task",
+      "TaskCreate",
+      "TaskGet",
+      "TaskList",
+      "TaskUpdate",
+      "TodoWrite",
+      "WebFetch",
+      "WebSearch",
+      "Write",
+      "mcp__context7__get-library-docs",
+      "mcp__context7__resolve-library-id",
+      "mcp__sequential-thinking__*",
+
+      "Bash(git *)",
+      "Bash(gh *)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(grep:*)",
+      "Bash(find:*)",
+      "Bash(tree:*)",
+      "Bash(pwd:*)",
+      "Bash(diff:*)",
+      "Bash(cp:*)",
+      "Bash(mv:*)",
+      "Bash(mkdir:*)",
+      "Bash(touch:*)",
+      "Bash(curl:*)",
+      "Bash(jq:*)",
+      "Bash(yq:*)",
+      "Bash(python*)",
+      "Bash(node*)",
+      "Bash(npm*)",
+      "Bash(npx*)",
+      "Bash(pnpm*)",
+      "Bash(yarn*)",
+      "Bash(make:*)",
+      "Bash(rg:*)",
+      "Bash(echo:*)",
+      "Bash(which:*)",
+      "Bash(man:*)",
+      "Bash(moai*)"
+    ],
+    "ask": [
+      "Bash(rm:*)",
+      "Bash(sudo:*)",
+      "Bash(chmod:*)",
+      "Bash(chown:*)",
+      "Read(./.env)",
+      "Read(./.env.*)"
+    ],
+    "deny": [
+      "Read(./secrets/**)",
+      "Read(~/.ssh/**)",
+      "Read(~/.aws/**)",
+      "Read(~/.config/gcloud/**)",
+      "Write(./secrets/**)",
+      "Write(~/.ssh/**)",
+      "Write(~/.aws/**)",
+      "Write(~/.config/gcloud/**)",
+      "Edit(./secrets/**)",
+      "Edit(~/.ssh/**)",
+      "Edit(~/.aws/**)",
+      "Edit(~/.config/gcloud/**)",
+      "Bash(rm -rf /:*)",
+      "Bash(rm -rf ~:*)",
+      "Bash(git push --force:*)",
+      "Bash(git reset --hard:*)",
+      "Bash(git clean -fd:*)",
+      "Bash(dd:*)",
+      "Bash(mkfs:*)",
+      "Bash(reboot:*)",
+      "Bash(shutdown:*)"
+    ]
+  },
+  "teammateMode": "auto"
+}
