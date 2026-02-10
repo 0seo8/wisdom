@@ -26,7 +26,6 @@ export default function Home() {
       <CoreValues />
       <Timeline />
       <SDGs />
-      <Overview />
       <Certification />
       <CISection />
       <MapSection />

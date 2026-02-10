@@ -82,7 +82,7 @@ function ProgramCard({
   return (
     <Link href={href} className="group block">
       <div
-        className={`bg-white rounded-2xl p-8 h-full shadow-sm hover:shadow-lg transition-all duration-300 ${classes.hover}`}
+        className={`bg-white p-8 h-full shadow-sm hover:shadow-lg transition-all duration-300 ${classes.hover}`}
       >
         <div className="flex items-start gap-4 mb-4">
           <div

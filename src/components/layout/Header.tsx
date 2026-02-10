@@ -2,11 +2,13 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { navigation, type NavItem } from "@/constants/navigation";
 import { Logo } from "./Logo";
 
 export function Header() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -32,58 +34,77 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-sm"
-          : "bg-white"
+          ? "bg-[var(--color-header-bg)] shadow-sm"
+          : "bg-[var(--color-header-bg)]"
       }`}
     >
       <div className="container">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <Logo />
+            <Logo variant="default" />
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
-            {navigation.map((item) => (
-              <div
-                key={item.label}
-                className="relative"
-                onMouseEnter={() => handleDropdownEnter(item.label)}
-                onMouseLeave={handleDropdownLeave}
-              >
-                <Link
-                  href={item.href}
-                  className="flex items-center gap-1 px-4 py-2 text-gray-700 hover:text-[var(--color-accent)] transition-colors font-medium"
-                >
-                  {item.label}
-                  {item.children && (
-                    <ChevronDown
-                      className={`w-4 h-4 transition-transform ${
-                        activeDropdown === item.label ? "rotate-180" : ""
-                      }`}
-                    />
-                  )}
-                </Link>
+            {navigation.map((item) => {
+              const isActive =
+                item.href === pathname ||
+                (item.children &&
+                  item.children.some((child) => child.href === pathname));
 
-                {/* Dropdown Menu */}
-                {item.children && activeDropdown === item.label && (
-                  <div className="absolute top-full left-0 pt-2">
-                    <div className="bg-white rounded-lg shadow-lg border border-gray-100 py-2 min-w-[180px]">
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.label}
-                          href={child.href}
-                          className="block px-4 py-2 text-gray-600 hover:text-[var(--color-accent)] hover:bg-gray-50 transition-colors"
-                        >
-                          {child.label}
-                        </Link>
-                      ))}
+              return (
+                <div
+                  key={item.label}
+                  className="relative group h-20 flex items-center"
+                  onMouseEnter={() => handleDropdownEnter(item.label)}
+                  onMouseLeave={handleDropdownLeave}
+                >
+                  <Link
+                    href={item.href}
+                    className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors relative ${
+                      isActive
+                        ? "text-[var(--color-primary)] font-bold"
+                        : "text-gray-600 hover:text-[var(--color-primary)]"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                  
+                  {/* Active Indicator positioned at the bottom of the header item */}
+                  {isActive && (
+                    <span className="absolute bottom-0 left-0 w-full h-[3px] bg-[var(--color-primary)] rounded-t-sm"></span>
+                  )}
+
+                  {/* Dropdown Menu */}
+                  {item.children && (
+                    <div
+                      className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 transition-all duration-200 ${
+                        activeDropdown === item.label
+                          ? "opacity-100 visible translate-y-0"
+                          : "opacity-0 invisible -translate-y-2"
+                      }`}
+                    >
+                      <div className="bg-white rounded-lg shadow-xl border border-gray-100 py-3 min-w-[200px] overflow-hidden">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.label}
+                            href={child.href}
+                            className={`block px-6 py-2.5 text-sm transition-colors hover:bg-gray-50 ${
+                              pathname === child.href
+                                ? "text-[var(--color-primary)] font-bold bg-gray-50"
+                                : "text-gray-600 hover:text-[var(--color-primary)]"
+                            }`}
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                )}
-              </div>
-            ))}
+                  )}
+                </div>
+              );
+            })}
           </nav>
 
           {/* Mobile Menu Button */}

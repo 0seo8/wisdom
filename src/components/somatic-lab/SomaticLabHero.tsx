@@ -10,7 +10,7 @@ export function SomaticLabHero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src={images.somaticLab.methodology}
+          src={images.somaticLab.hero}
           alt="Somatic Lab Background"
           fill
           className="object-cover"

@@ -1,23 +1,47 @@
+/* @import "tailwindcss"; */
 @import "tailwindcss";
 
-/* Pretendard 폰트 */
-@font-face {
-  font-family: "Pretendard";
-  src: url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
-}
-
 :root {
-  /* Colors - ArtsWisdom Palette */
+  /* Colors - ArtsWisdom Original Palette */
+  /* Main Background: Cream/Off-white #fcf3eb */
+  --background: #fcf3eb;
+  --color-cream: #fcf3eb;
+  
+  /* Header: Muted Green #b6c2ae (approx from rgb(182, 194, 174)) */
+  --color-header-bg: #b6c2ae; 
+  
+  /* Footer: Light Beige #f2ddcc (approx from rgb(242, 221, 204)) */
+  --color-footer-bg: #f2ddcc;
+
+  /* Primary text is dark gray, almost black */
+  --foreground: #333333;
+
+  /* Accent Colors (Keep existing if not conflicting, but adjust base) */
   --color-primary: #4a7c8c;
   --color-primary-light: #6b94a3;
   --color-primary-dark: #355e6b;
 
-  --color-accent: #8c5a5a;
-  --color-accent-light: #a37272;
-  --color-accent-dark: #704444;
+  --color-accent: #8c5a5a; 
 
-  --color-cream: #f5f1e6;
-  --color-white: #ffffff;
+  /* Brand Colors for Subpages (Restored) */
+  /* Healasoma (Orange/Yellow) */
+  --color-orange: #ea580c;
+  --color-orange-light: #fff7ed; /* orange-50 */
+  --color-orange-dark: #c2410c;
+  
+  --color-yellow: #ca8a04;
+  --color-yellow-light: #fefce8; /* yellow-50 */
+  --color-yellow-dark: #a16207;
+
+  /* Somatic Lab (Green) */
+  --color-green: #15803d;
+  --color-green-light: #f0fdf4; /* green-50 */
+  --color-green-dark: #14532d;
+
+  /* Daily Art / Business (Blue) */
+  --color-blue: #2563eb;
+  --color-blue-light: #eff6ff; /* blue-50 */
+  --color-blue-dark: #1e40af;
 
   /* Colors - Neutral */
   --color-gray-50: #f9fafb;
@@ -31,10 +55,6 @@
   --color-gray-800: #1f2937;
   --color-gray-900: #111827;
 
-  /* Background & Foreground */
-  --background: #f5f1e6; /* Cream background */
-  --foreground: #374151; /* Dark gray text */
-
   /* Layout */
   --header-height: 80px;
   --container-max-width: 1200px;
@@ -43,17 +63,10 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-
-  /* CI Colors */
-  --color-brand-primary: var(--color-primary);
-  --color-brand-accent: var(--color-accent);
   --color-brand-cream: var(--color-cream);
 
-  /* Font */
-  --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui,
-    Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo",
-    "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", sans-serif;
+  /* Font - Original System Fonts */
+  --font-sans: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
 }
 
 /* Base Styles */

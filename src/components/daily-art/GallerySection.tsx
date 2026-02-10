@@ -6,24 +6,26 @@ import { useRef } from "react";
 
 const videos = [
   {
-    title: "넋두리 공연 후 인터뷰",
-    description: "배우와 관객이 함께하는 공감의 시간",
-    embedId: "dQw4w9WgXcQ",
+    title: "넋두리 공연 후 출연배우 및 관객들의 생생한 인터뷰",
+    description:
+      "있는 그대로 허용해주는 공간 넋두리. 모두가 감동으로 하나 되었다고 합니다.",
+    embedId: "IXWTNHh6wHM",
   },
   {
-    title: "무늬만 가족 - 상명대 예술홀",
-    description: "현실 기반 가족 드라마, 관객 참여 공연",
-    embedId: "dQw4w9WgXcQ",
+    title: "상명대 아트홀에서 진행한 소통극장 '무늬만 가족' 공연",
+    description:
+      "실화를 바탕으로 한 가족의 모습, 관객이 함께 참여했던 감동적인 연극입니다.",
+    embedId: "ZggHvYu37jk",
   },
   {
-    title: "몸..,쉼 - 소매틱스/명상 소개",
-    description: "소매틱스와 명상을 통한 몸과 마음의 쉼",
-    embedId: "dQw4w9WgXcQ",
+    title: "지혜의밭 '몸..,쉼'을 소개합니다",
+    description: "소매틱, somatics, 명상을 통한 몸과 마음의 쉼",
+    embedId: "fEeVGJGSRQs",
   },
   {
-    title: "내비춤: 몸, 춤, 꽃으로 피어나다",
+    title: "내비춤 - 몸, 춤, 꽃으로 피어나다",
     description: "나비의 날갯짓처럼 자유로운 움직임 명상",
-    embedId: "dQw4w9WgXcQ",
+    embedId: "JJsVSNW6UFE",
   },
 ];
 
@@ -32,10 +34,7 @@ export function GallerySection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section
-      ref={ref}
-      className="py-16 md:py-24 bg-gray-50"
-    >
+    <section id="gallery" ref={ref} className="py-16 md:py-24 bg-gray-50">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -64,33 +63,19 @@ export function GallerySection() {
               className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
             >
               <div className="aspect-video bg-gray-200 relative">
-                <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
-                  <div className="text-center text-gray-400">
-                    <svg
-                      className="w-16 h-16 mx-auto mb-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span className="text-sm">영상 준비 중</span>
-                  </div>
-                </div>
+                <iframe
+                  className="absolute inset-0 w-full h-full"
+                  src={`https://www.youtube.com/embed/${video.embedId}`}
+                  title={video.title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
               </div>
               <div className="p-5">
-                <h3 className="font-bold text-gray-900 mb-1">{video.title}</h3>
+                <h3 className="font-bold text-gray-900 mb-1">
+                  {video.title}
+                </h3>
                 <p className="text-sm text-gray-600">{video.description}</p>
               </div>
             </motion.div>

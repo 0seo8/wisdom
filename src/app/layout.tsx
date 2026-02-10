@@ -21,6 +21,11 @@ export const metadata: Metadata = {
     "웰빙",
   ],
   authors: [{ name: "㈜지혜의밭" }],
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
   openGraph: {
     type: "website",
     locale: "ko_KR",

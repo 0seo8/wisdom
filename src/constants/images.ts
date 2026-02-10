@@ -97,7 +97,7 @@ export const images = {
 
   // Healasoma page
   healasoma: {
-    hero: "/images/healasoma/hero-banner.png",
+    hero: "/images/healasoma/hero-bg.jpg",
     bgHarmony: "/images/healasoma/bg-harmony.jpg",
     bgLeaves: "/images/healasoma/bg-leaves.jpg",
     bodyfulness: "/images/healasoma/program-bodyfulness.png",
@@ -110,10 +110,13 @@ export const images = {
 
   // Somatic Lab page
   somaticLab: {
+    hero: "/images/somatic-lab/hero-bg.jpg",
     certification: "/images/somatic-lab/certification-badge.png",
     trinity: "/images/somatic-lab/trinity-concept.png",
+    trinityConcept: "/images/somatic-lab/trinity-concept.png",
     differenceChart: "/images/somatic-lab/difference-chart.png",
     methodology: "/images/somatic-lab/methodology-main.jpg",
+    methodologyMain: "/images/somatic-lab/methodology-main.jpg",
     researchBadge: "/images/somatic-lab/research-badge.png",
     programsHeader: "/images/somatic-lab/programs-header.jpg",
     programIntroMain: "/images/somatic-lab/program-intro-main.jpg",
@@ -126,6 +129,12 @@ export const images = {
       athletes: "/images/somatic-lab/age-athletes.jpg",
       entertainment: "/images/somatic-lab/age-entertainment.jpg",
     },
+    ageAdolescent: "/images/somatic-lab/age-adolescent.jpg",
+    ageYoungAdult: "/images/somatic-lab/age-young-adult.jpg",
+    ageMiddle: "/images/somatic-lab/age-middle.jpg",
+    ageElderly: "/images/somatic-lab/age-elderly.jpg",
+    ageAthletes: "/images/somatic-lab/age-athletes.jpg",
+    ageEntertainment: "/images/somatic-lab/age-entertainment.jpg",
     researchers: {
       moon: "/images/somatic-lab/researcher-moon.png",
       choiMira: "/images/somatic-lab/researcher-choi-mira.png",
@@ -144,7 +153,7 @@ export const images = {
 
   // Daily Art page
   dailyArt: {
-    hero: "/images/daily-art/hero-daily-art.jpg",
+    hero: "/images/daily-art/hero-bg.png",
     performanceGeneric: "/images/daily-art/performance-generic.png",
     muniman: {
       intro: "/images/daily-art/muniman-intro.jpg",
@@ -181,6 +190,7 @@ export const images = {
 
   // Business page
   business: {
+    hero: "/images/business/hero-bg.png",
     educationMain: "/images/business/education-main.png",
     trainingSession: "/images/business/training-session.jpg",
     workshopActivity: "/images/business/workshop-activity.jpg",
@@ -191,6 +201,8 @@ export const images = {
     eventEngagement: "/images/business/event-engagement.jpg",
     eventShowcase: "/images/business/event-showcase.jpg",
     eventDocumentation: "/images/business/event-documentation.jpg",
+    eventMain: "/images/business/event-service.png",
+    eventReview: "/images/business/education-photo-3.png",
     educationPhotos: {
       photo1: "/images/business/education-photo-1.png",
       photo2: "/images/business/education-photo-2.png",

@@ -10,7 +10,7 @@ export function BusinessHero() {
       {/* Full-width Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src={images.business.trainingSession}
+          src={images.business.hero}
           alt="Educational Event Background"
           fill
           className="object-cover"

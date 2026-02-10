@@ -42,7 +42,7 @@ export function IntroSection() {
   ];
 
   return (
-    <section ref={ref} className="py-16 md:py-24 bg-white">
+    <section id="intro" ref={ref} className="py-16 md:py-24 bg-white">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

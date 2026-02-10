@@ -62,25 +62,48 @@ export default function SomaticLabPage() {
               <br />
               문의를 통해 자세한 내용을 안내받으세요.
             </p>
-            <a
-              href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 bg-[var(--color-green)] text-white font-medium rounded-full hover:bg-[var(--color-green-dark)] transition-colors duration-200 shadow-lg shadow-[var(--color-green)]/30"
-            >
-              프로그램 문의하기
-              <svg
-                className="w-5 h-5 ml-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="/contact"
+                className="inline-flex items-center justify-center px-8 py-4 bg-[var(--color-green)] text-white font-medium rounded-full hover:bg-[var(--color-green-dark)] transition-colors duration-200 shadow-lg shadow-[var(--color-green)]/30"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </a>
+                프로그램 문의하기
+                <svg
+                  className="w-5 h-5 ml-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://artswisdom.com/브로슈어/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white text-[var(--color-green)] border-2 border-[var(--color-green)] font-medium rounded-full hover:bg-[var(--color-green-light)] transition-colors duration-200"
+              >
+                브로슈어 바로가기
+                <svg
+                  className="w-5 h-5 ml-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1.5}
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </section>

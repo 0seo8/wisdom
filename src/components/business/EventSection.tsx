@@ -74,162 +74,182 @@ export function EventSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="event" ref={ref} className="py-16 md:py-24">
+    <section id="event" ref={ref} className="py-16 md:py-24 bg-white">
       <div className="container">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
-        >
-          <span className="inline-block px-4 py-2 bg-[var(--color-yellow)]/20 rounded-full text-sm font-medium text-[var(--color-yellow-dark)] mb-6">
-            Event Planning
-          </span>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-            행사기획
-          </h2>
-          <p className="text-gray-600 text-lg leading-relaxed">
-            참여자 모두가 주인공이 되는 특별한 기업 행사를 기획합니다.
-            문화예술을 통한 차별화된 경험으로 잊지 못할 순간을 만들어 드립니다.
-          </p>
-        </motion.div>
-
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.1 + index * 0.15 }}
-              className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group"
-            >
-              <div className="w-16 h-16 bg-gradient-to-br from-[var(--color-yellow-light)] to-[var(--color-yellow)]/30 rounded-2xl flex items-center justify-center text-[var(--color-yellow-dark)] mb-6 group-hover:scale-110 transition-transform">
-                {service.icon}
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center">
+          {/* Left: Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="flex-1 space-y-12"
+          >
+            {/* Event Planning */}
+            <div className="space-y-6">
+              <h2 className="text-4xl md:text-5xl font-serif text-[#5d4037] leading-tight">
+                Event
+                <br />
+                Planning
+                <br />
+                <span className="text-3xl md:text-4xl font-sans font-bold text-gray-900 mt-2 block">
+                  행사기획
+                </span>
+              </h2>
+              <div className="space-y-6 text-gray-700 leading-relaxed text-lg">
+                <div>
+                  <h3 className="font-bold text-xl mb-2 text-[#8b6f47]">
+                    “참여형 공연”
+                  </h3>
+                  <p>
+                    구성원들의 다양한 이야기를 마법같은 즉흥공연으로 반영하고
+                    수용과 지지 경험으로 서로를 이해하고 연대감을 형성함으로써
+                    조직문화 활성화를 이끌 수 있습니다.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-xl mb-2 text-[#8b6f47]">
+                    “몸 챙김, 마음 챙김”
+                  </h3>
+                  <p>
+                    소매틱, 춤, 명료한 앎을 통해 스트레스 해소 및 refresh를
+                    경험하여 번아웃을 사전에 예방하고 감정에 휘둘리지 않는
+                    마음의 주인으로 조직 내 갈등을 지혜롭게 해결합니다.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
-                {service.title}
-              </h3>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                {service.description}
-              </p>
-              <ul className="space-y-2">
-                {service.highlights.map((highlight) => (
-                  <li
-                    key={highlight}
-                    className="flex items-center text-sm text-gray-500"
-                  >
-                    <svg
-                      className="w-4 h-4 mr-2 text-[var(--color-yellow-dark)]"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    {highlight}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
+            </div>
+          </motion.div>
+
+          {/* Right: Images */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex-1 relative"
+          >
+            <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg w-full">
+              <Image
+                src={images.business.eventMain}
+                alt="행사기획 현장"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </motion.div>
         </div>
 
-        {/* Event Photo Gallery */}
+        {/* Event Planning present */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
+          className="mt-24 flex flex-col-reverse lg:flex-row gap-12 items-center bg-[#fcf9f2] rounded-3xl p-8 lg:p-16"
         >
-          {[
-            { src: images.business.eventActivity, alt: "행사 활동" },
-            { src: images.business.eventEngagement, alt: "참여형 행사" },
-            { src: images.business.eventShowcase, alt: "행사 진행" },
-          ].map((photo, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-              className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg group"
-            >
-              <Image
-                src={photo.src}
-                alt={photo.alt}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
-                sizes="(max-width: 768px) 100vw, 33vw"
-              />
-            </motion.div>
-          ))}
+          <div className="flex-1 space-y-8">
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900">
+              행사기획 present
+            </h3>
+            <ul className="space-y-4 text-gray-700 text-lg leading-relaxed">
+              {[
+                "기업의 요구와 환경을 고려한 최적화된 서비스",
+                "다양한 장르의 콜라보를 통한 창의적인 행사",
+                "흥미로운 이벤트 구성으로 참여 동기 극대화",
+                "즐거움과 행복을 추구하는 인간의 기본 욕구 충족",
+                "재미와 더불어 삶의 유연성을 통한 긍정적인 변화",
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="w-1.5 h-1.5 bg-[#8b6f47] rounded-full mt-2.5 flex-shrink-0" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="flex-1 relative aspect-square lg:aspect-[4/3] w-full rounded-xl overflow-hidden shadow-md">
+            <Image
+              src={images.business.eventActivity}
+              alt="행사기획 present"
+              fill
+              className="object-cover"
+            />
+          </div>
         </motion.div>
 
-        {/* Features Bar */}
+        {/* Recommendations */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
+          transition={{ duration: 0.6, delay: 0.7 }}
+          className="mt-24 text-center"
         >
-          {features.map((feature, index) => (
-            <div
-              key={feature.title}
-              className="flex items-start gap-4 p-6 bg-gray-50 rounded-xl"
-            >
-              <div className="w-12 h-12 bg-[var(--color-yellow)]/20 rounded-lg flex items-center justify-center text-[var(--color-yellow-dark)] flex-shrink-0">
-                {feature.icon}
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-1">
-                  {feature.title}
-                </h4>
-                <p className="text-gray-600 text-sm">
-                  {feature.description}
+          <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12">
+            이런 대상에게 추천합니다
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                src: images.business.eventRecommend.recommend1,
+                text: "새롭고 참신한 방법으로 행사의 퀄리티를 높이고 싶은 조직",
+              },
+              {
+                src: images.business.eventRecommend.recommend2,
+                text: "행사의 목적에 부합하는 전문적인 결과를 내고 싶은 조직",
+              },
+              {
+                src: images.business.eventRecommend.recommend3,
+                text: "One-Stop으로 편리하게 서비스를 받고 싶은 조직 및 공동체",
+              },
+              {
+                src: images.business.eventRecommend.recommend4,
+                text: "일회성 행사에 그치지 않고 섬김과 존중을 받고 싶은 조직 및 공동체",
+              },
+            ].map((item, index) => (
+              <div key={index} className="space-y-4 group">
+                <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-md">
+                  <Image
+                    src={item.src}
+                    alt={item.text}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <p className="text-gray-700 leading-relaxed break-keep text-left px-2">
+                  {item.text}
                 </p>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </motion.div>
 
-        {/* Event Recommendations */}
+        {/* Review Banner */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.9 }}
+          className="mt-24 relative rounded-2xl overflow-hidden min-h-[400px] flex items-center justify-center text-center px-4"
         >
-          <h3 className="text-xl font-bold text-gray-900 mb-8 text-center">
-            추천 행사
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { src: images.business.eventRecommend.recommend1, alt: "추천 행사 1" },
-              { src: images.business.eventRecommend.recommend2, alt: "추천 행사 2" },
-              { src: images.business.eventRecommend.recommend3, alt: "추천 행사 3" },
-              { src: images.business.eventRecommend.recommend4, alt: "추천 행사 4" },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.5, delay: 1.0 + index * 0.1 }}
-                className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg group"
-              >
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-300"
-                  sizes="(max-width: 768px) 50vw, 25vw"
-                />
-              </motion.div>
-            ))}
+          <Image
+            src={images.business.eventReview}
+            alt="Review of Event Planning"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/60" />
+          <div className="relative z-10 max-w-4xl mx-auto space-y-6 text-white text-shadow-sm">
+            <h2 className="text-4xl md:text-6xl font-serif leading-tight drop-shadow-md">
+              Review of
+              <br />
+              Event Planning
+            </h2>
+            <div className="flex justify-center gap-2 text-[#f4d03f] text-2xl my-6 drop-shadow-md">
+              {"★★★★★"}
+            </div>
+            <p className="text-lg md:text-xl font-medium leading-relaxed drop-shadow-md pb-6 md:pb-0">
+              "어린이, 청소년들을 위한 다양한 프로그램을 20여 년간 운영해 온 경험으로
+              바라볼 때<br />
+              넋두리와 내비침은 연극 치유의 순수한 지향성을 가집니다
+              <br />
+              비용 측면으로 맞춤식이 된다면 치유 공연으로 많은 사랑 기대됩니다"
+            </p>
           </div>
         </motion.div>
       </div>

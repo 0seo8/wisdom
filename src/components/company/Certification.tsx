@@ -1,149 +1,110 @@
 "use client";
 
 import { Section, SectionTitle } from "@/components/common";
-import { Card, CardContent } from "@/components/common/Card";
 import { motion } from "framer-motion";
 
 const certifications = [
   {
     category: "상표등록증",
+    icon: "stamp",
     items: [
-      { name: "넋두리", number: "#40-1665119", year: "2021" },
-      { name: "무늬만", number: "#40-1665118", year: "2021" },
-      { name: "내비춤", number: "#40-1677526", year: "2021" },
-      { name: "소통극장", number: "#40-1677528", year: "2021" },
-      { name: "공감극장", number: "#40-1677524", year: "2021" },
-      { name: "지혜의밭", number: "#40-1705149", year: "2021" },
+      "넋두리 제 40-1665119 호",
+      "무늬만 제 40-1665118 호",
+      "내비춤 제 40-1677526 호",
+      "소통극장 제 40-1677528 호",
+      "공감극장 제 40-1677524 호",
+      "지혜의밭 제 40-1705149 호",
     ],
   },
   {
-    category: "기업인증서",
+    category: "기업인증",
+    icon: "list",
     items: [
-      { name: "사회적기업 인증", number: "#2021-058", year: "2021" },
-      { name: "소셜벤처기업 확인", number: "#2023-01-1008", year: "2023" },
-      { name: "여성기업 확인", number: "#0111-2022-20045", year: "2022" },
-      { name: "창업기업 확인", number: "#202109-90191", year: "2021" },
-      { name: "연구개발전담부서 인정", number: "#2023155581", year: "2023" },
-      { name: "사회적가치(SVI) 우수등급", number: "", year: "2025" },
+      "사회가치측정(SVI) 우수등급인증 (한국사회적기업진흥원)",
+      "사회적기업 제 2021-058 호(고용노동부)",
+      "여성기업 제 0111-2022-20045 호(서울지방중소벤처기업청)",
+      "창업기업 제 202109-90191-0011960 호(중소벤처기업부)",
+      "소매틱연구전담부서 제 2023155581 호(과학기술정보통신부)",
+      "소셜벤처기업 제 2023-01-1008호(중소벤처기업부)",
     ],
   },
   {
     category: "저작권등록증",
+    icon: "certificate",
     items: [
-      { name: "넋두리", number: "#C-2018-011080", year: "2018" },
-      { name: "무늬만 가족", number: "#C-2017-024230", year: "2017" },
-      { name: "네 이름이 뭐니?", number: "#C-2021-005812", year: "2021" },
-      { name: "공감UP", number: "#C-2021-009720", year: "2021" },
+      "넋두리 제 C-2018-011080 호",
+      "무늬만 가족 제 C-2017-024230 호",
+      "네 이름이 뭐니? 제 C-2021-005812 호",
+      "코로나19극복 공감UP 제 C-2021-009720호",
     ],
   },
 ];
 
 export function Certification() {
   return (
-    <Section id="certification" background="gray">
+    <Section id="certification" className="py-20 md:py-32 bg-[#FCF3EB]">
       <SectionTitle
-        title="인증"
-        subtitle="지혜의밭이 보유한 인증 및 등록 현황"
+        title="인증 및 지식재산권"
+        subtitle=""
         align="center"
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-        {certifications.map((cert, index) => (
-          <motion.div
-            key={cert.category}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-          >
-            <Card className="h-full" hover={true}>
-              <CardContent className="p-6">
-                {/* Category Header */}
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-lg bg-[var(--color-orange-light)] flex items-center justify-center">
-                    <CertIcon category={cert.category} />
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900">
-                    {cert.category}
-                  </h3>
+      <div className="max-w-[1300px] mx-auto px-4 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
+          {certifications.map((cert, index) => (
+            <motion.div
+              key={cert.category}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
+              className="flex flex-col"
+            >
+              {/* Icon & Title */}
+              <div className="flex items-start gap-3 mb-6">
+                <div className="text-gray-600 mt-1">
+                  <CertIcon icon={cert.icon} />
                 </div>
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900">
+                  {cert.category}
+                </h3>
+              </div>
 
-                {/* Certification Items */}
-                <ul className="space-y-4">
-                  {cert.items.map((item, itemIndex) => (
-                    <motion.li
-                      key={item.name}
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.3, delay: index * 0.1 + itemIndex * 0.05 }}
-                      className="flex items-center justify-between p-3 bg-gray-50 rounded-lg"
-                    >
-                      <div className="flex-1 min-w-0">
-                        <span className="text-gray-700 text-sm font-medium block">
-                          {item.name}
-                        </span>
-                        {item.number && (
-                          <span className="text-gray-400 text-xs">
-                            {item.number}
-                          </span>
-                        )}
-                      </div>
-                      <span className="text-gray-500 text-xs bg-white px-2 py-1 rounded flex-shrink-0">
-                        {item.year}
-                      </span>
-                    </motion.li>
-                  ))}
-                </ul>
-
-                {/* Placeholder for certificate image */}
-                <div className="mt-6 aspect-[4/3] bg-gray-100 rounded-lg flex items-center justify-center">
-                  <div className="text-center text-gray-400">
-                    <svg
-                      className="w-12 h-12 mx-auto mb-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                      />
-                    </svg>
-                    <span className="text-xs">인증서 이미지</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-        ))}
+              {/* Items List */}
+              <ul className="space-y-2 pl-0">
+                {cert.items.map((item, itemIndex) => (
+                  <li key={itemIndex} className="text-gray-700 text-sm md:text-base flex items-start gap-2">
+                    <span className="text-gray-500 mt-1">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </Section>
   );
 }
 
-function CertIcon({ category }: { category: string }) {
-  const iconColor = "text-[var(--color-orange)]";
-
-  switch (category) {
-    case "상표등록증":
+function CertIcon({ icon }: { icon: string }) {
+  switch (icon) {
+    case "stamp":
       return (
-        <svg className={`w-5 h-5 ${iconColor}`} fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 512 512">
+          <path d="M312 201.8c0-17.4 9.2-33.2 19.9-47C344.5 138.5 352 118.1 152 96.4V80c0-26.5-21.5-48-48-48S56 53.5 56 80v16.4c-6 1.7-12 3.4-18 5.5C11.5 110.8-3.9 139.2 1.2 169.2l26.3 155.5C31.5 344.3 50.2 360 71.7 360h368.6c21.5 0 40.2-15.7 44.1-35.3l26.3-155.5c5.1-30-10.3-58.4-36.8-67.3-6-2.1-12-3.8-18-5.5V80c0-26.5-21.5-48-48-48s-48 21.5-48 48v16.4c-200 21.7-192.5 42.1-179.9 58.4 10.7 13.8 19.9 29.6 19.9 47zM80 80c0-8.8 7.2-16 16-16s16 7.2 16 16v10.8c-10.3 2.3-20.8 5-31.2 8.1L80 80zm336 18.9c-10.4-3.1-20.9-5.8-31.2-8.1V80c0-8.8 7.2-16 16-16s16 7.2 16 16v18.9zM71.7 328L45.5 172.5c-1.7-10 5.2-19.5 15.2-21.5 53.5-11.3 123-17.5 195.3-17.5s141.8 6.2 195.3 17.5c10 2 16.9 11.5 15.2 21.5L440.3 328H71.7zM32 432c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-48H32v48z"/>
         </svg>
       );
-    case "저작권등록증":
+    case "list":
       return (
-        <svg className={`w-5 h-5 ${iconColor}`} fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 512 512">
+          <path d="M64 144a48 48 0 1 0 0-96 48 48 0 1 0 0 96zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zM64 464a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm48-208a48 48 0 1 0 -96 0 48 48 0 1 0 96 0z"/>
         </svg>
       );
-    case "기업인증서":
+    case "certificate":
       return (
-        <svg className={`w-5 h-5 ${iconColor}`} fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 512 512">
+          <path d="M211 7.3C205 1 196-1.4 187.6 .8s-14.9 8.9-17.1 17.3L154.7 80.6l-62-17.5c-8.4-2.4-17.4 0-23.5 6.1s-8.5 15.1-6.1 23.5l17.5 62L18.1 170.6c-8.4 2.1-15 8.7-17.3 17.1S1 205 7.3 211l46.2 45L7.3 301C1 307-1.4 316 .8 324.4s8.9 14.9 17.3 17.1l62.5 15.8-17.5 62c-2.4 8.4 0 17.4 6.1 23.5s15.1 8.5 23.5 6.1l62-17.5 15.8 62.5c2.1 8.4 8.7 15 17.1 17.3s17.3-.2 23.4-6.4l45-46.2 45 46.2c6.1 6.2 15 8.7 23.4 6.4s14.9-8.9 17.1-17.3l15.8-62.5 62 17.5c8.4 2.4 17.4 0 23.5-6.1s8.5-15.1 6.1-23.5l-17.5-62 62.5-15.8c8.4-2.1 15-8.7 17.3-17.1s-.2-17.4-6.4-23.4l-46.2-45 46.2-45c6.2-6.1 8.7-15 6.4-23.4s-8.9-14.9-17.3-17.1l-62.5-15.8 17.5-62c2.4-8.4 0-17.4-6.1-23.5s-15.1-8.5-23.5-6.1l-62 17.5L341.4 18.1c-2.1-8.4-8.7-15-17.1-17.3S307 1 301 7.3L256 53.5 211 7.3z"/>
         </svg>
       );
     default:

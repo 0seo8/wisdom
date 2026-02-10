@@ -10,40 +10,47 @@ export const navigation: NavItem[] = [
     href: "/",
     children: [
       { label: "인사말", href: "/#greeting" },
-      { label: "비전", href: "/#vision" },
-      { label: "발자취", href: "/#history" },
+      { label: "회사개요", href: "/#overview" },
+      { label: "SDGs 경영", href: "/#sdgs" },
+      { label: "인증", href: "/#certification" },
       { label: "CI", href: "/#ci" },
-      { label: "오시는 길", href: "/#location" },
+      { label: "오시는 길", href: "/#map" },
     ],
   },
   {
     label: "힐소마",
     href: "/healasoma",
     children: [
-      { label: "힐소마 소개", href: "/healasoma#intro" },
-      { label: "통합예술치유", href: "/healasoma#therapy" },
-      { label: "프로그램", href: "/healasoma#program" },
+      { label: "바디풀니스", href: "/healasoma#bodyfulness" },
+      { label: "마인드풀니스", href: "/healasoma#mindfulness" },
+      { label: "테라피", href: "/healasoma#therapy" },
+      { label: "표현 예술", href: "/healasoma#expressive" },
+      { label: "집단 상담", href: "/healasoma#group" },
+      { label: "연극 놀이", href: "/healasoma#creative" },
     ],
   },
   {
     label: "소매틱랩",
     href: "/somatic-lab",
     children: [
-      { label: "연구소 소개", href: "/somatic-lab#intro" },
-      { label: "연구활동", href: "/somatic-lab#research" },
-      { label: "출판물", href: "/somatic-lab#publication" },
+      { label: "개요", href: "/somatic-lab#overview" },
+      { label: "효과", href: "/somatic-lab#effect" },
+      { label: "논문", href: "/somatic-lab#article" },
+      { label: "연구원", href: "/somatic-lab#people" },
+      { label: "프로그램", href: "/somatic-lab#program" },
     ],
   },
   {
     label: "일상의 예술",
     href: "/daily-art",
     children: [
-      { label: "프로젝트 소개", href: "/daily-art#intro" },
-      { label: "활동 갤러리", href: "/daily-art#gallery" },
+      { label: "소통", href: "/daily-art#communication" },
+      { label: "공감", href: "/daily-art#sympathy" },
+      { label: "해소", href: "/daily-art#reduce" },
     ],
   },
   {
-    label: "기업의 예술",
+    label: "기업교육 및 행사",
     href: "/business",
     children: [
       { label: "기업교육", href: "/business#education" },
@@ -51,12 +58,12 @@ export const navigation: NavItem[] = [
     ],
   },
   {
-    label: "공지사항",
-    href: "/notice",
-  },
-  {
     label: "문의하기",
     href: "/contact",
+  },
+  {
+    label: "공지사항",
+    href: "/notice",
   },
 ];
 

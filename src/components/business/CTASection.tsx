@@ -55,10 +55,17 @@ export function CTASection() {
             >
               <Button
                 href="/contact"
-                className="bg-white text-[var(--color-yellow-dark)] hover:bg-gray-100 focus:ring-white"
+                className="bg-white text-orange-700 hover:bg-gray-100 focus:ring-white"
                 size="lg"
               >
                 상담 문의하기
+              </Button>
+              <Button
+                href="https://artswisdom.com/브로슈어/"
+                className="bg-transparent border-2 border-white text-white hover:bg-white/10"
+                size="lg"
+              >
+                브로슈어 바로가기
               </Button>
               <Button
                 href="tel:02-000-0000"

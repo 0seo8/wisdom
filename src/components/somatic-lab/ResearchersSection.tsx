@@ -13,48 +13,108 @@ export function ResearchersSection() {
   const researchers = [
     {
       name: "문수정",
-      specialty: "한나 소매틱스",
-      qualifications: ["소마전문사", "문화예술교육사"],
-      description:
-        "한나 소매틱스를 기반으로 몸의 감각과 움직임을 통한 자기 인식 교육을 진행합니다.",
+      specialty: "Hanna Somatics",
+      qualifications: [
+        "소마전문사",
+        "문화예술교육사",
+        "Applied Drama Practitioner",
+        "내면아이, 상호상담RC/명상 지도사",
+      ],
+      experience: [
+        "전)경기대학교 평생교육원 출강",
+        "전주대학교 하계 교수 워크숍 '공감을 위한 비폭력 스킬'",
+        "서원대 산업대학원 소셜벤처전공entrepreneurship 강의",
+        "한국장학재단 상담센터 힐링캠프 진행",
+        "동작구 시설관리공단 힐링캠프 진행",
+        "자전적 공연-과천시민회관 <나에게 반하다> 외",
+      ],
       image: images.somaticLab.researchers.moon,
     },
     {
       name: "최미라",
-      specialty: "라반 댄스 테라피",
-      qualifications: ["국제공인라반동작분석가 (CMA)"],
-      description:
-        "라반 움직임 분석을 활용하여 움직임 패턴을 탐구하고 치유적 경험을 제공합니다.",
+      specialty: "Laban & Dance Therapy",
+      qualifications: [
+        "소마전문사",
+        "국제공인라반동작분석가",
+        "인지행동발달심리상담사",
+        "통합예술심리상담사/미술치료사",
+      ],
+      experience: [
+        "과천시 장애인 복지관<장애인을 위한 춤테라피>",
+        "서귀포치유숲 자기돌봄예술치유",
+        "토요예술학교 몸으로 읽는 그림책",
+        "치매어르신을 위한 라반 기반 움직임",
+        "국제즉흥춤축제 <Rebirth of sacrum>",
+        "경의선 축제 몸 꽃 안무",
+        "과천 민예총 춤타조타 안무 외",
+      ],
       image: images.somaticLab.researchers.choiMira,
     },
     {
       name: "이영선",
-      specialty: "소마 힐링 요가",
-      qualifications: ["물리치료사", "요가 지도사"],
-      description:
-        "소매틱스와 요가를 결합하여 신체 정렬과 호흡을 통한 치유 프로그램을 운영합니다.",
+      specialty: "Soma Healing Yoga",
+      qualifications: [
+        "소마전문사",
+        "요가, 명상 지도사",
+        "물리치료사/도수치료사",
+        "표현예술심리치료사",
+        "미술치료사/놀이심리상담사",
+      ],
+      experience: [
+        "전)한양여대 요가과정 출강",
+        "인도요가 및 아유르베다 연수",
+        "목동문화센터 명상, 요가 강의",
+        "하나원 소매틱과 춤 강의",
+        "수도원 요가와 서클댄스",
+        "강릉한옥마을 소매틱 요가",
+        "이화여대 공연 <물끄러미 .하염없이> 외",
+      ],
       image: images.somaticLab.researchers.lee,
     },
     {
-      name: "정이화",
-      specialty: "소마 발레",
-      qualifications: ["이화여대 무용과 출강"],
-      description:
-        "전통 발레 기법에 소매틱 접근을 접목하여 움직임의 효율성과 표현력을 높입니다.",
+      name: "정이와",
+      specialty: "Soma Ballet",
+      qualifications: [
+        "소마전문사",
+        "문화예술교육사",
+        "이화여자대학교 무용과 출강",
+        "정이와 댄스프로젝트 안무가",
+      ],
+      experience: [
+        "소마전문가 양성 과정 전임 강사",
+        "<몸공부: Somatic Learning> 전문강사",
+        "문화조성 사업 서대문구 50+센터 강의",
+        "몸춤놀이학교 서대문구 50+센터 진행",
+        "중랑구 성평등활동센터 자기돌봄 워크숍 <젠더를 넘어, 몸으로 춤으로 만나기>",
+        "서울문화재단 링가링가 자이언트 얀",
+        "서강대 메리홀 <보이지 않는 벽> 안무 외",
+      ],
       image: images.somaticLab.researchers.jung,
     },
     {
       name: "최은화",
-      specialty: "무브 무브 바디 바디",
-      qualifications: ["움직임창작소 대표"],
-      description:
-        "창의적 움직임과 신체 표현을 통해 자기 발견과 예술적 성장을 돕습니다.",
+      specialty: "Movemove Bodybody",
+      qualifications: [
+        "소마전문사",
+        "문화예술교육사",
+        "경민대학교 공연예술과 출강",
+        "움직임창작소See 대표",
+        "한국문화예술교육진흥원 예술강사",
+      ],
+      experience: [
+        "서울문화재단 <SEARCH_예술적 거리두기 해제법> 연구",
+        "인천문화재단<가족과 만나는 바다 속 이야기>",
+        "국립현대미술관 서울관,과천관 통합예술교육",
+        "서울문화재단 꿈다락토요문화학교 기획, 강의",
+        "아르코･대학로 예술극장 대학로 놀이학교 기획",
+        "국립극단 청소년시리즈<레스슬링시즌> 안무 외",
+      ],
       image: images.somaticLab.researchers.choiEunhwa,
     },
   ];
 
   return (
-    <section id="people" ref={ref} className="py-16 md:py-24 bg-gray-50">
+    <section id="people" ref={ref} className="py-16 md:py-24 bg-white">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -62,27 +122,29 @@ export function ResearchersSection() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-            연구원 소개
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#8b6f47] mb-6">
+            Somatics Researcher
           </h2>
           <p className="text-gray-600 text-lg leading-relaxed">
-            다양한 분야의 전문가들이 함께 소매틱스를 연구하고 교육합니다. 각자의
-            전문성을 바탕으로 통합적인 프로그램을 개발하고 있습니다.
+            발레 전공, 한국 무용 전공, 표현 예술 심리상담 전공, 물리 치료 전공,
+            요가, 명상 전공, 통합 예술 치유 전공, 교육학 등을 전공하고
+            소매틱스를 통해 몸과 마음을 깊이 있게 공부하신 최고 수준의
+            전문가들로 구성되어 있습니다.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {researchers.map((researcher, index) => (
             <motion.div
               key={researcher.name}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
-              className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300"
+              className="bg-[#f5f1e8] rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300"
             >
               {/* Profile Image */}
-              <div className="flex items-center gap-4 mb-4">
-                <div className="relative w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-[var(--color-green-light)] to-[var(--color-green)]/30">
+              <div className="flex flex-col items-center mb-6">
+                <div className="relative w-24 h-24 rounded-full overflow-hidden bg-white mb-4">
                   <Image
                     src={researcher.image}
                     alt={researcher.name}
@@ -90,32 +152,37 @@ export function ResearchersSection() {
                     className="object-cover"
                   />
                 </div>
-                <div>
-                  <h3 className="text-lg font-bold text-gray-900">
-                    {researcher.name}
-                  </h3>
-                  <p className="text-[var(--color-green)] font-medium text-sm">
-                    {researcher.specialty}
-                  </p>
-                </div>
+                <h3 className="text-xl font-bold text-gray-900">
+                  {researcher.name}
+                </h3>
+                <p className="text-[#8b6f47] font-medium text-sm mt-1">
+                  {researcher.specialty}
+                </p>
               </div>
 
               {/* Qualifications */}
-              <div className="flex flex-wrap gap-2 mb-4">
+              <div className="mb-4">
                 {researcher.qualifications.map((qual, qualIndex) => (
-                  <span
+                  <p
                     key={qualIndex}
-                    className="px-3 py-1 bg-[var(--color-green)]/10 text-[var(--color-green-dark)] rounded-full text-xs font-medium"
+                    className="text-sm text-gray-700 leading-relaxed"
                   >
-                    {qual}
-                  </span>
+                    – {qual}
+                  </p>
                 ))}
               </div>
 
-              {/* Description */}
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {researcher.description}
-              </p>
+              {/* Experience */}
+              <div className="space-y-1">
+                {researcher.experience.map((exp, expIndex) => (
+                  <p
+                    key={expIndex}
+                    className="text-xs text-gray-600 leading-relaxed"
+                  >
+                    – {exp}
+                  </p>
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>
