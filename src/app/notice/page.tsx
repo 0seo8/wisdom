@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { getNotices } from "@/lib/queries/notices";
 import {
+  NoticeHero,
   NoticeSearch,
   NoticeList,
   NoticePagination,
@@ -28,7 +29,7 @@ async function NoticeContent({
   page: number;
   search?: string;
 }) {
-  const { notices, totalPages, currentPage } = await getNotices(
+  const { notices, totalPages, currentPage, totalCount } = await getNotices(
     page,
     10,
     search
@@ -36,7 +37,11 @@ async function NoticeContent({
 
   return (
     <>
-      <NoticeList notices={notices} />
+      <NoticeList 
+        notices={notices} 
+        currentPage={currentPage} 
+        totalCount={totalCount} 
+      />
       <NoticePagination currentPage={currentPage} totalPages={totalPages} />
     </>
   );
@@ -80,7 +85,8 @@ export default async function NoticePage({ searchParams }: NoticePageProps) {
 
   return (
     <>
-      <section className="section bg-white pt-32 md:pt-36">
+      <NoticeHero />
+      <section className="section bg-white py-16 md:py-24">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <Suspense fallback={null}>

@@ -55,7 +55,7 @@ export function CTASection() {
             >
               <Button
                 href="/contact"
-                className="bg-white text-orange-700 hover:bg-gray-100 focus:ring-white"
+                className="!bg-white !text-[#d35400] hover:!bg-gray-100 font-bold border-2 border-white"
                 size="lg"
               >
                 상담 문의하기

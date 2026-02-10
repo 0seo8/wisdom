@@ -7,7 +7,6 @@ import {
   EventSection,
   DifferentiatorsSection,
   GallerySection,
-  PartnersSection,
   CTASection,
 } from "@/components/business";
 
@@ -20,7 +19,6 @@ export default function BusinessPage() {
       <EventSection />
       <DifferentiatorsSection />
       <GallerySection />
-      <PartnersSection />
       <CTASection />
     </main>
   );
