@@ -4,7 +4,7 @@ import { Section } from "@/components/common";
 import { images } from "@/constants/images";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link"; // Import Link
+
 
 export function Greeting() {
   return (
@@ -78,36 +78,6 @@ export function Greeting() {
         </motion.div>
       </div>
 
-       {/* Web Brochure Banner (Sticky/Bottom) */}
-       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-        className="mt-16 bg-white p-6 rounded-xl shadow-lg border border-gray-100 flex flex-col md:flex-row items-center justify-between gap-4 max-w-4xl mx-auto"
-      >
-        <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-[#8c5a5a]/10 rounded-full flex items-center justify-center text-[#8c5a5a]">
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                </svg>
-            </div>
-            <div>
-                <h3 className="text-lg font-bold text-gray-900">지혜의밭 웹브로슈어</h3>
-                <p className="text-sm text-gray-500">회사 소개 및 프로그램 안내를 확인해보세요.</p>
-            </div>
-        </div>
-        <Link 
-            href="https://artswisdom.com/브로슈어/" 
-            target="_blank"
-            className="px-6 py-3 bg-[#8c5a5a] text-white font-medium rounded-lg hover:bg-[#7a4e4e] transition-colors flex items-center gap-2 whitespace-nowrap"
-        >
-            바로가기
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-        </Link>
-      </motion.div>
     </Section>
   );
 }

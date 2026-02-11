@@ -6,8 +6,7 @@ import {
   CoreValues,
   Timeline,
   SDGs,
-  NoticePreview,
-  HomeContact,
+  HomeNoticeContact,
   Partners,
 } from "@/components/home";
 import {
@@ -16,6 +15,7 @@ import {
   CISection,
   MapSection,
 } from "@/components/company";
+import { WebBrochureBanner } from "@/components/layout";
 
 export default function Home() {
   return (
@@ -30,10 +30,10 @@ export default function Home() {
       <CISection />
       <MapSection />
       <Suspense fallback={null}>
-        <NoticePreview />
+        <HomeNoticeContact />
       </Suspense>
-      <HomeContact />
       <Partners />
+      <WebBrochureBanner />
     </>
   );
 }

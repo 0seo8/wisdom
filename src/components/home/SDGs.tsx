@@ -34,60 +34,31 @@ export function SDGs() {
             </div>
         </motion.div>
 
-        {/* Text Commitment List - "하나," format */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-x-12 max-w-4xl mx-auto">
-            <motion.div 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4 }}
-                className="flex items-start gap-3"
-            >
-                <span className="text-[#8c5a5a] font-bold text-xl whitespace-nowrap">하나,</span>
-                <p className="text-gray-700 text-lg leading-relaxed">
-                    모든 이들의 몸과 마음의 건강을 위한 활동을 이어갑니다.
-                </p>
-            </motion.div>
-
-            <motion.div 
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.1 }}
-                className="flex items-start gap-3"
-            >
-                <span className="text-[#8c5a5a] font-bold text-xl whitespace-nowrap">하나,</span>
-                <p className="text-gray-700 text-lg leading-relaxed">
-                    지속 가능한 성장을 추구하며 지역 사회의 문제를 해결해 나갑니다.
-                </p>
-            </motion.div>
-
-             <motion.div 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.2 }}
-                className="flex items-start gap-3"
-            >
-                <span className="text-[#8c5a5a] font-bold text-xl whitespace-nowrap">하나,</span>
-                <p className="text-gray-700 text-lg leading-relaxed">
-                     세대 간의 격차를 줄이고 모두가 소통할 수 있는 문화를 만듭니다.
-                </p>
-            </motion.div>
-
-             <motion.div 
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.3 }}
-                className="flex items-start gap-3"
-            >
-                <span className="text-[#8c5a5a] font-bold text-xl whitespace-nowrap">하나,</span>
-                <p className="text-gray-700 text-lg leading-relaxed">
-                    다음 세대를 위한 환경 보호와 윤리 경영을 실천합니다.
-                </p>
-            </motion.div>
-        
+        {/* Desktop: Centered Vertical List */}
+        <div className="flex flex-col items-center space-y-8 max-w-4xl mx-auto">
+            {[
+                "국민 건강 불평등 해소를 위해 웰니스 문화에 앞장선다.",
+                "지속 가능한 지구를 위해 일회용품 사용을 자제한다.",
+                "기후 변화 대응을 위해 대중교통을 생활화한다.",
+                "양성 평등한 권리의 기업 문화를 조성한다.",
+                "지속 가능한 일자리를 위해 사회적 약자를 고용한다.",
+                "지역사회와 상생하며 혁신과 인프라를 구축한다.",
+                "건강하고 안전한 사회를 위해 기부를 실천한다."
+            ].map((text, index) => (
+                <motion.div 
+                    key={index}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                    className="flex flex-col md:flex-row items-center md:items-baseline gap-2 text-center md:text-left"
+                >
+                    <span className="text-gray-900 font-bold text-xl md:text-2xl whitespace-nowrap">하나,</span>
+                    <p className="text-gray-700 text-lg md:text-xl font-medium break-keep">
+                        {text}
+                    </p>
+                </motion.div>
+            ))}
         </div>
       </div>
     </Section>
