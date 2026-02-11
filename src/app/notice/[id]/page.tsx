@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getNoticeById, getAdjacentNotices, incrementViewCount } from "@/lib/queries/notices";
-import { NoticeDetail, NoticeNavigation } from "@/components/notice";
+import { NoticeDetail, NoticeNavigation, NoticeHero } from "@/components/notice";
 
 interface NoticeDetailPageProps {
   params: Promise<{ id: string }>;
@@ -69,37 +69,36 @@ export default async function NoticeDetailPage({
 
   return (
     <>
-      {/* Back Button Header */}
-      <section className="bg-gray-50 py-4 border-b border-gray-100">
-        <div className="container">
-          <Link
-            href="/notice"
-            className="inline-flex items-center gap-2 text-gray-600 hover:text-[var(--color-orange)] transition-colors"
-          >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+      <NoticeHero />
+      <section className="bg-[#FAF7F2] py-20 min-h-[600px]">
+        <div className="container px-4 mx-auto max-w-[1300px]">
+          <div className="mb-8">
+            <Link
+              href="/notice"
+              className="inline-flex items-center gap-2 text-gray-500 hover:text-[#7a5c51] transition-colors font-medium border border-gray-200 bg-white px-4 py-2 rounded-lg shadow-sm"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-            <span>공지사항 목록</span>
-          </Link>
-        </div>
-      </section>
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+              <span>공지사항 목록으로</span>
+            </Link>
+          </div>
 
-      {/* Notice Content */}
-      <section className="section bg-gray-50">
-        <div className="container">
-          <div className="max-w-4xl mx-auto">
+          <div className="w-full">
             <NoticeDetail notice={notice} />
-            <NoticeNavigation prevNotice={prev} nextNotice={next} />
+            <div className="mt-12">
+              <NoticeNavigation prevNotice={prev} nextNotice={next} />
+            </div>
           </div>
         </div>
       </section>
