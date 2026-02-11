@@ -2,20 +2,18 @@
 
 import { motion } from "framer-motion";
 import { images } from "@/constants/images";
-import Image from "next/image";
+
 
 export function MissionVision() {
   return (
     <section id="vision" className="relative py-20 md:py-32 overflow-hidden min-h-[680px] flex items-center justify-center">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={images.hero.main} // Using hero background as fallback for the requested image
-          alt="Mission Background"
-          fill
-          className="object-cover"
-          priority
-        />
+      {/* Background Image with Parallax Effect */}
+      <div
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed"
+        style={{
+            backgroundImage: `url(${images.hero.main})`,
+        }}
+      >
         <div className="absolute inset-0 bg-black/50" /> {/* Overlay opacity 0.5 */}
       </div>
 
