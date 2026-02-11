@@ -1,20 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
 
 const videos = [
   {
     title: "넋두리 공연 후 출연배우 및 관객들의 생생한 인터뷰",
     description:
-      "있는 그대로 허용해주는 공간 넋두리. 모두가 감동으로 하나 되었다고 합니다.",
+      "넛두리 공연 후 출연배우 및 관객들의 생생한 인터뷰. 있는 그대로 허용해주는 공간 넛두리. 모두가 감동으로 하나 되었다고 합니다.",
     embedId: "IXWTNHh6wHM",
   },
   {
     title: "상명대 아트홀에서 진행한 소통극장 '무늬만 가족' 공연",
     description:
-      "실화를 바탕으로 한 가족의 모습, 관객이 함께 참여했던 감동적인 연극입니다.",
+      "상명대 아트홀에서 진행한 소통극장 '무늬만 가족' 공연. 실화를 바탕으로 한 가족의 모습, 관객이 함께 참여했던 감동적인 연극입니다.",
     embedId: "ZggHvYu37jk",
   },
   {
@@ -30,37 +28,34 @@ const videos = [
 ];
 
 export function GallerySection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
-    <section id="gallery" ref={ref} className="py-16 md:py-24 bg-gray-50">
+    <section id="gallery" className="py-16 md:py-24 bg-white">
       <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+        {/* Divider line */}
+        <div className="flex justify-center mb-8">
+          <div className="w-16 h-0.5 bg-gray-400" />
+        </div>
+
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-12"
+          className="text-4xl md:text-5xl lg:text-6xl font-serif text-center text-gray-900 mb-12 italic"
+          style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
         >
-          <span className="inline-block px-4 py-2 bg-[var(--color-orange)]/10 rounded-full text-sm font-medium text-[var(--color-orange)] mb-6">
-            Gallery
-          </span>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            공연 갤러리
-          </h2>
-          <p className="text-gray-600 text-lg leading-relaxed">
-            일상의 예술 프로그램의 생생한 현장을 만나보세요
-          </p>
-        </motion.div>
+          Gallery
+        </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {videos.map((video, index) => (
             <motion.div
               key={video.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
-              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 * index }}
+              className="overflow-hidden"
             >
               <div className="aspect-video bg-gray-200 relative">
                 <iframe
@@ -72,11 +67,10 @@ export function GallerySection() {
                   allowFullScreen
                 />
               </div>
-              <div className="p-5">
-                <h3 className="font-bold text-gray-900 mb-1">
-                  {video.title}
-                </h3>
-                <p className="text-sm text-gray-600">{video.description}</p>
+              <div className="py-4">
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  {video.description}
+                </p>
               </div>
             </motion.div>
           ))}

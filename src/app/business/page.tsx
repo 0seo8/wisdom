@@ -5,21 +5,22 @@ import {
   IntroSection,
   EducationSection,
   EventSection,
-  DifferentiatorsSection,
+  RecommendationSection,
+  PresentSection,
+  ReviewSection,
   GallerySection,
-  CTASection,
 } from "@/components/business";
+import { WebBrochureBannerSection } from "@/components/layout/WebBrochureBannerSection";
 
 export default function BusinessPage() {
   return (
-    <main>
+    <main className="bg-[#fcf3eb] min-h-screen">
       <BusinessHero />
       <IntroSection />
       <EducationSection />
       <EventSection />
-      <DifferentiatorsSection />
       <GallerySection />
-      <CTASection />
+      <WebBrochureBannerSection />
     </main>
   );
 }

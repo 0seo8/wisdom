@@ -40,12 +40,38 @@ export function NoticeList({ notices, totalCount, currentPage }: NoticeListProps
 
   return (
     <div className="w-full">
+      {/* Speaker Icon & Title */}
+      <div className="flex flex-col items-center mb-12">
+        <div className="mb-4">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 5L6 9H2V15H6L11 19V5Z" fill="#8C6A5E" stroke="#8C6A5E" strokeWidth="2" strokeLinejoin="round"/>
+            <path d="M19.07 4.93C20.9447 6.80527 21.9979 9.34836 21.9979 12C21.9979 14.6516 20.9447 17.1947 19.07 19.07" stroke="#8C6A5E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M15.54 8.46C16.4771 9.39764 17.0037 10.6692 17.0037 12C17.0037 13.3308 16.4771 14.6024 15.54 15.54" stroke="#8C6A5E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </div>
+        <h2 className="text-3xl font-bold text-gray-900 mb-4">공지사항</h2>
+      </div>
+
+      {/* Info Bar */}
+      <div className="flex items-center justify-between mb-4 text-sm">
+        <div className="text-gray-600">
+          전체 <span className="font-bold">{totalCount}</span>
+        </div>
+        <div>
+          <select className="border-none bg-transparent text-gray-500 focus:ring-0 cursor-pointer">
+            <option>최신순</option>
+          </select>
+        </div>
+      </div>
+
       {/* Header */}
-      <div className="hidden md:flex items-center py-4 border-t-2 border-gray-900 border-b border-gray-200 text-sm font-medium text-gray-600">
-        <div className="w-20 text-center shrink-0">번호</div>
+      <div className="hidden md:flex items-center py-4 border-t-2 border-gray-900 border-b border-gray-200 text-[15px] font-bold text-gray-800 bg-white">
+        <div className="w-16 text-center shrink-0">번호</div>
         <div className="flex-1 text-center">제목</div>
-        <div className="w-32 text-center shrink-0">작성일</div>
-        <div className="w-20 text-center shrink-0">조회</div>
+        <div className="w-24 text-center shrink-0">작성자</div>
+        <div className="w-28 text-center shrink-0">작성일</div>
+        <div className="w-16 text-center shrink-0">추천</div>
+        <div className="w-16 text-center shrink-0">조회</div>
       </div>
 
       {/* List */}

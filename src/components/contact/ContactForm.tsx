@@ -5,8 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { motion } from "framer-motion";
-import { Send, Loader2, CheckCircle, AlertCircle, Paperclip } from "lucide-react";
-import { Button } from "@/components/common";
+import { Loader2, CheckCircle, AlertCircle, UploadCloud } from "lucide-react";
 import { submitContactForm } from "@/app/contact/actions";
 
 const contactSchema = z.object({
@@ -79,19 +78,17 @@ export function ContactForm() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      animate={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8"
+      className="bg-transparent"
     >
-      <h2 className="text-xl font-bold text-gray-900 mb-6">문의 양식</h2>
-
       {/* Status Messages */}
       {submitStatus === "success" && (
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl flex items-center gap-3"
+          className="mb-8 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-3"
         >
           <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
           <p className="text-green-700 text-sm">
@@ -104,7 +101,7 @@ export function ContactForm() {
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl flex items-center gap-3"
+          className="mb-8 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center gap-3"
         >
           <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0" />
           <p className="text-red-700 text-sm">
@@ -113,118 +110,95 @@ export function ContactForm() {
         </motion.div>
       )}
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-        {/* Name and Organization Row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5">
-              이름 <span className="text-red-500">*</span>
-            </label>
-            <input
-              id="name"
-              type="text"
-              placeholder="홍길동"
-              className={`w-full px-4 py-3 rounded-xl border ${
-                errors.name ? "border-red-300 focus:ring-red-500" : "border-gray-200 focus:ring-[var(--color-orange)]"
-              } focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors`}
-              {...register("name")}
-              aria-invalid={errors.name ? "true" : "false"}
-              aria-describedby={errors.name ? "name-error" : undefined}
-            />
-            {errors.name && (
-              <p id="name-error" className="mt-1.5 text-sm text-red-500" role="alert">
-                {errors.name.message}
-              </p>
-            )}
-          </div>
-
-          <div>
-            <label htmlFor="organization" className="block text-sm font-medium text-gray-700 mb-1.5">
-              소속
-            </label>
-            <input
-              id="organization"
-              type="text"
-              placeholder="회사/단체명"
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[var(--color-orange)] focus:ring-opacity-50 transition-colors"
-              {...register("organization")}
-            />
-          </div>
-        </div>
-
-        {/* Email and Phone Row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1.5">
-              이메일 <span className="text-red-500">*</span>
-            </label>
-            <input
-              id="email"
-              type="email"
-              placeholder="example@email.com"
-              className={`w-full px-4 py-3 rounded-xl border ${
-                errors.email ? "border-red-300 focus:ring-red-500" : "border-gray-200 focus:ring-[var(--color-orange)]"
-              } focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors`}
-              {...register("email")}
-              aria-invalid={errors.email ? "true" : "false"}
-              aria-describedby={errors.email ? "email-error" : undefined}
-            />
-            {errors.email && (
-              <p id="email-error" className="mt-1.5 text-sm text-red-500" role="alert">
-                {errors.email.message}
-              </p>
-            )}
-          </div>
-
-          <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1.5">
-              전화번호 <span className="text-red-500">*</span>
-            </label>
-            <input
-              id="phone"
-              type="tel"
-              placeholder="010-0000-0000"
-              className={`w-full px-4 py-3 rounded-xl border ${
-                errors.phone ? "border-red-300 focus:ring-red-500" : "border-gray-200 focus:ring-[var(--color-orange)]"
-              } focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors`}
-              {...register("phone")}
-              aria-invalid={errors.phone ? "true" : "false"}
-              aria-describedby={errors.phone ? "phone-error" : undefined}
-            />
-            {errors.phone && (
-              <p id="phone-error" className="mt-1.5 text-sm text-red-500" role="alert">
-                {errors.phone.message}
-              </p>
-            )}
-          </div>
-        </div>
-
-        {/* Message */}
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+        {/* Name Field */}
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1.5">
-            문의 내용 <span className="text-red-500">*</span>
+          <label htmlFor="name" className="block text-[15px] font-bold text-gray-800 mb-2">
+            이름
           </label>
-          <textarea
-            id="message"
-            rows={5}
-            placeholder="문의하실 내용을 입력해주세요"
-            className={`w-full px-4 py-3 rounded-xl border ${
-              errors.message ? "border-red-300 focus:ring-red-500" : "border-gray-200 focus:ring-[var(--color-orange)]"
-            } focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors resize-none`}
-            {...register("message")}
-            aria-invalid={errors.message ? "true" : "false"}
-            aria-describedby={errors.message ? "message-error" : undefined}
+          <input
+            id="name"
+            type="text"
+            className={`w-full px-4 py-2.5 bg-white border ${
+              errors.name ? "border-red-300" : "border-gray-200"
+            } focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors rounded-sm shadow-sm`}
+            {...register("name")}
           />
-          {errors.message && (
-            <p id="message-error" className="mt-1.5 text-sm text-red-500" role="alert">
-              {errors.message.message}
-            </p>
+          {errors.name && (
+            <p className="mt-1.5 text-xs text-red-500">{errors.name.message}</p>
           )}
         </div>
 
-        {/* File Upload */}
+        {/* Organization Field */}
         <div>
-          <label htmlFor="attachment" className="block text-sm font-medium text-gray-700 mb-1.5">
+          <label htmlFor="organization" className="block text-[15px] font-bold text-gray-800 mb-2">
+            소속(단체)
+          </label>
+          <input
+            id="organization"
+            type="text"
+            className="w-full px-4 py-2.5 bg-white border border-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors rounded-sm shadow-sm"
+            {...register("organization")}
+          />
+        </div>
+
+        {/* Email Field */}
+        <div>
+          <label htmlFor="email" className="block text-[15px] font-bold text-gray-800 mb-2">
+            이메일
+          </label>
+          <input
+            id="email"
+            type="email"
+            className={`w-full px-4 py-2.5 bg-white border ${
+              errors.email ? "border-red-300" : "border-gray-200"
+            } focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors rounded-sm shadow-sm`}
+            {...register("email")}
+          />
+          {errors.email && (
+            <p className="mt-1.5 text-xs text-red-500">{errors.email.message}</p>
+          )}
+        </div>
+
+        {/* Phone Field */}
+        <div>
+          <label htmlFor="phone" className="block text-[15px] font-bold text-gray-800 mb-2">
+            연락처
+          </label>
+          <input
+            id="phone"
+            type="tel"
+            className={`w-full px-4 py-2.5 bg-white border ${
+              errors.phone ? "border-red-300" : "border-gray-200"
+            } focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors rounded-sm shadow-sm`}
+            {...register("phone")}
+          />
+          {errors.phone && (
+            <p className="mt-1.5 text-xs text-red-500">{errors.phone.message}</p>
+          )}
+        </div>
+
+        {/* Message Field */}
+        <div>
+          <label htmlFor="message" className="block text-[15px] font-bold text-gray-800 mb-2">
+            문의내용
+          </label>
+          <textarea
+            id="message"
+            rows={10}
+            className={`w-full px-4 py-3 bg-white border ${
+              errors.message ? "border-red-300" : "border-gray-200"
+            } focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors rounded-sm shadow-sm resize-none`}
+            {...register("message")}
+          />
+          {errors.message && (
+            <p className="mt-1.5 text-xs text-red-500">{errors.message.message}</p>
+          )}
+        </div>
+
+        {/* File Upload Section */}
+        <div>
+          <label className="block text-[15px] font-bold text-gray-800 mb-2 transition-all">
             첨부파일
           </label>
           <div className="relative">
@@ -237,63 +211,51 @@ export function ContactForm() {
             />
             <label
               htmlFor="attachment"
-              className="flex items-center gap-3 w-full px-4 py-3 rounded-xl border border-gray-200 border-dashed cursor-pointer hover:bg-gray-50 transition-colors"
+              className="flex flex-col items-center justify-center gap-3 w-full h-40 border border-gray-200 border-dashed bg-white cursor-pointer hover:bg-gray-50 transition-colors rounded-sm"
             >
-              <Paperclip className="w-5 h-5 text-gray-400" />
-              <span className="text-gray-500 text-sm">
-                {fileName || "파일을 선택하세요 (PDF, DOC, HWP, 이미지)"}
-              </span>
+              <UploadCloud className="w-10 h-10 text-gray-300" />
+              <div className="text-center">
+                <p className="text-sm text-gray-500">
+                  {fileName || "Click or drag a file to this area to upload."}
+                </p>
+              </div>
             </label>
           </div>
-          <p className="mt-1 text-xs text-gray-400">최대 10MB까지 첨부 가능합니다</p>
         </div>
 
         {/* Privacy Consent */}
-        <div className="bg-gray-50 rounded-xl p-4">
-          <label className="flex items-start gap-3 cursor-pointer">
-            <input
-              type="checkbox"
-              className="mt-1 w-4 h-4 rounded border-gray-300 text-[var(--color-orange)] focus:ring-[var(--color-orange)] focus:ring-opacity-50"
-              {...register("privacyConsent")}
-              aria-invalid={errors.privacyConsent ? "true" : "false"}
-              aria-describedby={errors.privacyConsent ? "privacy-error" : undefined}
-            />
-            <div>
-              <span className="text-sm text-gray-700">
-                <span className="text-red-500">*</span> 개인정보 수집 및 이용에 동의합니다
-              </span>
-              <p className="text-xs text-gray-500 mt-1">
-                수집 항목: 이름, 이메일, 전화번호 / 이용 목적: 문의 답변 및 안내 / 보유 기간: 목적 달성 후 즉시 파기
-              </p>
-            </div>
+        <div className="flex items-center gap-3 py-4">
+          <input
+            type="checkbox"
+            id="privacyConsent"
+            className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 cursor-pointer"
+            {...register("privacyConsent")}
+          />
+          <label htmlFor="privacyConsent" className="text-[14px] text-gray-800 cursor-pointer select-none">
+            개인정보 활용 동의, 개인정보는 답변용으로만 활용됩니다.
           </label>
           {errors.privacyConsent && (
-            <p id="privacy-error" className="mt-2 text-sm text-red-500" role="alert">
-              {errors.privacyConsent.message}
-            </p>
+            <p className="text-xs text-red-500 ml-2">{errors.privacyConsent.message}</p>
           )}
         </div>
 
         {/* Submit Button */}
-        <Button
-          type="submit"
-          variant="primary"
-          size="lg"
-          disabled={isSubmitting}
-          className="w-full"
-        >
-          {isSubmitting ? (
-            <>
-              <Loader2 className="w-5 h-5 mr-2 animate-spin" />
-              전송 중...
-            </>
-          ) : (
-            <>
-              <Send className="w-5 h-5 mr-2" />
-              문의하기
-            </>
-          )}
-        </Button>
+        <div className="pt-2">
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="px-6 py-2 bg-[#eeeeee] text-gray-800 text-sm font-medium border border-gray-300 hover:bg-gray-200 disabled:opacity-50 transition-all flex items-center gap-2"
+          >
+            {isSubmitting ? (
+              <>
+                <Loader2 className="w-4 h-4 animate-spin" />
+                보내는 중...
+              </>
+            ) : (
+              "보내기"
+            )}
+          </button>
+        </div>
       </form>
     </motion.div>
   );

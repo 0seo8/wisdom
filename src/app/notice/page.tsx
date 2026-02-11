@@ -86,15 +86,15 @@ export default async function NoticePage({ searchParams }: NoticePageProps) {
   return (
     <>
       <NoticeHero />
-      <section className="section bg-white py-16 md:py-24">
-        <div className="container">
-          <div className="max-w-4xl mx-auto">
-            <Suspense fallback={null}>
-              <NoticeSearch initialSearch={search} />
-            </Suspense>
-
+      <section className="bg-[#FAF7F2] py-20">
+        <div className="container px-4 mx-auto max-w-[1300px]">
+          <div className="w-full">
             <Suspense fallback={<NoticeListSkeleton />}>
               <NoticeContent page={page} search={search} />
+            </Suspense>
+
+            <Suspense fallback={null}>
+              <NoticeSearch initialSearch={search} />
             </Suspense>
           </div>
         </div>

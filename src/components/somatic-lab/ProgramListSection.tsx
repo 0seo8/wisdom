@@ -1,15 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
 import Image from "next/image";
 import { images } from "@/constants/images";
 
 export function ProgramListSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   const programs = [
     {
       title: "Hanna Somatics",
@@ -23,19 +18,6 @@ export function ProgramListSection() {
       ],
       image: images.somaticLab.programImages.children,
       label: "한나 소매틱스",
-    },
-    {
-      title: "Soma Ballet",
-      subtitle: "소마 발레",
-      description:
-        "일상에 지친 몸을 돌보며 소매틱 발레를 통해 내 안의 생기와 우아함을 찾아가는 수업입니다. 발레는 부드러운 움직임을 통해 긴장된 몸과 마음을 이완 시키고 내면의 아름다움을 발견하도록 합니다.\n기존 발레와 다른, 잘 쉬고, 바르게 서고, 편안하게 걷는 것 만으로도 저절로 춤이 되는 신선한 경험을 하고 싶은 분들을 기다립니다.",
-      bullets: [
-        "부드러운 움직임을 통해 긴장된 몸을 이완 시킵니다.",
-        "몸의 바른 정렬을 찾고 유연함을 회복 시킵니다.",
-        "잃어버렸던 생기와 우아함을 발견하게 합니다.",
-      ],
-      image: images.somaticLab.programImages.ballet,
-      label: "소마 발레",
     },
     {
       title: "Laban & Dance Therapy",
@@ -64,6 +46,19 @@ export function ProgramListSection() {
       label: "소마 힐링 요가",
     },
     {
+      title: "Soma Ballet",
+      subtitle: "소마 발레",
+      description:
+        "일상에 지친 몸을 돌보며 소매틱 발레를 통해 내 안의 생기와 우아함을 찾아가는 수업입니다. 발레는 부드러운 움직임을 통해 긴장된 몸과 마음을 이완 시키고 내면의 아름다움을 발견하도록 합니다.\n기존 발레와 다른, 잘 쉬고, 바르게 서고, 편안하게 걷는 것 만으로도 저절로 춤이 되는 신선한 경험을 하고 싶은 분들을 기다립니다.",
+      bullets: [
+        "부드러운 움직임을 통해 긴장된 몸을 이완 시킵니다.",
+        "몸의 바른 정렬을 찾고 유연함을 회복 시킵니다.",
+        "잃어버렸던 생기와 우아함을 발견하게 합니다.",
+      ],
+      image: images.somaticLab.programImages.ballet,
+      label: "소마 발레",
+    },
+    {
       title: "Move Move Body Body",
       subtitle: "무브 무브 바디 바디",
       description:
@@ -77,7 +72,7 @@ export function ProgramListSection() {
       label: "무브 무브 바디 바디",
     },
     {
-      title: "Contact Improvisation & Circle Dance",
+      title: "Contact Improvisation\n& Circle Dance",
       subtitle: "접촉즉흥 & 써클댄스",
       description:
         '"당신을 행복하게 하는 움직임이라면 무엇이든 춤이 될 수 있다"\nSteve Paxton 의 말처럼 일상의 움직임으로 소통하는 기분좋은 관계를 만듭니다.\n함께 춤으로써 자신을 발견하고 상대를 배려하며 소통과 공감이 자연스럽게 일어납니다.\n몸의 중심과 바닥,중력과의 연결을 인지하며 모든 가능성을 탐구하게 됩니다.\n\n원(circle)은 평등과 평화를 상징합니다. 영원의 춤, 신성무라고도 불리며\n"상징적이고 의식적인 체험이 치유력을 가져온다"라고 말합니다.',
@@ -91,43 +86,49 @@ export function ProgramListSection() {
   ];
 
   return (
-    <section id="program" ref={ref} className="bg-white">
-      {/* Program Header */}
-      <div className="py-16 md:py-20 bg-gray-700 text-white">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center"
-          >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-              Somatics Program
-            </h2>
-          </motion.div>
+    <section id="program">
+      {/* Program Header - Dark photo background */}
+      <div className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={images.somaticLab.programsHeader}
+            alt="Somatics Program"
+            fill
+            className="object-cover"
+          />
         </div>
+        <div className="absolute inset-0 z-10 bg-black/50" />
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="relative z-20 text-4xl md:text-6xl lg:text-7xl font-serif text-white italic"
+          style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
+        >
+          Somatics Program
+        </motion.h2>
       </div>
 
-      {/* Programs List */}
-      <div className="divide-y divide-gray-100">
-        {programs.map((program, index) => (
-          <motion.div
-            key={program.title}
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.1 * index }}
-            className="py-16 md:py-20 bg-[#f5f1e8]"
-          >
-            <div className="container">
+      {/* Programs List - alternating layout */}
+      {programs.map((program, index) => {
+        const isReverse = index % 2 === 1;
+        const bgColor = index % 2 === 0 ? "bg-[#f5f1e8]" : "bg-[#e8e4db]";
+
+        return (
+          <div key={program.title} className={`${bgColor}`}>
+            <div className="container py-0">
               <div
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center ${
-                  index % 2 === 1 ? "lg:flex-row-reverse" : ""
-                }`}
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch min-h-[500px]`}
               >
-                {/* Image */}
-                <div
-                  className={`relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg ${
-                    index % 2 === 1 ? "lg:order-2" : ""
+                {/* Image Side */}
+                <motion.div
+                  initial={{ opacity: 0, x: isReverse ? 30 : -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className={`relative min-h-[350px] lg:min-h-[500px] ${
+                    isReverse ? "lg:order-2" : ""
                   }`}
                 >
                   <Image
@@ -136,42 +137,47 @@ export function ProgramListSection() {
                     fill
                     className="object-cover"
                   />
-                </div>
+                </motion.div>
 
-                {/* Content */}
-                <div
-                  className={`space-y-6 ${index % 2 === 1 ? "lg:order-1" : ""}`}
+                {/* Content Side */}
+                <motion.div
+                  initial={{ opacity: 0, x: isReverse ? -30 : 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className={`flex flex-col justify-center px-8 md:px-12 lg:px-16 py-12 ${
+                    isReverse ? "lg:order-1" : ""
+                  }`}
                 >
-                  <div>
-                    <p className="text-sm text-[#8b6f47] mb-2">
-                      {program.label}
-                    </p>
-                    <h3 className="text-2xl md:text-3xl font-bold text-[#8b6f47] mb-4">
-                      {program.title}
-                    </h3>
-                  </div>
-
-                  <div className="space-y-4 text-gray-700 leading-relaxed whitespace-pre-line">
+                  <p className="text-sm text-[#8b6f47] mb-3">{program.label}</p>
+                  <h3
+                    className="text-2xl md:text-4xl font-serif text-[#5D2E1E] mb-6 whitespace-pre-line"
+                    style={{
+                      fontFamily: "'Georgia', 'Times New Roman', serif",
+                    }}
+                  >
+                    {program.title}
+                  </h3>
+                  <div className="space-y-4 text-gray-700 leading-relaxed whitespace-pre-line text-sm md:text-base">
                     <p>{program.description}</p>
                   </div>
-
-                  <ul className="space-y-2">
+                  <ul className="mt-6 space-y-2">
                     {program.bullets.map((bullet, bulletIndex) => (
                       <li
                         key={bulletIndex}
-                        className="flex items-start gap-2 text-gray-700"
+                        className="flex items-start gap-2 text-gray-700 text-sm md:text-base"
                       >
-                        <span className="text-[#8b6f47] mt-1">–</span>
+                        <span className="text-[#8b6f47] mt-0.5">–</span>
                         <span>{bullet}</span>
                       </li>
                     ))}
                   </ul>
-                </div>
+                </motion.div>
               </div>
             </div>
-          </motion.div>
-        ))}
-      </div>
+          </div>
+        );
+      })}
     </section>
   );
 }

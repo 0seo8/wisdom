@@ -1,27 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
 import Image from "next/image";
 
 export function ArticleSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
-    <section id="article" ref={ref} className="py-16 md:py-24 bg-[#f5f1e8]">
+    <section id="article" className="py-16 md:py-24 bg-[#f5f1e8]">
       <div className="container">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="max-w-5xl mx-auto"
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left: Text Content */}
             <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#8b6f47]">
+              <h2
+                className="text-3xl md:text-4xl font-serif text-[#5D2E1E]"
+                style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
+              >
                 Somatics Article
               </h2>
               <h3 className="text-2xl font-bold text-gray-900">
@@ -46,7 +45,7 @@ export function ArticleSection() {
                 href="https://somatic.artswisdom.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-6 py-3 bg-[#8b6f47] text-white font-medium rounded hover:bg-[#6d5638] transition-colors"
+                className="inline-block px-6 py-3 bg-[#7C554D] text-white font-medium rounded hover:bg-[#5D2E1E] transition-colors"
               >
                 논문 보기
               </a>
@@ -55,27 +54,20 @@ export function ArticleSection() {
             {/* Right: Images */}
             <div className="relative">
               <div className="grid grid-cols-2 gap-4">
-                <div className="relative aspect-[3/4] rounded-lg overflow-hidden shadow-lg">
+                <div className="relative aspect-[3/4] overflow-hidden shadow-lg">
                   <Image
                     src="/images/somatic-lab/article-image-1.jpg"
                     alt="소매틱스 연구"
                     fill
                     className="object-cover"
-                    onError={(e) => {
-                      // Fallback to placeholder if image doesn't exist
-                      e.currentTarget.src = "/images/placeholder.jpg";
-                    }}
                   />
                 </div>
-                <div className="relative aspect-[3/4] rounded-lg overflow-hidden shadow-lg mt-8">
+                <div className="relative aspect-[3/4] overflow-hidden shadow-lg mt-8">
                   <Image
                     src="/images/somatic-lab/article-image-2.jpg"
                     alt="소매틱스 논문"
                     fill
                     className="object-cover"
-                    onError={(e) => {
-                      e.currentTarget.src = "/images/placeholder.jpg";
-                    }}
                   />
                 </div>
               </div>

@@ -1,8 +1,22 @@
 import type { Metadata } from "next";
+import { Noto_Sans_KR, Libre_Baskerville } from "next/font/google";
 import { Header, Footer } from "@/components/layout";
 import "./globals.css";
 
+const notoSansKr = Noto_Sans_KR({
+  subsets: ["latin"],
+  weight: ["100", "300", "400", "500", "700", "900"],
+  variable: "--font-noto-sans-kr",
+});
+
+const libreBaskerville = Libre_Baskerville({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-libre-baskerville",
+});
+
 export const metadata: Metadata = {
+  // ... (existing metadata)
   title: {
     default: "건강한 사회를 위해 웰니스 문화를 선도하는 소셜벤처 ⋅ 사회적기업",
     template: "%s | 지혜의밭",
@@ -76,7 +90,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className="antialiased">
+      <body className={`${notoSansKr.variable} ${libreBaskerville.variable} antialiased`}>
         {/* Schema.org Organization Data */}
         <script
           type="application/ld+json"
@@ -137,7 +151,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         />
         {/* End Google Tag Manager */}
         <Header />
-        <main className="min-h-screen pt-20">{children}</main>
+        <main className="min-h-screen" style={{ paddingTop: "var(--header-height)" }}>{children}</main>
         <Footer />
       </body>
     </html>

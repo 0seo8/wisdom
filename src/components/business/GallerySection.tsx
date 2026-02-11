@@ -1,8 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
 
 const videos = [
   {
@@ -20,7 +18,7 @@ const videos = [
   {
     title: "사회적기업과 기업가 정신 - 서원대학교 산업대학원 초청 특강",
     description:
-      "서원대학교 산업대학원 초청 특별강의 – 앙트러프러너십(entrepreneurship). 평생교육학과(소셜벤처전공)석사과정 대상 사회적기업과 기업가정신에 대한 강의를 진행했습니다.",
+      "서원대학교 산업대학원 초청 특별강의 – 앙트러프러너십(entrepreneurship). 평생교육학과(소셜벤처전공)석사과정 대상 사회적기업และ 기업가정신에 대한 강의를 진행했습니다.",
     embedId: "hVSD7p8_UTA",
   },
   {
@@ -32,50 +30,46 @@ const videos = [
 ];
 
 export function GallerySection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
-    <section id="gallery" ref={ref} className="py-16 md:py-24 bg-[#fcf9f2]">
-      <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
-        >
-          <h2 className="text-3xl md:text-5xl font-serif text-[#5d4037] mb-6">
-            Gallery
-          </h2>
-          <p className="text-gray-600 text-lg leading-relaxed">
-            지혜의밭이 함께한 다양한 현장의 생생한 모습을 영상으로 만나보세요.
-          </p>
-        </motion.div>
+    <section id="gallery" className="py-24 bg-[#fcf3eb]">
+      <div className="container px-4 mx-auto max-w-[1400px]">
+        {/* Simple Divider line */}
+        <div className="flex justify-center mb-6">
+          <div className="w-[80px] h-[1.5px] bg-[#7a5c51] opacity-50" />
+        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-[48px] md:text-[60px] lg:text-[70px] text-center text-[#7a5c51] mb-20"
+          style={{ fontFamily: "var(--font-libre-baskerville), serif" }}
+        >
+          Gallery
+        </motion.h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
           {videos.map((video, index) => (
             <motion.div
               key={video.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
-              className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 group"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 * index }}
+              className="space-y-6"
             >
-              <div className="aspect-video relative bg-black">
+              <div className="relative aspect-video rounded-sm overflow-hidden shadow-xl bg-black group">
                 <iframe
-                  className="absolute inset-0 w-full h-full"
+                  className="absolute inset-0 w-full h-full border-0"
                   src={`https://www.youtube.com/embed/${video.embedId}`}
                   title={video.title}
-                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 />
               </div>
-              <div className="p-6 md:p-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[var(--color-orange)] transition-colors">
-                  {video.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+              <div className="py-2">
+                <p className="text-gray-600 leading-relaxed break-keep text-[15px] md:text-[16px]">
                   {video.description}
                 </p>
               </div>

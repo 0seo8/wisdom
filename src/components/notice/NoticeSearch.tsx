@@ -38,56 +38,20 @@ export function NoticeSearch({ initialSearch = "" }: NoticeSearchProps) {
   }, [searchParams, router]);
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-xl mx-auto mb-8">
-      <div className="flex gap-2">
-        <div className="relative flex-1">
-          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-            <svg
-              className="w-5 h-5 text-gray-400"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
-          </div>
-          <input
-            type="text"
-            value={searchValue}
-            onChange={(e) => setSearchValue(e.target.value)}
-            placeholder="공지사항 검색..."
-            className="w-full pl-12 pr-10 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[var(--color-orange)] focus:border-transparent transition-all"
-          />
-          {searchValue && (
-            <button
-              type="button"
-              onClick={handleClear}
-              className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-gray-600"
-            >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          )}
-        </div>
+    <form onSubmit={handleSubmit} className="w-full max-w-2xl mx-auto py-8">
+      <div className="flex items-center justify-center gap-1 h-10">
+        <select className="h-full px-4 border border-[#E1E1E1] text-sm text-gray-600 focus:outline-none focus:border-gray-400 min-w-[100px] rounded-none">
+          <option>전체</option>
+        </select>
+        <input
+          type="text"
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
+          className="h-full px-4 border border-[#E1E1E1] text-sm flex-1 focus:outline-none focus:border-gray-400 rounded-none"
+        />
         <button
           type="submit"
-          className="px-6 py-3 bg-[var(--color-orange)] text-white rounded-full hover:bg-[var(--color-orange-dark)] transition-colors font-medium"
+          className="h-full px-6 bg-[#666] text-white text-sm font-medium hover:bg-[#555] transition-colors rounded-none"
         >
           검색
         </button>

@@ -4,31 +4,28 @@ import { motion } from "framer-motion";
 
 export function NoticeHero() {
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden flex items-center justify-center min-h-[400px]">
+    <section className="relative h-[450px] overflow-hidden flex items-center justify-center">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 hover:scale-105"
         style={{
-          backgroundImage: "url('/공지사항/write-1957302_1280.jpg')", // Using the 'write' image as it fits the 'Notice' theme well
+          backgroundImage: "url('/공지사항/write-1957302_1280.jpg')",
         }}
       />
       
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/50 z-10" />
+      <div className="absolute inset-0 bg-black/40 z-10" />
 
       <div className="container relative z-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-2xl mx-auto"
+          transition={{ duration: 0.8 }}
+          className="text-center"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-6">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-serif text-white tracking-tight font-libre-baskerville" style={{ fontFamily: "var(--font-libre-baskerville), serif" }}>
             Notice
           </h1>
-          <p className="text-lg md:text-xl text-white/90 font-light">
-            지혜의밭의 새로운 소식과 공지사항을 확인하세요
-          </p>
         </motion.div>
       </div>
     </section>

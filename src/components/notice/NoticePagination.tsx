@@ -65,47 +65,18 @@ export function NoticePagination({
   };
 
   return (
-    <nav className="flex items-center justify-center mt-8 gap-2">
-      {/* Previous Button */}
-      <button
-        onClick={() => handlePageChange(currentPage - 1)}
-        disabled={currentPage === 1}
-        className="p-2 rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-white transition-colors"
-        aria-label="이전 페이지"
-      >
-        <svg
-          className="w-5 h-5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M15 19l-7-7 7-7"
-          />
-        </svg>
-      </button>
-
+    <nav className="flex items-center justify-center mt-12 mb-16 gap-1">
       {/* Page Numbers */}
       <div className="flex items-center gap-1">
         {getPageNumbers().map((page, index) =>
-          page === "..." ? (
-            <span
-              key={`ellipsis-${index}`}
-              className="px-3 py-2 text-gray-400"
-            >
-              ...
-            </span>
-          ) : (
+          page === "..." ? null : (
             <button
               key={page}
               onClick={() => handlePageChange(page as number)}
-              className={`min-w-[40px] h-10 rounded-lg font-medium transition-colors ${
+              className={`w-10 h-10 flex items-center justify-center text-sm font-medium transition-colors ${
                 currentPage === page
-                  ? "bg-[var(--color-orange)] text-white"
-                  : "border border-gray-300 text-gray-600 hover:bg-gray-50"
+                  ? "bg-[#E9ECEF] text-gray-900"
+                  : "bg-white text-gray-500 hover:bg-gray-50"
               }`}
             >
               {page}
@@ -118,28 +89,22 @@ export function NoticePagination({
       <button
         onClick={() => handlePageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="p-2 rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-white transition-colors"
+        className="w-10 h-10 flex items-center justify-center bg-white text-gray-500 hover:bg-gray-50 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
         aria-label="다음 페이지"
       >
-        <svg
-          className="w-5 h-5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 5l7 7-7 7"
-          />
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
         </svg>
       </button>
 
-      {/* Page Info */}
-      <span className="ml-4 text-sm text-gray-500">
-        {currentPage} / {totalPages} 페이지
-      </span>
+      {/* Last Page Button */}
+      <button
+        onClick={() => handlePageChange(totalPages)}
+        disabled={currentPage === totalPages}
+        className="px-4 h-10 flex items-center justify-center bg-white text-gray-500 hover:bg-gray-50 disabled:opacity-30 disabled:cursor-not-allowed transition-colors text-sm"
+      >
+        마지막
+      </button>
     </nav>
   );
 }

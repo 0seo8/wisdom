@@ -14,7 +14,7 @@ interface ProgramSectionProps {
   imageSrc?: string;
   imageAlt: string;
   reverse?: boolean;
-  accentColor?: "orange" | "yellow" | "green" | "blue";
+  accentColor?: "beige" | "green" | "brown" | "blue" | "yellow";
 }
 
 export function ProgramSection({
@@ -26,64 +26,60 @@ export function ProgramSection({
   imageSrc,
   imageAlt,
   reverse = false,
-  accentColor = "orange",
+  accentColor = "beige",
 }: ProgramSectionProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const colorClasses = {
-    orange: {
-      bg: "from-[var(--color-orange-light)] to-[#fff8f0]",
-      accent: "bg-[var(--color-orange)]",
-      text: "text-[var(--color-orange)]",
-      border: "border-[var(--color-orange)]",
-      featureBg: "bg-[var(--color-orange)]/10",
-    },
-    yellow: {
-      bg: "from-[var(--color-yellow-light)] to-[#fffef0]",
-      accent: "bg-[var(--color-yellow)]",
-      text: "text-[var(--color-yellow-dark)]",
-      border: "border-[var(--color-yellow)]",
-      featureBg: "bg-[var(--color-yellow)]/20",
-    },
-    green: {
-      bg: "from-[var(--color-green-light)]/30 to-[#f0fff0]",
-      accent: "bg-[var(--color-green)]",
-      text: "text-[var(--color-green)]",
-      border: "border-[var(--color-green)]",
-      featureBg: "bg-[var(--color-green)]/10",
-    },
-    blue: {
-      bg: "from-[var(--color-blue-light)]/30 to-[#f0f8ff]",
-      accent: "bg-[var(--color-blue)]",
-      text: "text-[var(--color-blue)]",
-      border: "border-[var(--color-blue)]",
-      featureBg: "bg-[var(--color-blue)]/10",
-    },
+  const bgColorMap = {
+    // Offset background box colors
+    beige: "bg-[#EEDCCB]", // Light skin/beige
+    green: "bg-[#B5C7B1]", // Muted sage green
+    brown: "bg-[#7C554D]", // Dark brown
+    blue: "bg-[#E0E7FF]",
+    yellow: "bg-[#FEF9C3]",
   };
+  
+  const titleColorMap = {
+    // Text is consistently dark brown/reddish for most items in screenshots
+    beige: "text-[#5D2E1E]", 
+    green: "text-[#5D2E1E]",
+    brown: "text-[#5D2E1E]",
+    blue: "text-[#1E3A8A]",
+    yellow: "text-[#854D0E]",
+  }
 
-  const colors = colorClasses[accentColor];
+  const offsetBg = bgColorMap[accentColor as keyof typeof bgColorMap] || "bg-gray-100";
+  const textColor = titleColorMap[accentColor as keyof typeof titleColorMap] || "text-gray-900";
 
   return (
     <section
       id={id}
       ref={ref}
-      className="py-16 md:py-24 scroll-mt-20"
+      className={`py-20 md:py-32 scroll-mt-20 overflow-hidden ${reverse ? 'bg-white' : 'bg-[#fffcf6]'}`}
     >
       <div className="container">
         <div
           className={`flex flex-col ${
-            reverse ? "lg:flex-row-reverse" : "lg:flex-row"
-          } gap-8 lg:gap-16 items-center`}
+            reverse ? "md:flex-row-reverse" : "md:flex-row"
+          } gap-12 lg:gap-24 items-center`}
         >
-          {/* Program Image */}
+          {/* Image Side */}
           <motion.div
             initial={{ opacity: 0, x: reverse ? 50 : -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-full lg:w-1/2"
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="w-full md:w-1/2 relative min-h-[300px] md:min-h-[400px]"
           >
-            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-lg">
+             {/* Offset Background Box */}
+            <div 
+                className={`absolute ${reverse ? 'right-8 top-8' : 'left-8 top-8'} bottom-[-2rem] ${reverse ? 'left-[-2rem]' : 'right-[-2rem]'} ${offsetBg} -z-10`}
+                style={{ width: '80%', height: '110%' }}
+            />
+            
+            {/* Image Container */}
+             <div className="relative w-full h-[300px] md:h-[400px] shadow-xl">
               {imageSrc && (
                 <Image
                   src={imageSrc}
@@ -95,42 +91,25 @@ export function ProgramSection({
             </div>
           </motion.div>
 
-          {/* Content */}
+          {/* Content Side */}
           <motion.div
             initial={{ opacity: 0, x: reverse ? -50 : 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="w-full lg:w-1/2"
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className={`w-full md:w-1/2 text-center md:text-left ${reverse ? 'md:pr-12' : 'md:pl-12'}`}
           >
-            <div className={`inline-block px-3 py-1 ${colors.featureBg} rounded-full mb-4`}>
-              <span className={`text-sm font-medium ${colors.text}`}>#{id}</span>
-            </div>
-
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
-              {title}
+            <h2 className={`text-3xl md:text-4xl lg:text-5xl font-serif font-bold ${textColor} mb-6 leading-tight`}>
+              {subtitle}({title})
             </h2>
 
-            <p className={`text-lg font-medium ${colors.text} mb-4`}>
-              {subtitle}
-            </p>
-
-            <p className="text-gray-600 leading-relaxed mb-6">
+            <p className="text-gray-700 leading-relaxed mb-6 whitespace-pre-line text-lg">
               {description}
             </p>
 
-            {/* Features */}
-            <div className="flex flex-wrap gap-2">
-              {features.map((feature, index) => (
-                <motion.span
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
-                  className={`px-4 py-2 ${colors.featureBg} rounded-full text-sm font-medium text-gray-700`}
-                >
-                  {feature}
-                </motion.span>
-              ))}
+            {/* Simple list or features */}
+            <div className={`text-sm md:text-base text-gray-600 font-medium`}>
+               {features.join(" / ")}
             </div>
           </motion.div>
         </div>
