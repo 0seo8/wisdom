@@ -58,6 +58,26 @@
   /* Layout */
   --header-height: 80px;
   --container-max-width: 1200px;
+
+  /* User Provided WP Colors */
+  --wp--preset--color--black: #000000;
+  --wp--preset--color--cyan-bluish-gray: #abb8c3;
+  --wp--preset--color--white: #ffffff;
+  --wp--preset--color--pale-pink: #f78da7;
+  --wp--preset--color--vivid-red: #cf2e2e;
+  --wp--preset--color--luminous-vivid-orange: #ff6900;
+  --wp--preset--color--luminous-vivid-amber: #fcb900;
+  --wp--preset--color--light-green-cyan: #7bdcb5;
+  --wp--preset--color--vivid-green-cyan: #00d084;
+  --wp--preset--color--pale-cyan-blue: #8ed1fc;
+  --wp--preset--color--vivid-cyan-blue: #0693e3;
+  --wp--preset--color--vivid-purple: #9b51e0;
+  --wp--preset--font-size--small: 13px;
+  --wp--preset--font-size--medium: 20px;
+  --wp--preset--font-size--large: 36px;
+  --wp--preset--font-size--x-large: 42px;
+  --wp--preset--font-size--normal: 16px;
+  --wp--preset--font-size--huge: 42px;
 }
 
 @theme inline {
@@ -76,11 +96,25 @@ html {
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
-  line-height: 1.6;
+  color: #333;
+  font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
+  font-size: 15px; /* Default mobile size */
+  font-weight: 400;
+  line-height: 1.66;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@media screen and (min-width: 30em) {
+    body {
+        font-size: 18px; /* 1.125rem */
+    }
+}
+
+@media screen and (min-width: 48em) {
+    body {
+        font-size: 16px; /* 1rem - Reset for desktop if needed based on provided CSS logic, though usually it goes up. The user provided snippet has desktop smaller? "min-width: 48em -> font-size: 16px". I will follow the user's snippet exactly. */
+    }
 }
 
 /* Typography */
