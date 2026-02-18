@@ -9,7 +9,7 @@ export function NoticeHero() {
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 hover:scale-105"
         style={{
-          backgroundImage: "url('/공지사항/write-1957302_1280.jpg')",
+          backgroundImage: "url('/images/notice/hero-bg.jpg')",
         }}
       />
       

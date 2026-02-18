@@ -95,17 +95,17 @@ export const images = {
     default: "/images/hero/hero-bg.jpg",
   },
 
-  // Healasoma page
-  healasoma: {
-    hero: "/images/healasoma/hero-bg.jpg",
-    bgHarmony: "/images/healasoma/bg-harmony.jpg",
-    bgLeaves: "/images/healasoma/bg-leaves.jpg",
-    bodyfulness: "/images/healasoma/program-bodyfulness.png",
-    mindfulness: "/images/healasoma/program-mindfulness.png",
-    therapy: "/images/healasoma/program-therapy.png",
-    expressiveArt: "/images/healasoma/program-expressive-art.png",
-    groupCounseling: "/images/healasoma/program-group-counseling.png",
-    creativeDrama: "/images/healasoma/program-creative-drama.png",
+  // Healsoma page
+  healsoma: {
+    hero: "/images/healsoma/hero-bg.jpg",
+    bgHarmony: "/images/healsoma/bg-harmony.jpg",
+    bgLeaves: "/images/healsoma/bg-leaves.jpg",
+    bodyfulness: "/images/healsoma/program-bodyfulness.png",
+    mindfulness: "/images/healsoma/program-mindfulness.png",
+    therapy: "/images/healsoma/program-therapy.png",
+    expressiveArt: "/images/healsoma/program-expressive-art.png",
+    groupCounseling: "/images/healsoma/program-group-counseling.png",
+    creativeDrama: "/images/healsoma/program-creative-drama.png",
   },
 
   // Somatic Lab page

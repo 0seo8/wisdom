@@ -19,7 +19,7 @@ const slides = [
     title: "온전한 쉼",
     subtitle: "Healsoma",
     description: "일상의 쉼을 더하는 곳, 당신도 온전한 쉼이 필요하다",
-    cta: "/healasoma",
+    cta: "/healsoma",
     image: images.hero.slide2,
   },
   {

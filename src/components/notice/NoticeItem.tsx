@@ -57,9 +57,6 @@ export function NoticeItem({ notice, number }: NoticeItemProps) {
           {formatDate(notice.created_at)}
         </div>
         <div className="w-16 text-center text-gray-500 shrink-0 text-[14px]">
-          {recommendations}
-        </div>
-        <div className="w-16 text-center text-gray-500 shrink-0 text-[14px]">
           {notice.view_count ?? 0}
         </div>
       </div>

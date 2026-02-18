@@ -9,7 +9,7 @@ export function BusinessHero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/기업의 예술/20210615_112010.png"
+          src="/images/business/20210615_112010.png"
           alt="Business Hero Background"
           fill
           className="object-cover"

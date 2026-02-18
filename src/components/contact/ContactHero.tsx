@@ -7,7 +7,7 @@ export function ContactHero() {
     <section className="relative h-[480px] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-[url('/문의하기/vintage-2608934_1280.jpg')] bg-cover bg-center"
+        className="absolute inset-0 bg-[url('/images/contact/hero-bg.jpg')] bg-cover bg-center"
       >
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/50" />

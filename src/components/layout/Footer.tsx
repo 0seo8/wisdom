@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { companyInfo } from "@/constants/navigation";
+import { images } from "@/constants/images";
 
 export function Footer() {
   return (
@@ -11,22 +12,22 @@ export function Footer() {
         <div className="flex justify-center gap-6 mb-16">
           <SocialLink
             href="https://www.youtube.com/channel/UCR8ZIwOtV1cAFgMaXe8EO6g"
-            icon="/문의하기/yt_icon_rgb-qdoxjecg4ibquv4kky101rw5h92zt79rvsplatlutu.png"
+            icon={images.social.youtube}
             label="YouTube"
           />
           <SocialLink
             href="https://blog.naver.com/artswisdom"
-            icon="/images/misc/naver-cafe-logo.png" // Using the naver logo if available or similar
+            icon={images.social.naver}
             label="Blog"
           />
           <SocialLink
             href="https://www.instagram.com/artswisdom_official/"
-            icon="/문의하기/인스타그램_로고_1920_01-e1586670078567-qdoxj9n96c5b8tbecdzv7b2uibq5qpr475g5wfstrg.png"
+            icon={images.social.instagram}
             label="Instagram"
           />
           <SocialLink
             href="https://www.facebook.com/artswisdom/"
-            icon="/문의하기/f_logo_RGB-Hex-Blue_512-qdoxj8pezi40x7crhvl8mtbdwxusj0ndv0sof5u7xo.png"
+            icon={images.social.facebook}
             label="Facebook"
           />
         </div>
@@ -38,7 +39,7 @@ export function Footer() {
             <div className="md:order-1">
                  <Link href="/" className="inline-block">
                     <Image 
-                      src="/문의하기/지혜의밭_기본형로고-1-787x1024-1-e1589805611202.png"
+                      src={images.logo.vertical}
                       alt="지혜의밭 Logo"
                       width={120}
                       height={150}

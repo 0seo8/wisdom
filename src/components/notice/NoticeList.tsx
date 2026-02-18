@@ -70,7 +70,6 @@ export function NoticeList({ notices, totalCount, currentPage }: NoticeListProps
         <div className="flex-1 text-center">제목</div>
         <div className="w-24 text-center shrink-0">작성자</div>
         <div className="w-28 text-center shrink-0">작성일</div>
-        <div className="w-16 text-center shrink-0">추천</div>
         <div className="w-16 text-center shrink-0">조회</div>
       </div>
 

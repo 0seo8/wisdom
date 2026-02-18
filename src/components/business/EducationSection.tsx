@@ -69,7 +69,7 @@ export function EducationSection() {
               className="w-[85%] md:w-[75%] aspect-[4/3] z-0 overflow-hidden rounded-sm shadow-xl"
             >
               <Image
-                src="/기업의 예술/20230513_193104995_23-1024x768.jpg"
+                src="/images/business/20230513_193104995_23-1024x768.jpg"
                 alt="Education Session detail"
                 fill
                 className="object-cover"
@@ -84,7 +84,7 @@ export function EducationSection() {
               className="absolute left-0 top-1/2 -translate-y-[40%] w-[55%] md:w-[45%] aspect-[3/4] z-10 shadow-[-7px_20px_50px_0px_rgba(0,0,0,0.48)] overflow-hidden rounded-sm"
             >
               <Image
-                src="/기업의 예술/123456-1150x1536.png"
+                src="/images/business/123456-1150x1536.png"
                 alt="Main Education Scene"
                 fill
                 className="object-cover"
@@ -102,7 +102,7 @@ export function EducationSection() {
         >
           <div className="w-full md:w-1/2 relative aspect-[4/3] rounded-sm overflow-hidden shadow-lg">
             <Image
-              src="/기업의 예술/20230513_193104995_19-scaled.jpg"
+              src="/images/business/20230513_193104995_19-scaled.jpg"
               alt="Classroom scene"
               fill
               className="object-cover"
@@ -139,10 +139,10 @@ export function EducationSection() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { img: "/기업의 예술/행사기획-추천-이미지11.jpg", text: "새롭고 참신한 방법으로 행사의 퀄리티를 높이고 싶은 조직" },
-              { img: "/기업의 예술/행사기획-추천-이미지2.jpg", text: "행사의 목적에 부합하는 전문적인 결과를 내고 싶은 조직" },
-              { img: "/기업의 예술/행사기획-추천-이미지3.jpg", text: "One-Stop으로 편리하게 서비스를 받고 싶은 조직 및 공동체" },
-              { img: "/기업의 예술/행사기획-추천-이미지4.jpg", text: "일회성 행사에 그치지 않고 섬김과 존중을 받고 싶은 조직 및 공동체" }
+              { img: "/images/business/행사기획-추천-이미지11.jpg", text: "새롭고 참신한 방법으로 행사의 퀄리티를 높이고 싶은 조직" },
+              { img: "/images/business/행사기획-추천-이미지2.jpg", text: "행사의 목적에 부합하는 전문적인 결과를 내고 싶은 조직" },
+              { img: "/images/business/행사기획-추천-이미지3.jpg", text: "One-Stop으로 편리하게 서비스를 받고 싶은 조직 및 공동체" },
+              { img: "/images/business/행사기획-추천-이미지4.jpg", text: "일회성 행사에 그치지 않고 섬김과 존중을 받고 싶은 조직 및 공동체" }
             ].map((card, idx) => (
               <motion.div
                 key={idx}

@@ -22,7 +22,7 @@ export default function ContactPage() {
         <div className="container px-4">
           <div className="flex justify-center mb-8">
             <img 
-              src="/문의하기/주석_2020-04-12_143549-removebg-preview-1-qdoxj9n96c5b8tbecdzv7b2uibq5qpr475g5wfstqm.png" 
+              src="/images/contact/quote.png" 
               alt="Quote" 
               className="h-10 opacity-70"
             />

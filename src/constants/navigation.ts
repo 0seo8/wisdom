@@ -19,14 +19,14 @@ export const navigation: NavItem[] = [
   },
   {
     label: "힐소마",
-    href: "/healasoma",
+    href: "/healsoma",
     children: [
-      { label: "바디풀니스", href: "/healasoma#bodyfulness" },
-      { label: "마인드풀니스", href: "/healasoma#mindfulness" },
-      { label: "테라피", href: "/healasoma#therapy" },
-      { label: "표현 예술", href: "/healasoma#expressive" },
-      { label: "집단 상담", href: "/healasoma#group" },
-      { label: "연극 놀이", href: "/healasoma#creative" },
+      { label: "바디풀니스", href: "/healsoma#bodyfulness" },
+      { label: "마인드풀니스", href: "/healsoma#mindfulness" },
+      { label: "테라피", href: "/healsoma#therapy" },
+      { label: "표현 예술", href: "/healsoma#expressive" },
+      { label: "집단 상담", href: "/healsoma#group" },
+      { label: "연극 놀이", href: "/healsoma#creative" },
     ],
   },
   {

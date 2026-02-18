@@ -7,7 +7,7 @@ const categoryMeta: Record<
   string,
   { icon: string; color: "orange" | "green" | "blue" | "yellow"; subtitle: string; href: string }
 > = {
-  healasoma: { icon: "Heart", color: "orange", subtitle: "HEALASOMA", href: "/healasoma" },
+  healasoma: { icon: "Heart", color: "orange", subtitle: "HEALSOMA", href: "/healsoma" },
   "somatic-lab": { icon: "Brain", color: "green", subtitle: "SOMATIC LAB", href: "/somatic-lab" },
   "daily-art": { icon: "Sparkles", color: "blue", subtitle: "ART IN LIFE", href: "/daily-art" },
   business: { icon: "Users", color: "yellow", subtitle: "BUSINESS", href: "/business" },
