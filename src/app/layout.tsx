@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   authors: [{ name: "㈜지혜의밭" }],
   icons: {
     icon: [
-      { url: "/images/logo/logo-symbol.png" },
+      { url: "https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/logo/logo-symbol.png" },
       { url: "https://artswisdom.com/wp-content/uploads/2020/05/cropped-지혜의밭_그래픽확장형1-32x32.png", sizes: "32x32" },
       { url: "https://artswisdom.com/wp-content/uploads/2020/05/cropped-지혜의밭_그래픽확장형1-192x192.png", sizes: "192x192" },
     ],

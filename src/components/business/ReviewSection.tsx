@@ -10,7 +10,7 @@ export function ReviewSection() {
       <section className="relative min-h-[600px] flex items-center justify-center text-center px-6 py-24 mb-1">
         <div className="absolute inset-0 z-0">
           <Image
-            src={"/images/business/event-documentation.jpg"}
+            src={"https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/business/event-documentation.jpg"}
             alt="Event Review Background"
             fill
             className="object-cover"
@@ -57,7 +57,7 @@ export function ReviewSection() {
       <section className="relative min-h-[600px] flex items-center justify-center text-center px-6 py-24">
         <div className="absolute inset-0 z-0">
           <Image
-            src={"/images/business/education-photo-3.png"}
+            src={"https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/business/education-photo-3.png"}
             alt="Education Review Background"
             fill
             className="object-cover"

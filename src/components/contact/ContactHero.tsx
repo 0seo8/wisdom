@@ -7,7 +7,7 @@ export function ContactHero() {
     <section className="relative h-[480px] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-[url('/images/contact/hero-bg.jpg')] bg-cover bg-center"
+        className="absolute inset-0 bg-[url('https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/contact/hero-bg.jpg')] bg-cover bg-center"
       >
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/50" />

@@ -18,7 +18,7 @@ export function IntroSection() {
           </h2>
           
           <div className="space-y-4 text-lg md:text-xl text-[#444] leading-relaxed">
-            <p className="font-medium text-2xl mb-6">"당신도 온전한 쉼이 필요하다"</p>
+            <p className="font-medium text-2xl mb-6">&quot;당신도 온전한 쉼이 필요하다&quot;</p>
             <p>
               분주한 일상 너머, 깊은 쉼을 통해 평온함을 선사하는 공간.
             </p>
@@ -28,7 +28,7 @@ export function IntroSection() {
           </div>
 
           <div className="pt-12">
-            <p className="text-[#555] font-bold text-lg mb-4">오직 한 쉼' 힐소마는</p>
+            <p className="text-[#555] font-bold text-lg mb-4">오직 한 쉼&apos; 힐소마는</p>
             <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 text-[#555]">
                <span>Heal(치유/회복)</span>
                <span className="hidden md:inline">+</span>

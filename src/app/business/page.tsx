@@ -10,7 +10,6 @@ import {
   ReviewSection,
   GallerySection,
 } from "@/components/business";
-import { WebBrochureBannerSection } from "@/components/layout/WebBrochureBannerSection";
 
 export default function BusinessPage() {
   return (
@@ -20,7 +19,6 @@ export default function BusinessPage() {
       <EducationSection />
       <EventSection />
       <GallerySection />
-      <WebBrochureBannerSection />
     </main>
   );
 }

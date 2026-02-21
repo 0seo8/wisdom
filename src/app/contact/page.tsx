@@ -22,7 +22,7 @@ export default function ContactPage() {
         <div className="container px-4">
           <div className="flex justify-center mb-8">
             <img 
-              src="/images/contact/quote.png" 
+              src="https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/contact/quote.png" 
               alt="Quote" 
               className="h-10 opacity-70"
             />

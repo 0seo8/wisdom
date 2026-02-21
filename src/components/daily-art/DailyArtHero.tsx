@@ -11,7 +11,7 @@ export function DailyArtHero() {
       <section className="relative w-full h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src={"/images/daily-art/muniman-performance-4.png"}
+            src={"https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/daily-art/muniman-performance-4.png"}
             alt="Arts of Living"
             fill
             className="object-cover"

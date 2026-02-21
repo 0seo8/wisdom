@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { Section, SectionTitle } from "@/components/common";
-import { motion } from "framer-motion";
 import { images } from "@/constants/images";
 
 export function CISection() {
@@ -32,8 +31,8 @@ export function CISection() {
                     심볼마크 (Symbol Mark)
                 </h3>
                 <p className="text-gray-600 leading-loose text-lg mb-6">
-                    지혜의밭 심볼은 <strong>'밭 전(田)'</strong> 자를 모티브로 하여 삶의 터전을 형상화했습니다.
-                    지혜의밭의 초성 <strong>'ㅈ, ㅎ, ㅇ, ㅂ'</strong>을 조형적으로 배치하여, 
+                    지혜의밭 심볼은 <strong>&apos;밭 전(田)&apos;</strong> 자를 모티브로 하여 삶의 터전을 형상화했습니다.
+                    지혜의밭의 초성 <strong>&apos;ㅈ, ㅎ, ㅇ, ㅂ&apos;</strong>을 조형적으로 배치하여, 
                     각각의 요소가 서로 어우러지고 연결되는 유기적인 관계를 표현하고 있습니다.
                 </p>
                 <ul className="space-y-3 text-gray-600 text-lg">

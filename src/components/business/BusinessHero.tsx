@@ -9,7 +9,7 @@ export function BusinessHero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/business/20210615_112010.png"
+          src="https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/business/legacy_business_2.png"
           alt="Business Hero Background"
           fill
           className="object-cover"

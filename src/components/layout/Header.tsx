@@ -43,7 +43,7 @@ export function Header() {
         <div className="w-[20%] shrink-0 hidden lg:flex items-center">
           <Link href="/">
             <Image
-              src="/images/logo/header-logo.png"
+              src="https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/logo/header-logo.png"
               alt="지혜의밭"
               width={214}
               height={130}
@@ -57,7 +57,7 @@ export function Header() {
         <div className="lg:hidden flex items-center">
           <Link href="/">
             <Image
-              src="/images/logo/header-logo.png"
+              src="https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/logo/header-logo.png"
               alt="지혜의밭"
               width={214}
               height={130}

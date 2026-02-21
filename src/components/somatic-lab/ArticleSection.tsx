@@ -56,7 +56,7 @@ export function ArticleSection() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative aspect-[3/4] overflow-hidden shadow-lg">
                   <Image
-                    src="/images/somatic-lab/article-image-1.jpg"
+                    src="https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/somatic-lab/article-image-1.jpg"
                     alt="소매틱스 연구"
                     fill
                     className="object-cover"
@@ -64,7 +64,7 @@ export function ArticleSection() {
                 </div>
                 <div className="relative aspect-[3/4] overflow-hidden shadow-lg mt-8">
                   <Image
-                    src="/images/somatic-lab/article-image-2.jpg"
+                    src="https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/somatic-lab/article-image-2.jpg"
                     alt="소매틱스 논문"
                     fill
                     className="object-cover"
