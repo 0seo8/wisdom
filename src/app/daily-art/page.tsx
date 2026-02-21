@@ -5,7 +5,6 @@ import {
   ProgramCard,
   GallerySection,
 } from "@/components/daily-art";
-import { WebBrochureBanner } from "@/components/layout";
 import { images } from "@/constants/images";
 import { getPrograms } from "@/lib/queries/programs";
 
@@ -85,7 +84,6 @@ export default async function DailyArtPage() {
   return (
     <main className="bg-white">
       <DailyArtHero />
-      <WebBrochureBanner />
 
       {/* Program Sections */}
       {dbPrograms.map((program) => {
@@ -110,7 +108,6 @@ export default async function DailyArtPage() {
       })}
 
       <GallerySection />
-      <WebBrochureBanner />
     </main>
   );
 }

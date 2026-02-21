@@ -5,7 +5,7 @@ import {
   ResearchersSection,
   ProgramListSection,
 } from "@/components/somatic-lab";
-import { WebBrochureBanner } from "@/components/layout";
+
 import { getPrograms } from "@/lib/queries/programs";
 import { createClient } from "@supabase/supabase-js";
 
@@ -32,7 +32,6 @@ export default async function SomaticLabPage() {
       <ResearchersSection researchers={researchers} />
       <ProgramListSection programs={programs} />
       <ArticleSection />
-      <WebBrochureBanner />
     </main>
   );
 }

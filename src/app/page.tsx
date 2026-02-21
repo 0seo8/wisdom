@@ -15,7 +15,7 @@ import {
   CISection,
   MapSection,
 } from "@/components/company";
-import { WebBrochureBanner } from "@/components/layout";
+
 
 export default function Home() {
   return (
@@ -33,7 +33,6 @@ export default function Home() {
         <HomeNoticeContact />
       </Suspense>
       <Partners />
-      <WebBrochureBanner />
     </>
   );
 }

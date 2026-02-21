@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Noto_Sans_KR, Libre_Baskerville } from "next/font/google";
-import { Header, Footer } from "@/components/layout";
+import { Header, Footer, WebBrochureBanner } from "@/components/layout";
 import "./globals.css";
 
 const notoSansKr = Noto_Sans_KR({
@@ -153,6 +153,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <Header />
         <main className="min-h-screen" style={{ paddingTop: "var(--header-height)" }}>{children}</main>
         <Footer />
+        <WebBrochureBanner />
       </body>
     </html>
   );

@@ -5,7 +5,7 @@ import {
   ProgramSection,
   ProgramDivider,
 } from "@/components/healsoma";
-import { WebBrochureBanner } from "@/components/layout";
+
 import { getPrograms } from "@/lib/queries/programs";
 
 export const metadata: Metadata = {
@@ -62,7 +62,6 @@ export default async function HealsomaPage() {
         ))}
       </div>
 
-      <WebBrochureBanner />
     </main>
   );
 }
