@@ -7,7 +7,7 @@ export function DailyArtHero() {
   return (
     <>
       {/* Hero Image Section */}
-      <section className="relative w-full h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+      <section className="hero-section">
         <div className="absolute inset-0 z-0">
           <Image
             src={"https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/daily-art/muniman-performance-4.png"}
@@ -18,7 +18,7 @@ export function DailyArtHero() {
             quality={90}
           />
         </div>
-        <div className="absolute inset-0 z-10 bg-black/45" />
+        <div className="hero-overlay" />
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

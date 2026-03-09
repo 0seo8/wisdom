@@ -81,10 +81,10 @@ export function Hero() {
                 sizes="100vw"
               />
 
-              <div className="absolute inset-0 bg-black/45" />
+              <div className="hero-overlay" />
 
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center px-4 sm:px-6 max-w-4xl mx-auto">
+                <div className="hero-content px-4 sm:px-6 max-w-4xl mx-auto">
                   {selectedIndex === index && (
                     <div className="animate-fade-in space-y-6">
                       <h1

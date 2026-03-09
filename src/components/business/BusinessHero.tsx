@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export function BusinessHero() {
   return (
-    <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+    <section className="hero-section">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -15,11 +15,11 @@ export function BusinessHero() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/45" />
+        <div className="hero-overlay" />
       </div>
 
-      <div className="container relative z-10 px-4">
-        <motion.div className="text-center">
+      <div className="container relative z-20 px-4">
+        <motion.div className="hero-content">
           <h1 
             className="text-5xl md:text-7xl lg:text-7xl font-serif text-white tracking-tight drop-shadow-2xl hero-font-libre hero-title-shadow"
           >

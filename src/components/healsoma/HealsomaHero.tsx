@@ -6,7 +6,7 @@ import { images } from "@/constants/images";
 
 export function HealsomaHero() {
   return (
-    <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+    <section className="hero-section">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -19,10 +19,10 @@ export function HealsomaHero() {
       </div>
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 z-10 bg-black/45" />
+      <div className="hero-overlay" />
 
       {/* Content */}
-      <div className="container relative z-20 text-center">
+      <div className="container hero-content">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

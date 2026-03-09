@@ -6,7 +6,7 @@ import { images } from "@/constants/images";
 
 export function SomaticLabHero() {
   return (
-    <section className="relative w-full h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+    <section className="hero-section">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -23,7 +23,7 @@ export function SomaticLabHero() {
       <div className="absolute inset-0 z-10 bg-black/35" />
 
       {/* Content */}
-      <div className="container relative z-20 text-center">
+      <div className="container hero-content">
         <motion.h1
           className="text-5xl md:text-7xl lg:text-7xl font-semibold text-white leading-[1] hero-font-libre hero-title-shadow-strong"
         >

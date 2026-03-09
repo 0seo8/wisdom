@@ -7,7 +7,7 @@ export function BrochureHero() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   return (
-    <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center bg-black overflow-hidden pt-16">
+    <section className="hero-section bg-black pt-16">
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
         <video
@@ -23,10 +23,10 @@ export function BrochureHero() {
             type="video/mp4" 
           />
         </video>
-        <div className="absolute inset-0 bg-black/45" />
+        <div className="hero-overlay" />
       </div>
 
-      <div className="container relative z-10 px-4 flex flex-col items-center">
+      <div className="container hero-content px-4 flex flex-col items-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
