@@ -7,7 +7,7 @@ export function BrochureHero() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   return (
-    <section className="relative w-full min-h-[50vh] md:min-h-[70vh] flex items-center justify-center bg-black overflow-hidden pt-20">
+    <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center bg-black overflow-hidden pt-16">
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
         <video
@@ -23,7 +23,7 @@ export function BrochureHero() {
             type="video/mp4" 
           />
         </video>
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/45" />
       </div>
 
       <div className="container relative z-10 px-4 flex flex-col items-center">
@@ -35,7 +35,7 @@ export function BrochureHero() {
         >
           <h1 
             className="text-5xl md:text-7xl lg:text-7xl font-serif text-white tracking-tight drop-shadow-xl"
-            style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
+            style={{ fontFamily: "'Georgia', 'Times New Roman', serif", textShadow: "0 2px 18px rgba(0,0,0,0.5)" }}
           >
             Brochure
           </h1>

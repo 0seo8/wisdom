@@ -10,7 +10,7 @@ export function SomaticLabHero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src={images.somaticLab.hero}
+          src={images.somaticLab.programsHeader}
           alt="Somatic Lab Background"
           fill
           className="object-cover"
@@ -20,28 +20,16 @@ export function SomaticLabHero() {
       </div>
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 z-10 bg-black/45" />
+      <div className="absolute inset-0 z-10 bg-black/5" />
 
       {/* Content */}
       <div className="container relative z-20 text-center">
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-5xl md:text-7xl lg:text-7xl text-white italic leading-[0.9]"
-          style={{ fontFamily: "var(--font-libre-baskerville), 'Times New Roman', serif" }}
+          className="text-5xl md:text-7xl lg:text-7xl text-white leading-[1]"
+          style={{ fontFamily: "var(--font-libre-baskerville), 'Times New Roman', serif", textShadow: "0 2px 18px rgba(0,0,0,0.5)" }}
         >
           Somatic Laboratory
         </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.15 }}
-          className="mt-6 text-sm md:text-lg text-white/90 tracking-[0.55em] font-light"
-          style={{ fontFamily: "var(--font-noto-sans-kr), 'Noto Sans KR', sans-serif" }}
-        >
-          몸 과 마음 의 연결
-        </motion.p>
       </div>
     </section>
   );

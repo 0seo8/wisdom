@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { images } from "@/constants/images";
 
 export function DailyArtHero() {
   return (
@@ -19,13 +18,13 @@ export function DailyArtHero() {
             quality={90}
           />
         </div>
-        <div className="absolute inset-0 z-10 bg-black/40" />
+        <div className="absolute inset-0 z-10 bg-black/45" />
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="relative z-20 text-5xl md:text-7xl lg:text-7xl font-serif text-white italic"
-          style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
+          style={{ fontFamily: "'Georgia', 'Times New Roman', serif", textShadow: "0 2px 18px rgba(0,0,0,0.5)" }}
         >
           Arts of Living
         </motion.h1>

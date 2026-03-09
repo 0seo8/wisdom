@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export function BusinessHero() {
   return (
-    <section className="relative min-h-[60vh] flex items-center justify-center pt-32 pb-24 overflow-hidden">
+    <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -15,19 +15,14 @@ export function BusinessHero() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/45" />
       </div>
 
       <div className="container relative z-10 px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2 }}
-          className="text-center"
-        >
+        <motion.div className="text-center">
           <h1 
             className="text-5xl md:text-7xl lg:text-7xl font-serif text-white tracking-tight drop-shadow-2xl"
-            style={{ fontFamily: "var(--font-libre-baskerville), serif" }}
+            style={{ fontFamily: "var(--font-libre-baskerville), serif", textShadow: "0 2px 18px rgba(0,0,0,0.5)" }}
           >
             Educational Event
           </h1>

@@ -19,7 +19,7 @@ export function HealsomaHero() {
       </div>
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 z-10 bg-black/40" />
+      <div className="absolute inset-0 z-10 bg-black/45" />
 
       {/* Content */}
       <div className="container relative z-20 text-center">
@@ -32,7 +32,10 @@ export function HealsomaHero() {
           <span className="text-white/90 text-xl md:text-2xl font-light tracking-widest mb-4">
             온 전 한 쉼
           </span>
-          <h1 className="text-white text-5xl md:text-7xl lg:text-7xl font-serif font-medium tracking-wide">
+          <h1
+            className="text-white text-5xl md:text-7xl lg:text-7xl font-serif font-medium tracking-wide"
+            style={{ textShadow: "0 2px 18px rgba(0,0,0,0.5)" }}
+          >
             HEALSOMA
           </h1>
         </motion.div>

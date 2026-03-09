@@ -85,7 +85,7 @@ export function Hero() {
                 sizes="100vw"
               />
 
-              <div className="absolute inset-0 bg-black/40" />
+              <div className="absolute inset-0 bg-black/45" />
 
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center px-4 sm:px-6 max-w-4xl mx-auto">
@@ -94,7 +94,10 @@ export function Hero() {
                       <p className="text-base sm:text-lg md:text-xl text-white/90 tracking-[0.2em] uppercase font-light">
                         {slide.subtitle}
                       </p>
-                      <h1 className="text-5xl md:text-7xl lg:text-7xl font-bold text-white leading-tight font-serif">
+                      <h1
+                        className="text-5xl md:text-7xl lg:text-7xl font-bold text-white leading-tight font-serif"
+                        style={{ textShadow: "0 2px 18px rgba(0,0,0,0.5)" }}
+                      >
                         {slide.title}
                       </h1>
                       <div className="w-24 h-[1px] bg-white/50 mx-auto my-8" />
