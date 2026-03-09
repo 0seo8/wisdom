@@ -16,13 +16,7 @@ export function ContactHero() {
       <div className="container relative z-10">
         <motion.div className="text-center">
           <h1 
-            className="text-5xl md:text-7xl lg:text-7xl text-white tracking-tight leading-none"
-            style={{ 
-              fontFamily: "var(--font-libre-baskerville), serif",
-              fontStyle: "normal",
-              fontWeight: 600,
-              textShadow: "0 2px 18px rgba(0,0,0,0.55)"
-            }}
+            className="text-5xl md:text-7xl lg:text-7xl text-white tracking-tight leading-none font-semibold not-italic hero-font-libre hero-title-shadow-strong"
           >
             Contact us
           </h1>

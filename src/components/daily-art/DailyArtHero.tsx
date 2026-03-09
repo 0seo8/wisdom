@@ -23,8 +23,7 @@ export function DailyArtHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative z-20 text-5xl md:text-7xl lg:text-7xl font-serif text-white italic"
-          style={{ fontFamily: "'Georgia', 'Times New Roman', serif", textShadow: "0 2px 18px rgba(0,0,0,0.5)" }}
+          className="relative z-20 text-5xl md:text-7xl lg:text-7xl font-serif text-white italic hero-font-georgia hero-title-shadow"
         >
           Arts of Living
         </motion.h1>

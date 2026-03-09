@@ -21,8 +21,7 @@ export function BusinessHero() {
       <div className="container relative z-10 px-4">
         <motion.div className="text-center">
           <h1 
-            className="text-5xl md:text-7xl lg:text-7xl font-serif text-white tracking-tight drop-shadow-2xl"
-            style={{ fontFamily: "var(--font-libre-baskerville), serif", textShadow: "0 2px 18px rgba(0,0,0,0.5)" }}
+            className="text-5xl md:text-7xl lg:text-7xl font-serif text-white tracking-tight drop-shadow-2xl hero-font-libre hero-title-shadow"
           >
             Educational Event
           </h1>

@@ -11,28 +11,24 @@ const slides = [
   {
     title: "일상의 예술",
     subtitle: "Arts of Living",
-    description: "예술이 힐링이 되는 곳! 쉽고, 재미있고, 안전한 예술 경험",
     cta: "/daily-art",
     image: images.hero.slide1,
   },
   {
     title: "온전한 쉼",
     subtitle: "Healsoma",
-    description: "일상의 쉼을 더하는 곳, 당신도 온전한 쉼이 필요하다",
     cta: "/healsoma",
     image: images.hero.slide2,
   },
   {
     title: "소매틱랩",
     subtitle: "Somatic Laboratory",
-    description: "Holistic 관점의 소매틱을 연구하고 실천합니다",
     cta: "/somatic-lab",
     image: images.hero.slide3,
   },
   {
     title: "기업교육 및 행사",
     subtitle: "Educational Event",
-    description: "지속가능한 성장을 위해 ESG를 실천하는 곳!",
     cta: "/business",
     image: images.hero.main,
   },
@@ -91,18 +87,15 @@ export function Hero() {
                 <div className="text-center px-4 sm:px-6 max-w-4xl mx-auto">
                   {selectedIndex === index && (
                     <div className="animate-fade-in space-y-6">
-                      <p className="text-base sm:text-lg md:text-xl text-white/90 tracking-[0.2em] uppercase font-light">
-                        {slide.subtitle}
-                      </p>
                       <h1
-                        className="text-5xl md:text-7xl lg:text-7xl font-bold text-white leading-tight font-serif"
-                        style={{ textShadow: "0 2px 18px rgba(0,0,0,0.5)" }}
+                        className="text-5xl md:text-7xl lg:text-7xl font-bold text-white leading-tight font-serif hero-title-shadow"
                       >
                         {slide.title}
                       </h1>
-                      <div className="w-24 h-[1px] bg-white/50 mx-auto my-8" />
-                      <p className="text-lg sm:text-xl md:text-2xl text-white/95 max-w-2xl mx-auto font-light leading-relaxed">
-                        {slide.description}
+                      <p
+                        className="text-4xl md:text-6xl text-white/95 italic leading-none hero-font-libre hero-subtitle-shadow"
+                      >
+                        {slide.subtitle}
                       </p>
                       <div className="pt-8">
                         <Button 

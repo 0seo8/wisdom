@@ -261,6 +261,27 @@ h6 {
   display: none;
 }
 
+/* Hero typography utilities (replace inline styles) */
+.hero-font-libre {
+  font-family: var(--font-libre-baskerville), "Times New Roman", serif;
+}
+
+.hero-font-georgia {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.hero-title-shadow {
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.5);
+}
+
+.hero-title-shadow-strong {
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
+}
+
+.hero-subtitle-shadow {
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+}
+
 /* Somatic Lab page-specific style matching original WordPress tone */
 .somatic-lab-page {
   background-color: #fcf3eb;

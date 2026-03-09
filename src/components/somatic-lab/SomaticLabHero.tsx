@@ -20,13 +20,12 @@ export function SomaticLabHero() {
       </div>
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 z-10 bg-black/5" />
+      <div className="absolute inset-0 z-10 bg-black/35" />
 
       {/* Content */}
       <div className="container relative z-20 text-center">
         <motion.h1
-          className="text-5xl md:text-7xl lg:text-7xl text-white leading-[1]"
-          style={{ fontFamily: "var(--font-libre-baskerville), 'Times New Roman', serif", textShadow: "0 2px 18px rgba(0,0,0,0.5)" }}
+          className="text-5xl md:text-7xl lg:text-7xl font-semibold text-white leading-[1] hero-font-libre hero-title-shadow-strong"
         >
           Somatic Laboratory
         </motion.h1>

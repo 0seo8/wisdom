@@ -33,8 +33,7 @@ export function HealsomaHero() {
             온 전 한 쉼
           </span>
           <h1
-            className="text-white text-5xl md:text-7xl lg:text-7xl font-serif font-medium tracking-wide"
-            style={{ textShadow: "0 2px 18px rgba(0,0,0,0.5)" }}
+            className="text-white text-5xl md:text-7xl lg:text-7xl font-serif font-medium tracking-wide hero-title-shadow"
           >
             HEALSOMA
           </h1>
