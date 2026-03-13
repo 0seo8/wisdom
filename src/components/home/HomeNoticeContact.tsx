@@ -3,7 +3,7 @@ import { HomeContact } from "./HomeContact";
 import Link from "next/link";
 
 export async function HomeNoticeContact() {
-  const { notices } = await getNotices(1, 10);
+  const { notices } = await getNotices({ page: 1, limit: 10 });
 
   // Date formatting helper
   const formatDate = (dateString: string): string => {

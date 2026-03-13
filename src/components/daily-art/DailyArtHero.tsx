@@ -1,26 +1,39 @@
 "use client";
 
+const HERO_BG_URL =
+  "http://artswisdom.com/wp-content/uploads/2023/10/무늬만-공연-4.png";
+
 export function DailyArtHero() {
   return (
     <>
-      <section className="relative overflow-hidden pb-[400px] md:pb-[450px]">
+      <section className="hero-section hero-section--fixed hero-section--mobile-tall">
         <div
-          className="absolute inset-0 z-0 bg-cover bg-no-repeat"
+          className="absolute inset-0 z-0 hidden bg-cover bg-no-repeat md:block"
           style={{
-            backgroundImage:
-              "url('http://artswisdom.com/wp-content/uploads/2023/10/무늬만-공연-4.png')",
+            backgroundImage: `url('${HERO_BG_URL}')`,
           }}
           aria-hidden="true"
         />
-        <div className="absolute inset-0 z-10 bg-black/50" aria-hidden="true" />
-        <div className="relative z-20 mx-auto w-full max-w-full text-center">
-          <h1 className="hero-font-times translate-y-[230px] text-[40px] font-semibold leading-none text-[#EFEDE1] md:translate-y-[235px] md:text-[100px]">
+        <div
+          className="absolute inset-0 z-0 bg-cover bg-no-repeat bg-top md:hidden"
+          style={{
+            backgroundImage: `url('${HERO_BG_URL}')`,
+          }}
+          aria-hidden="true"
+        />
+        <div
+          className="hero-overlay"
+          style={{ ["--hero-overlay-opacity" as string]: 0.5 }}
+          aria-hidden="true"
+        />
+        <div className="container hero-content px-4">
+          <h1 className="hero-page-title hero-font-times hero-title-shadow-strong text-[71px] md:text-[100px]">
             Arts of Living
           </h1>
         </div>
       </section>
 
-      <section className="py-16 md:py-20 bg-[#C8BFA9]">
+      <section className="bg-[#C8BFA9] py-12 md:py-20">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center space-y-4">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { images } from "@/constants/images";
 import { type Program } from "@/types/database";
@@ -25,94 +24,82 @@ export function ProgramListSection({ programs }: ProgramListSectionProps) {
 
   return (
     <section id="program">
-      {/* Program Header - Dark photo background */}
-      <div className="relative h-[42vh] md:h-[56vh] min-h-[300px] md:min-h-[420px] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src={images.somaticLab.programsHeader}
-            alt="Somatics Program"
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="absolute inset-0 z-10 bg-black/56" />
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="relative z-20 text-3xl md:text-6xl lg:text-7xl text-white italic"
-          style={{ fontFamily: "var(--font-libre-baskerville), 'Times New Roman', serif" }}
-        >
+      <div className="hero-section hero-section--fixed hero-section--mobile-tall">
+        <div
+          className="absolute inset-0 z-0 hidden bg-cover bg-no-repeat md:block"
+          style={{ backgroundImage: `url('${images.somaticLab.programsHeader}')` }}
+        />
+        <div
+          className="absolute inset-0 z-0 bg-cover bg-no-repeat bg-center md:hidden"
+          style={{ backgroundImage: `url('${images.somaticLab.programsHeader}')` }}
+        />
+        <div className="absolute inset-0 z-10 bg-black/50" />
+        <h2 className="relative z-20 text-[32px] text-white hero-font-times font-semibold md:text-[80px]">
           Somatics Program
-        </motion.h2>
+        </h2>
       </div>
 
-      {/* Programs List - alternating layout */}
       {programs.map((program, index) => {
         const isReverse = index % 2 === 1;
-        const bgColor = index % 2 === 0 ? "bg-[#fcf3eb]" : "bg-[#efede1]";
+        const subtitle = program.subtitle || getLabel(program.slug);
 
         return (
-          <div key={program.id} className={`${bgColor}`}>
-            <div className="container py-0">
-              <div
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch min-h-[400px] lg:min-h-[500px]`}
-              >
-                {/* Image Side */}
-                <motion.div
-                  initial={{ opacity: 0, x: isReverse ? 30 : -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
-                  className={`relative min-h-[250px] md:min-h-[350px] lg:min-h-[500px] ${
-                    isReverse ? "lg:order-2" : ""
-                  }`}
-                >
-                  <Image
-                    src={program.image_url || ""}
-                    alt={program.title}
-                    fill
-                    className="object-cover"
-                  />
-                </motion.div>
+          <div key={program.id} className="bg-[#fcf3eb]">
+            <div className="hidden md:block">
+              <div className="container px-6">
+                <div className={`grid grid-cols-2 ${isReverse ? "" : ""}`}>
+                  <div className={`relative min-h-[470px] ${isReverse ? "order-2" : ""}`}>
+                    <Image
+                      src={program.image_url || ""}
+                      alt={program.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className={`flex min-h-[470px] items-center justify-center px-10 ${isReverse ? "order-1" : ""}`}>
+                    <div className="max-w-[430px] text-center">
+                      <p className="mb-4 text-[17px] text-[#541404]">{subtitle}</p>
+                      <h3 className="mb-6 text-[45px] leading-[1.1] text-[#85544d] hero-font-times font-semibold">
+                        {program.title}
+                      </h3>
+                      <div className="somatic-body space-y-4 text-[17px] leading-[1.9]">
+                        <p className="whitespace-pre-line">{program.description}</p>
+                        {!!program.features?.length && (
+                          <p className="whitespace-pre-line">
+                            {program.features.map((bullet) => `- ${bullet}`).join("\n")}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-                {/* Content Side */}
-                <motion.div
-                  initial={{ opacity: 0, x: isReverse ? -30 : 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  className={`flex flex-col justify-center px-8 md:px-12 lg:px-16 py-12 ${
-                    isReverse ? "lg:order-1" : ""
-                  }`}
-                >
-                  <p className="text-sm text-[#85544d] mb-3" style={{ fontFamily: "var(--font-noto-sans-kr), 'Noto Sans KR', sans-serif" }}>{getLabel(program.slug)}</p>
-                  <h3
-                    className="text-2xl md:text-[40px] text-[#85544D] mb-6 whitespace-pre-line leading-tight"
-                    style={{
-                      fontFamily: "'Times New Roman', Times, serif",
-                      fontWeight: 600,
-                    }}
-                  >
+            <div className="md:hidden">
+              <div className="relative min-h-[240px] w-full">
+                <Image
+                  src={program.image_url || ""}
+                  alt={program.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="container px-4 py-8">
+                <div className="mx-auto max-w-[560px] text-left">
+                  <p className="mb-3 text-[15px] text-[#541404]">{subtitle}</p>
+                  <h3 className="mb-4 text-[30px] leading-tight text-[#85544d] hero-font-times font-semibold">
                     {program.title}
                   </h3>
-                  <div className="space-y-4 text-[#5b5b5b] leading-relaxed whitespace-pre-line text-sm md:text-[15px]" style={{ fontFamily: "var(--font-noto-sans-kr), 'Noto Sans KR', sans-serif" }}>
-                    <p>{program.description}</p>
+                  <div className="somatic-body space-y-4 text-[16px] leading-[1.9]">
+                    <p className="whitespace-pre-line">{program.description}</p>
+                    {!!program.features?.length && (
+                      <p className="whitespace-pre-line">
+                        {program.features.map((bullet) => `- ${bullet}`).join("\n")}
+                      </p>
+                    )}
                   </div>
-                  <ul className="mt-6 space-y-2">
-                    {(program.features || []).map((bullet, bulletIndex) => (
-                      <li
-                        key={bulletIndex}
-                        className="flex items-start gap-2 text-[#5b5b5b] text-sm md:text-[15px]"
-                        style={{ fontFamily: "var(--font-noto-sans-kr), 'Noto Sans KR', sans-serif" }}
-                      >
-                        <span className="text-[#85544d] mt-0.5">–</span>
-                        <span>{bullet}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
+                </div>
               </div>
             </div>
           </div>

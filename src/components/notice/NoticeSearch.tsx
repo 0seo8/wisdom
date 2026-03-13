@@ -1,61 +1,98 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useCallback, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import type { NoticeSearchTarget, NoticeSort } from "@/lib/source-notice-reference";
 
 interface NoticeSearchProps {
-  initialSearch?: string;
+  initialKeyword?: string;
+  initialTarget?: NoticeSearchTarget;
+  initialSort?: NoticeSort;
 }
 
-export function NoticeSearch({ initialSearch = "" }: NoticeSearchProps) {
+export function NoticeSearch({
+  initialKeyword = "",
+  initialTarget = "",
+  initialSort = "newest",
+}: NoticeSearchProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [searchValue, setSearchValue] = useState(initialSearch);
+  const [keyword, setKeyword] = useState(initialKeyword);
+  const [target, setTarget] = useState<NoticeSearchTarget>(initialTarget);
 
   const handleSubmit = useCallback(
-    (e: React.FormEvent) => {
-      e.preventDefault();
+    (event: React.FormEvent) => {
+      event.preventDefault();
       const params = new URLSearchParams(searchParams.toString());
 
-      if (searchValue.trim()) {
-        params.set("search", searchValue.trim());
+      if (keyword.trim()) {
+        params.set("keyword", keyword.trim());
       } else {
-        params.delete("search");
+        params.delete("keyword");
       }
-      params.delete("page"); // Reset to first page on new search
 
+      if (target) {
+        params.set("target", target);
+      } else {
+        params.delete("target");
+      }
+
+      if (initialSort === "newest" && !params.get("sort")) {
+        params.delete("sort");
+      }
+
+      params.delete("page");
       router.push(`/notice?${params.toString()}`);
     },
-    [searchValue, searchParams, router]
+    [initialSort, keyword, router, searchParams, target]
   );
 
   const handleClear = useCallback(() => {
-    setSearchValue("");
+    setKeyword("");
+    setTarget("");
     const params = new URLSearchParams(searchParams.toString());
-    params.delete("search");
+    params.delete("keyword");
+    params.delete("target");
     params.delete("page");
     router.push(`/notice?${params.toString()}`);
-  }, [searchParams, router]);
+  }, [router, searchParams]);
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-2xl mx-auto py-8">
-      <div className="flex items-center justify-center gap-1 h-10">
-        <select className="h-full px-4 border border-[#E1E1E1] text-sm text-gray-600 focus:outline-none focus:border-gray-400 min-w-[100px] rounded-none">
-          <option>전체</option>
+    <div className="kboard-search">
+      <form onSubmit={handleSubmit}>
+        <input type="hidden" name="mod" value="list" />
+        <input type="hidden" name="pageid" value="1" />
+        <select
+          name="target"
+          value={target}
+          onChange={(event) => setTarget(event.target.value as NoticeSearchTarget)}
+          aria-label="검색 대상"
+        >
+          <option value="">전체</option>
+          <option value="title">제목</option>
+          <option value="content">내용</option>
+          <option value="member_display">작성자</option>
         </select>
         <input
           type="text"
-          value={searchValue}
-          onChange={(e) => setSearchValue(e.target.value)}
-          className="h-full px-4 border border-[#E1E1E1] text-sm flex-1 focus:outline-none focus:border-gray-400 rounded-none"
+          name="keyword"
+          value={keyword}
+          onChange={(event) => setKeyword(event.target.value)}
+          aria-label="검색어"
         />
-        <button
-          type="submit"
-          className="h-full px-6 bg-[#666] text-white text-sm font-medium hover:bg-[#555] transition-colors rounded-none"
-        >
+        <button type="submit" className="kboard-default-button-small">
           검색
         </button>
-      </div>
-    </form>
+        {initialKeyword ? (
+          <button
+            type="button"
+            onClick={handleClear}
+            className="kboard-default-button-small"
+          >
+            초기화
+          </button>
+        ) : null}
+      </form>
+    </div>
   );
 }

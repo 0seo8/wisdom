@@ -3,20 +3,20 @@
 export function IntroSection() {
   return (
     <section
-      className="bg-[#B6C2AE] bg-cover bg-center px-5 pb-5 pt-10 text-center md:px-0 md:pb-0 md:pt-[60px]"
+      className="bg-[#B6C2AE] bg-cover bg-center px-5 pb-5 pt-10 text-center md:px-0 md:pb-0 md:pt-[60px] lg:bg-fixed"
       style={{
         backgroundImage:
           "url('http://bobospia.cafe24.com/wp-content/uploads/2020/05/공연관객2-1.png')",
       }}
     >
-      <div className="container mx-auto max-w-[1200px]">
+      <div className="mx-auto max-w-[1200px]">
         <div>
-          <h2 className="mb-4 font-[var(--font-noto-sans-kr)] text-[18px] font-semibold text-[#2B2B2B] md:text-[35px]">
+          <h2 className="mb-4 font-['Noto_Sans_KR',sans-serif] text-[18px] font-semibold tracking-[-1px] text-[#2B2B2B] lg:text-[35px]">
             일상의 쉼을 더하는 곳!
           </h2>
 
-          <div className="mx-auto text-[15px] text-[#5B5B5B] md:text-[20px]">
-            <p>
+          <div className="mx-auto text-[15px] tracking-[-0.4px] text-[#5B5B5B] lg:text-[20px]">
+            <p className="mb-0 lg:mb-5">
               &quot;당신도 온전한 쉼이 필요하다&quot;
               <br />
               분주한 일상 너머, 깊은 쉼을 통해 평온함을 선사하는 공간.
@@ -25,7 +25,7 @@ export function IntroSection() {
             </p>
           </div>
 
-          <div className="mt-0 text-[15px] text-[#5B5B5B] md:text-[20px]">
+          <div className="mt-0 text-[15px] tracking-[-0.4px] text-[#5B5B5B] lg:text-[20px]">
             <p>
               <strong>온전한 쉼&apos; 힐소마는</strong>
               <br />

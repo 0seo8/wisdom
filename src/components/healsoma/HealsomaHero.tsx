@@ -2,9 +2,9 @@
 
 export function HealsomaHero() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="hero-section hero-section--logo">
       <div
-        className="absolute inset-0 z-0 bg-[position:0px_0px] bg-no-repeat md:bg-[position:0px_-172px]"
+        className="absolute inset-0 z-0 bg-no-repeat bg-center lg:bg-[position:0px_-172px] lg:bg-fixed"
         style={{
           backgroundImage:
             "url('https://artswisdom.com/wp-content/uploads/2025/04/leaves-8222919_1280-1.jpg')",
@@ -18,11 +18,11 @@ export function HealsomaHero() {
         aria-hidden="true"
       />
 
-      <div className="relative z-20 mx-auto flex w-full max-w-[1200px] justify-center px-4 pt-[60px]">
+      <div className="container hero-content px-4">
         <img
           src="https://artswisdom.com/wp-content/uploads/2025/04/222.png"
           alt=""
-          className="h-auto w-full max-w-[552px]"
+          className="h-auto w-full max-w-[320px] md:max-w-[552px]"
         />
       </div>
     </section>

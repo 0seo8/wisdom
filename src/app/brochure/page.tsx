@@ -9,7 +9,10 @@ export const metadata: Metadata = {
 
 export default function BrochurePage() {
   return (
-    <main className="bg-[#FAF7F2]">
+    <main
+      className="bg-white"
+      style={{ marginTop: "calc(var(--header-height) * -1)" }}
+    >
       <BrochureHero />
       <BrochureGallery />
     </main>

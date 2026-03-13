@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { navigation, type NavItem } from "@/constants/navigation";
 
 export function Header() {
@@ -12,6 +12,10 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+
+  if (pathname === "/brochure") {
+    return null;
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +25,11 @@ export function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    setIsOpen(false);
+    setActiveDropdown(null);
+  }, [pathname]);
 
   const handleDropdownEnter = (label: string) => {
     setActiveDropdown(label);
@@ -157,32 +166,55 @@ export function Header() {
 
         {/* Mobile Menu Button */}
         <button
+          type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden ml-auto p-2 text-white hover:text-white/80 transition-colors"
+          className="relative ml-auto flex h-10 w-10 items-center justify-center lg:hidden"
           aria-label={isOpen ? "메뉴 닫기" : "메뉴 열기"}
+          aria-expanded={isOpen}
+          aria-controls="mobile-site-menu"
         >
-          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          <span className="sr-only">{isOpen ? "메뉴 닫기" : "메뉴 열기"}</span>
+          <span
+            aria-hidden="true"
+            className={`absolute h-[2px] w-[18px] bg-white transition-all duration-200 ${
+              isOpen ? "rotate-45" : "-translate-y-[6px]"
+            }`}
+          />
+          <span
+            aria-hidden="true"
+            className={`absolute h-[2px] w-[18px] bg-white transition-all duration-200 ${
+              isOpen ? "opacity-0" : "opacity-100"
+            }`}
+          />
+          <span
+            aria-hidden="true"
+            className={`absolute h-[2px] w-[18px] bg-white transition-all duration-200 ${
+              isOpen ? "-rotate-45" : "translate-y-[6px]"
+            }`}
+          />
         </button>
       </div>
 
-      {/* Mobile Navigation */}
-      {isOpen && (
-        <MobileMenu
-          items={navigation}
-          onClose={() => setIsOpen(false)}
-        />
-      )}
+      <MobileMenu items={navigation} isOpen={isOpen} onClose={() => setIsOpen(false)} />
     </header>
   );
 }
 
 interface MobileMenuProps {
   items: NavItem[];
+  isOpen: boolean;
   onClose: () => void;
 }
 
-function MobileMenu({ items, onClose }: MobileMenuProps) {
+function MobileMenu({ items, isOpen, onClose }: MobileMenuProps) {
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (!isOpen) {
+      setExpandedItems([]);
+    }
+  }, [isOpen]);
 
   const toggleExpand = (label: string) => {
     setExpandedItems((prev) =>
@@ -193,26 +225,36 @@ function MobileMenu({ items, onClose }: MobileMenuProps) {
   };
 
   return (
-    <div className="lg:hidden bg-white border-t border-gray-100 h-screen overflow-y-auto pb-20">
-      <nav className="container py-4">
+    <div
+      id="mobile-site-menu"
+      className={`overflow-hidden border-t border-black/10 bg-white shadow-[0_12px_30px_rgba(0,0,0,0.08)] transition-[max-height,opacity] duration-200 ease-out lg:hidden ${
+        isOpen ? "max-h-[calc(100vh-60px)] opacity-100" : "max-h-0 opacity-0"
+      }`}
+      aria-hidden={!isOpen}
+    >
+      <nav className="max-h-[calc(100vh-60px)] overflow-y-auto">
         {items.map((item) => (
-          <div key={item.label} className="border-b border-gray-100 last:border-0">
+          <div key={item.label} className="border-b border-[#e6e6e6] last:border-0">
             <div className="flex items-center justify-between">
               <Link
                 href={item.href}
                 onClick={onClose}
-                className="flex-1 py-3 text-gray-700 font-medium hover:text-[#0440F9]"
+                className={`flex-1 px-5 py-3 text-[15px] font-medium transition-colors ${
+                  pathname === item.href ? "text-[#0440F9]" : "text-[#3f444b]"
+                }`}
               >
                 {item.label}
               </Link>
               {item.children && (
                 <button
+                  type="button"
                   onClick={() => toggleExpand(item.label)}
-                  className="p-3 text-gray-500 hover:text-[#0440F9]"
+                  className="px-5 py-3 text-[#6b7280] transition-colors hover:text-[#0440F9]"
                   aria-label="하위 메뉴 펼치기"
+                  aria-expanded={expandedItems.includes(item.label)}
                 >
                   <ChevronDown
-                    className={`w-5 h-5 transition-transform ${
+                    className={`h-4 w-4 transition-transform ${
                       expandedItems.includes(item.label) ? "rotate-180" : ""
                     }`}
                     strokeWidth={2.5}
@@ -222,13 +264,17 @@ function MobileMenu({ items, onClose }: MobileMenuProps) {
             </div>
 
             {item.children && expandedItems.includes(item.label) && (
-              <div className="pl-4 pb-3 bg-gray-50/50">
+              <div className="bg-[#fafafa] pb-1">
                 {item.children.map((child) => (
                   <Link
                     key={child.label}
                     href={child.href}
                     onClick={onClose}
-                    className="block py-2 text-gray-600 hover:text-[#0440F9]"
+                    className={`block px-8 py-[11px] text-[15px] transition-colors ${
+                      pathname === child.href
+                        ? "text-[#0440F9]"
+                        : "text-[#50555c] hover:text-[#0440F9]"
+                    }`}
                   >
                     {child.label}
                   </Link>

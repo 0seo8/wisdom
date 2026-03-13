@@ -7,7 +7,6 @@ import {
   Timeline,
   SDGs,
   HomeNoticeContact,
-  Partners,
 } from "@/components/home";
 import {
   Overview,
@@ -32,7 +31,6 @@ export default function Home() {
       <Suspense fallback={null}>
         <HomeNoticeContact />
       </Suspense>
-      <Partners />
     </>
   );
 }

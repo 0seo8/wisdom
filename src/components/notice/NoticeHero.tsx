@@ -2,39 +2,25 @@
 
 export function NoticeHero() {
   return (
-    <>
-      <section className="relative hidden overflow-hidden pb-[452px] md:block">
-        <div
-          className="absolute inset-0 z-0 bg-cover bg-no-repeat"
-          style={{
-            backgroundImage:
-              "url('http://artswisdom.com/wp-content/uploads/2023/10/write-1957302_1280.jpg')",
-          }}
-          aria-hidden="true"
-        />
-        <div className="absolute inset-0 z-10 bg-[#120F0F]/50" aria-hidden="true" />
-        <div className="relative z-20 mx-auto w-full max-w-full text-center">
-          <h1 className="hero-font-times translate-y-[235px] text-[100px] font-semibold leading-none text-[#EFEDE1]">
-            Notice
-          </h1>
-        </div>
-      </section>
-
-      <section className="relative overflow-hidden px-[50px] py-[60px] md:hidden">
-        <div
-          className="absolute inset-0 z-0 bg-cover bg-no-repeat"
-          style={{
-            backgroundImage:
-              "url('http://artswisdom.com/wp-content/uploads/2023/10/write-1957302_1280.jpg')",
-          }}
-          aria-hidden="true"
-        />
-        <div className="relative z-10 text-center">
-          <h1 className="hero-font-times text-[32px] font-semibold leading-none text-white">
-            NOTICE
-          </h1>
-        </div>
-      </section>
-    </>
+    <section className="hero-section hero-section--fixed hero-section--mobile-banner">
+      <div
+        className="absolute inset-0 z-0 bg-cover bg-no-repeat bg-center"
+        style={{
+          backgroundImage:
+            "url('http://artswisdom.com/wp-content/uploads/2023/10/write-1957302_1280.jpg')",
+        }}
+        aria-hidden="true"
+      />
+      <div
+        className="hero-overlay"
+        style={{ ["--hero-overlay-opacity" as string]: 0.5 }}
+        aria-hidden="true"
+      />
+      <div className="container hero-content px-4">
+        <h1 className="hero-page-title hero-font-times hero-title-shadow-strong text-[32px] uppercase md:text-[100px] md:normal-case">
+          Notice
+        </h1>
+      </div>
+    </section>
   );
 }

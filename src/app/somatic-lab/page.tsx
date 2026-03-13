@@ -1,6 +1,7 @@
 import {
   SomaticLabHero,
   OverviewSection,
+  EffectSection,
   ArticleSection,
   ResearchersSection,
   ProgramListSection,
@@ -29,6 +30,7 @@ export default async function SomaticLabPage() {
     <main className="somatic-lab-page bg-[#fcf3eb]">
       <SomaticLabHero />
       <OverviewSection />
+      <EffectSection />
       <ArticleSection />
       <ResearchersSection researchers={researchers} />
       <ProgramListSection programs={programs} />

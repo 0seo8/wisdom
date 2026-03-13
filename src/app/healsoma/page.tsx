@@ -2,11 +2,9 @@ import { Metadata } from "next";
 import {
   HealsomaHero,
   IntroSection,
-  ProgramSection,
   ProgramDivider,
+  ProgramsLayout,
 } from "@/components/healsoma";
-
-import { getPrograms } from "@/lib/queries/programs";
 
 export const metadata: Metadata = {
   title: "힐소마 - 온전한 쉼",
@@ -25,43 +23,13 @@ export const metadata: Metadata = {
   ],
 };
 
-const slugColorMap: Record<string, "beige" | "green" | "brown" | "blue" | "yellow"> = {
-  "bodyfulness": "beige",
-  "mindfulness": "blue",
-  "therapy": "green",
-  "expressive-art": "brown",
-  "group-counseling": "beige",
-  "creative-drama": "brown",
-};
-
 export default async function HealsomaPage() {
-  const programs = await getPrograms("healasoma");
-
   return (
     <main className="bg-[#fcf3eb]">
       <HealsomaHero />
       <IntroSection />
-      
       <ProgramDivider />
-
-      {/* Program Sections */}
-      <div id="program">
-        {programs.map((program, index) => (
-          <ProgramSection
-            key={program.id}
-            id={program.slug}
-            title={program.title}
-            subtitle={program.subtitle || ""}
-            description={program.description}
-            features={program.features || []}
-            imageSrc={program.image_url || undefined}
-            imageAlt={program.title}
-            accentColor={slugColorMap[program.slug] || "beige"}
-            reverse={index % 2 === 1}
-          />
-        ))}
-      </div>
-
+      <ProgramsLayout />
     </main>
   );
 }

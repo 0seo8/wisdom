@@ -1,11 +1,26 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { companyInfo } from "@/constants/navigation";
 import { images } from "@/constants/images";
 
 export function Footer() {
+  const pathname = usePathname();
+
+  if (pathname === "/brochure") {
+    return null;
+  }
+
   return (
-    <footer className="bg-[#f2ddcc] pt-20 border-t border-black/5">
+    <footer
+      className="border-t border-black/5 bg-[#f2ddcc] pt-20"
+      style={{
+        paddingBottom:
+          "calc(2.5rem + var(--brochure-banner-safe-space) + env(safe-area-inset-bottom, 0px))",
+      }}
+    >
       <div className="container max-w-[1300px] mx-auto px-4">
         
         {/* Social Icons Section - Centered */}

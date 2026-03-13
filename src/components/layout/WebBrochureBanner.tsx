@@ -2,11 +2,17 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 export function WebBrochureBanner() {
+  const pathname = usePathname();
   const [isVisible, setIsVisible] = useState(false);
   const bannerRef = useRef<HTMLDivElement>(null);
+
+  if (pathname === "/brochure") {
+    return null;
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,11 +52,11 @@ export function WebBrochureBanner() {
         opacity: isVisible ? 1 : 0 
       }}
       transition={{ duration: 0.4 }}
-      className="fixed bottom-0 left-0 right-0 z-40 bg-[var(--color-header-bg)]/95 backdrop-blur-sm border-t border-white/20 shadow-lg py-4 px-6 md:px-8"
+      className="fixed bottom-0 left-0 right-0 z-40 overflow-hidden border-t border-white/20 bg-[var(--color-header-bg)]/95 px-4 py-3 shadow-lg backdrop-blur-sm md:px-8 md:py-4"
     >
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4 max-w-5xl">
-        <div className="text-center md:text-left">
-          <h3 className="text-lg md:text-xl font-bold text-white drop-shadow-sm">
+      <div className="mx-auto flex w-full max-w-5xl items-center justify-between gap-3 md:gap-4">
+        <div className="min-w-0 flex-1 text-left">
+          <h3 className="truncate text-[14px] font-bold text-white drop-shadow-sm md:text-xl">
             지혜의밭 웹브로슈어
           </h3>
           <p className="text-sm text-white/80 hidden md:block">
@@ -59,10 +65,10 @@ export function WebBrochureBanner() {
         </div>
         <Link 
           href="/brochure" 
-          className="px-8 py-2 bg-[#8c5a5a] text-white font-medium rounded-full hover:bg-[#7a4e4e] transition-colors shadow-md flex items-center gap-2"
+          className="flex shrink-0 items-center gap-1.5 rounded-full bg-[#8c5a5a] px-3 py-2 text-[13px] font-medium text-white shadow-md transition-colors hover:bg-[#7a4e4e] md:gap-2 md:px-8 md:text-base"
         >
           바로가기
-          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>
         </Link>

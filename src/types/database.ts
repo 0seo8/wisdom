@@ -16,6 +16,10 @@ export interface Database {
           title: string;
           content: string;
           is_published: boolean;
+          author_name: string | null;
+          vote_count: number;
+          source_uid: number | null;
+          is_notice: boolean;
           view_count: number;
           created_at: string;
           updated_at: string;
@@ -25,6 +29,10 @@ export interface Database {
           title: string;
           content: string;
           is_published?: boolean;
+          author_name?: string | null;
+          vote_count?: number;
+          source_uid?: number | null;
+          is_notice?: boolean;
           view_count?: number;
           created_at?: string;
           updated_at?: string;
@@ -34,6 +42,10 @@ export interface Database {
           title?: string;
           content?: string;
           is_published?: boolean;
+          author_name?: string | null;
+          vote_count?: number;
+          source_uid?: number | null;
+          is_notice?: boolean;
           view_count?: number;
           created_at?: string;
           updated_at?: string;

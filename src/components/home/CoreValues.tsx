@@ -5,19 +5,22 @@ const coreValues = [
     imageSrc: "https://artswisdom.com/wp-content/uploads/2023/10/차별성.png",
     title: "차별성",
     description: "디테일의 차이가 감동으로 이어진다.",
-    imageWidthClass: "md:w-[97%]",
+    imageWidthClass: "w-[194px] md:w-[97%]",
+    imageMarginClass: "mb-[22px]",
   },
   {
     imageSrc: "https://artswisdom.com/wp-content/uploads/2023/10/포용성.png",
     title: "포용성",
     description: "지속 가능한 성장을 위하여 변화를 수용한다.",
-    imageWidthClass: "md:w-full",
+    imageWidthClass: "w-[200px] md:w-full",
+    imageMarginClass: "mb-[15px]",
   },
   {
     imageSrc: "https://artswisdom.com/wp-content/uploads/2023/10/연결성.png",
     title: "연결성",
     description: "모든 에너지는 서로 연결되어 있으므로 우리는 하나다.",
-    imageWidthClass: "md:w-full",
+    imageWidthClass: "w-[200px] md:w-full",
+    imageMarginClass: "mb-[15px]",
   },
 ] as const;
 
@@ -34,9 +37,9 @@ export function CoreValues() {
 
       <section className="bg-[#FCF3EB] px-4 py-0 md:px-0">
         <div className="mx-auto grid max-w-[1300px] items-center gap-8 md:min-h-[400px] md:grid-cols-3 md:gap-0">
-          {coreValues.map((item, index) => (
+          {coreValues.map((item) => (
             <div key={item.title} className="text-center">
-              <figure className={`mx-auto mb-[15px] w-full ${index === 0 ? "md:mb-[22px]" : "md:mb-[15px]"} ${item.imageWidthClass}`}>
+              <figure className={`mx-auto ${item.imageMarginClass} ${item.imageWidthClass}`}>
                 <img
                   src={item.imageSrc}
                   alt=""

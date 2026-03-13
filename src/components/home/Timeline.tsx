@@ -1,6 +1,6 @@
 import { getTimeline } from "@/lib/queries";
 
-const TIMELINE_IMAGES: Record<number, string> = {
+const DESKTOP_TIMELINE_IMAGES: Record<number, string> = {
   2017: "https://artswisdom.com/wp-content/uploads/2023/10/타임라인사진01.png",
   2018: "https://artswisdom.com/wp-content/uploads/2023/11/타임라인사진_바이올린2018.jpg",
   2019: "https://artswisdom.com/wp-content/uploads/2023/11/히스토리-353x1024.jpg",
@@ -10,6 +10,18 @@ const TIMELINE_IMAGES: Record<number, string> = {
   2023: "https://artswisdom.com/wp-content/uploads/2024/01/히스토리2024_이미지수정.jpg",
   2024: "https://artswisdom.com/wp-content/uploads/2026/01/2024-copy.jpg",
   2025: "https://artswisdom.com/wp-content/uploads/2025/12/2323.png",
+};
+
+const MOBILE_TIMELINE_IMAGES: Record<number, string> = {
+  2017: "https://artswisdom.com/wp-content/uploads/2023/11/2017타임라인-모바일용.jpg",
+  2018: "https://artswisdom.com/wp-content/uploads/2023/11/2018타임라인-모바일용.jpg",
+  2019: "https://artswisdom.com/wp-content/uploads/2023/11/2019타임라인-모바일용.jpg",
+  2020: "https://artswisdom.com/wp-content/uploads/2023/11/2020타임라인-모바일용1.jpg",
+  2021: "https://artswisdom.com/wp-content/uploads/2023/11/2021타임라인-모바일용.jpg",
+  2022: "https://artswisdom.com/wp-content/uploads/2023/11/2022타임라인-모바일용.jpg",
+  2023: "https://artswisdom.com/wp-content/uploads/2024/01/히스토리2024_핸드폰8.jpg",
+  2024: "https://artswisdom.com/wp-content/uploads/2026/01/20241-1-scaled.jpg",
+  2025: "https://artswisdom.com/wp-content/uploads/2026/01/2025-1-scaled.jpg",
 };
 
 function formatTimelineItem(month: number | null, title: string) {
@@ -38,6 +50,7 @@ export async function Timeline() {
   const years = Object.keys(entries)
     .map(Number)
     .sort((a, b) => a - b);
+  const mobileYears = [...years].reverse();
 
   return (
     <>
@@ -58,7 +71,7 @@ export async function Timeline() {
                   {year}
                 </h3>
                 <img
-                  src={TIMELINE_IMAGES[year]}
+                  src={DESKTOP_TIMELINE_IMAGES[year]}
                   alt=""
                   className="mb-4 w-full"
                   loading="lazy"
@@ -78,15 +91,15 @@ export async function Timeline() {
 
       <section className="bg-[#FCF3EB] px-4 pb-0 md:hidden">
         <div className="mx-auto max-w-[560px] space-y-10">
-          {years.map((year) => (
+          {mobileYears.map((year) => (
             <article key={year}>
               <h3 className="mb-4 hero-font-times text-center text-[30px] font-semibold text-[#85544D]">
                 {year}
               </h3>
               <img
-                src={TIMELINE_IMAGES[year]}
+                src={MOBILE_TIMELINE_IMAGES[year]}
                 alt=""
-                className="mb-4 w-full"
+                className="mx-auto mb-4 block h-[176px] w-auto max-w-full"
                 loading="lazy"
               />
               <ul className="space-y-2 text-[14px] text-[#5B5B5B]">

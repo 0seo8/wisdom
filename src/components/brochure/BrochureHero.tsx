@@ -1,46 +1,54 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import { images } from "@/constants/images";
+
+const MINI_LOGO_URL = images.logo.brochure;
+const COVER_VIDEO_URL = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/images/brochure/coverv.mp4`;
+const COVER_IMAGE_URL =
+  "https://artswisdom.com/wp-content/uploads/2023/12/메인-브로슈어_수정1202.png";
 
 export function BrochureHero() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
   return (
-    <section className="hero-section bg-black pt-16">
-      {/* Background Video */}
-      <div className="absolute inset-0 z-0">
-        <video
-          ref={videoRef}
-          className="w-full h-full object-cover opacity-80"
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source 
-            src="https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/brochure/coverv.mp4" 
-            type="video/mp4" 
-          />
-        </video>
-        <div className="hero-overlay" />
-      </div>
-
-      <div className="container hero-content px-4 flex flex-col items-center">
+    <section className="bg-white px-4 pb-10 pt-5 md:pb-12">
+      <div className="mx-auto flex max-w-[1300px] flex-col items-center">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="text-center space-y-6"
+          transition={{ duration: 0.5 }}
+          className="mb-5 mt-[15px] md:mt-5"
         >
-          <h1 
-            className="text-5xl md:text-7xl lg:text-7xl font-serif text-white tracking-tight drop-shadow-xl hero-font-georgia hero-title-shadow"
+          <img
+            src={MINI_LOGO_URL}
+            alt="지혜의밭 브로슈어 로고"
+            className="h-auto w-[103px]"
+            loading="eager"
+          />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="relative mx-auto w-[80%] max-w-[525px] overflow-hidden md:w-[48%]"
+          style={{ aspectRatio: "525 / 700" }}
+        >
+          <video
+            className="absolute inset-0 h-full w-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
           >
-            Brochure
-          </h1>
-          <p className="text-xl md:text-2xl text-white/90 font-medium">
-            지혜의밭의 프로그램과 가치를 한눈에 확인하세요.
-          </p>
+            <source src={COVER_VIDEO_URL} type="video/mp4" />
+          </video>
+
+          <img
+            src={COVER_IMAGE_URL}
+            alt="지혜의밭 웹브로슈어 메인 표지"
+            className="absolute inset-0 h-full w-full object-cover"
+            loading="eager"
+          />
         </motion.div>
       </div>
     </section>

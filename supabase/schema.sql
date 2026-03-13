@@ -14,6 +14,10 @@ CREATE TABLE notices (
     title TEXT NOT NULL,
     content TEXT NOT NULL,
     is_published BOOLEAN DEFAULT true,
+    author_name TEXT,
+    vote_count INTEGER DEFAULT 0,
+    source_uid INTEGER,
+    is_notice BOOLEAN DEFAULT false,
     view_count INTEGER DEFAULT 0,
     created_at TIMESTAMPTZ DEFAULT NOW(),
     updated_at TIMESTAMPTZ DEFAULT NOW()
@@ -21,6 +25,7 @@ CREATE TABLE notices (
 
 -- 인덱스
 CREATE INDEX idx_notices_published ON notices(is_published, created_at DESC);
+CREATE INDEX idx_notices_source_uid ON notices(source_uid);
 
 -- RLS 정책
 ALTER TABLE notices ENABLE ROW LEVEL SECURITY;

@@ -1,5 +1,7 @@
 "use client";
 
+const VINTAGE_BG_URL = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/images/somatic-lab/vintage-2608934_1280.jpg`;
+
 export function ContactHero() {
   return (
     <>
@@ -7,8 +9,7 @@ export function ContactHero() {
         <div
           className="absolute inset-0 z-0 bg-no-repeat"
           style={{
-            backgroundImage:
-              "url('http://artswisdom.com/wp-content/uploads/2023/10/vintage-2608934_1280.jpg')",
+            backgroundImage: `url('${VINTAGE_BG_URL}')`,
             backgroundPosition: "0px -105px",
             backgroundSize: "100% auto",
           }}
@@ -22,19 +23,17 @@ export function ContactHero() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden px-[50px] py-[60px] md:hidden">
+      <section className="relative mt-[40px] overflow-hidden px-[50px] py-[60px] md:hidden">
         <div
-          className="absolute inset-0 z-0 bg-cover bg-no-repeat"
+          className="absolute inset-0 z-0 bg-cover bg-no-repeat bg-top"
           style={{
-            backgroundImage:
-              "url('http://artswisdom.com/wp-content/uploads/2023/10/vintage-2608934_1280.jpg')",
-            backgroundPosition: "top center",
+            backgroundImage: `url('${VINTAGE_BG_URL}')`,
           }}
           aria-hidden="true"
         />
         <div className="relative z-10 text-center">
           <h1 className="hero-font-times text-[32px] font-semibold leading-none text-white">
-            Contact us
+            CONTACT US
           </h1>
         </div>
       </section>

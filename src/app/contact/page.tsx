@@ -18,7 +18,7 @@ export default function ContactPage() {
       <ContactHero />
 
       {/* Quote Section */}
-      <section className="pt-20 pb-12 text-center">
+      <section className="pb-10 pt-12 text-center md:pb-12 md:pt-20">
         <div className="container px-4">
           <div className="flex justify-center mb-8">
             <img 
@@ -39,7 +39,7 @@ export default function ContactPage() {
       </section>
 
       {/* Separator with Icon */}
-      <div className="relative py-12">
+      <div className="relative py-8 md:py-12">
         <div className="max-w-[1300px] mx-auto px-10">
           <div className="relative flex items-center justify-center">
             <div className="absolute inset-0 flex items-center" aria-hidden="true">
@@ -60,7 +60,7 @@ export default function ContactPage() {
       </div>
 
       {/* Main Content Section - Now Centered Form */}
-      <section className="pb-32">
+      <section className="pb-20 md:pb-32">
         <div className="container">
           <div className="max-w-2xl mx-auto">
              <div className="text-center mb-12">
