@@ -8,7 +8,7 @@ export async function getTimeline(): Promise<Timeline[]> {
     .from("timeline")
     .select("*")
     .eq("is_active", true)
-    .order("year", { ascending: false })
+    .order("year", { ascending: true })
     .order("order", { ascending: true });
 
   if (error) {

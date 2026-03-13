@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastScanned": 1772424589566,
+  "lastScanned": 1773062470491,
   "projectRoot": "/Users/rohyeongseo/wisdom",
   "techStack": {
     "languages": [
@@ -75,17 +75,18 @@
     "docs": {
       "path": "docs",
       "purpose": "Documentation",
-      "fileCount": 1,
-      "lastAccessed": 1772424589542,
+      "fileCount": 2,
+      "lastAccessed": 1773062470287,
       "keyFiles": [
-        "moai-guide.md"
+        "moai-guide.md",
+        "origin-style-gap-plan.md"
       ]
     },
     "public": {
       "path": "public",
       "purpose": "Public files",
       "fileCount": 9,
-      "lastAccessed": 1772424589544,
+      "lastAccessed": 1773062470291,
       "keyFiles": [
         "apple-icon.png",
         "favicon.ico",
@@ -98,7 +99,7 @@
       "path": "scripts",
       "purpose": "Build/utility scripts",
       "fileCount": 9,
-      "lastAccessed": 1772424589550,
+      "lastAccessed": 1773062470292,
       "keyFiles": [
         "check-notice-links.ts",
         "fix_images.js",
@@ -111,14 +112,14 @@
       "path": "src",
       "purpose": "Source code",
       "fileCount": 0,
-      "lastAccessed": 1772424589551,
+      "lastAccessed": 1773062470292,
       "keyFiles": []
     },
     "supabase": {
       "path": "supabase",
       "purpose": null,
       "fileCount": 4,
-      "lastAccessed": 1772424589552,
+      "lastAccessed": 1773062470292,
       "keyFiles": [
         "schema.sql",
         "seed-certifications.sql",
@@ -130,7 +131,7 @@
       "path": "src/app",
       "purpose": "Application code",
       "fileCount": 8,
-      "lastAccessed": 1772424589555,
+      "lastAccessed": 1773062470294,
       "keyFiles": [
         "error.tsx",
         "favicon.png",
@@ -141,93 +142,26 @@
       "path": "src/components",
       "purpose": "UI components",
       "fileCount": 0,
-      "lastAccessed": 1772424589555,
+      "lastAccessed": 1773062470294,
       "keyFiles": []
     },
     "src/lib": {
       "path": "src/lib",
       "purpose": "Library code",
       "fileCount": 0,
-      "lastAccessed": 1772424589556,
+      "lastAccessed": 1773062470295,
       "keyFiles": []
     },
     "src/types": {
       "path": "src/types",
       "purpose": "Type definitions",
       "fileCount": 1,
-      "lastAccessed": 1772424589557,
+      "lastAccessed": 1773062470295,
       "keyFiles": [
         "database.ts"
       ]
     }
   },
-  "hotPaths": [
-    {
-      "path": "src/components/somatic-lab/OverviewSection.tsx",
-      "accessCount": 20,
-      "lastAccessed": 1772543833273,
-      "type": "file"
-    },
-    {
-      "path": "src/constants/images.ts",
-      "accessCount": 12,
-      "lastAccessed": 1772449464602,
-      "type": "directory"
-    },
-    {
-      "path": "src/components/somatic-lab/ProgramListSection.tsx",
-      "accessCount": 6,
-      "lastAccessed": 1772543840236,
-      "type": "file"
-    },
-    {
-      "path": "src/components/somatic-lab/ArticleSection.tsx",
-      "accessCount": 4,
-      "lastAccessed": 1772543790102,
-      "type": "file"
-    },
-    {
-      "path": "src/app/somatic-lab/page.tsx",
-      "accessCount": 3,
-      "lastAccessed": 1772448778158,
-      "type": "file"
-    },
-    {
-      "path": "src/components/layout/Footer.tsx",
-      "accessCount": 3,
-      "lastAccessed": 1772448879050,
-      "type": "file"
-    },
-    {
-      "path": "src/components/somatic-lab/SomaticLabHero.tsx",
-      "accessCount": 3,
-      "lastAccessed": 1772543807858,
-      "type": "file"
-    },
-    {
-      "path": "src/components/somatic-lab/ResearchersSection.tsx",
-      "accessCount": 3,
-      "lastAccessed": 1772543855953,
-      "type": "file"
-    },
-    {
-      "path": "src/components/somatic-lab",
-      "accessCount": 1,
-      "lastAccessed": 1772448754741,
-      "type": "directory"
-    },
-    {
-      "path": "src/components/layout/WebBrochureBanner.tsx",
-      "accessCount": 1,
-      "lastAccessed": 1772448865545,
-      "type": "file"
-    },
-    {
-      "path": "src/app/layout.tsx",
-      "accessCount": 1,
-      "lastAccessed": 1772448866702,
-      "type": "file"
-    }
-  ],
+  "hotPaths": [],
   "userDirectives": []
 }

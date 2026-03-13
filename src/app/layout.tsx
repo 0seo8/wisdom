@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import { Noto_Sans_KR, Libre_Baskerville } from "next/font/google";
+import {
+  Alex_Brush,
+  Dancing_Script,
+  Libre_Baskerville,
+  Libre_Caslon_Text,
+  Noto_Sans_KR,
+} from "next/font/google";
 import { Header, Footer, WebBrochureBanner } from "@/components/layout";
 import "./globals.css";
 
@@ -13,6 +19,24 @@ const libreBaskerville = Libre_Baskerville({
   subsets: ["latin"],
   weight: ["400", "700"],
   variable: "--font-libre-baskerville",
+});
+
+const alexBrush = Alex_Brush({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-alex-brush",
+});
+
+const dancingScript = Dancing_Script({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-dancing-script",
+});
+
+const libreCaslonText = Libre_Caslon_Text({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-libre-caslon-text",
 });
 
 export const metadata: Metadata = {
@@ -90,7 +114,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={`${notoSansKr.variable} ${libreBaskerville.variable} antialiased`}>
+      <body
+        className={`${notoSansKr.variable} ${libreBaskerville.variable} ${alexBrush.variable} ${dancingScript.variable} ${libreCaslonText.variable} antialiased`}
+      >
         {/* Schema.org Organization Data */}
         <script
           type="application/ld+json"

@@ -1,43 +1,29 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Image from "next/image";
-import { images } from "@/constants/images";
-
 export function HealsomaHero() {
   return (
-    <section className="hero-section">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={images.healsoma.bgLeaves}
-          alt="HEALSOMA Background"
-          fill
-          className="object-cover"
-          priority
+    <section className="relative overflow-hidden">
+      <div
+        className="absolute inset-0 z-0 bg-[position:0px_0px] bg-no-repeat md:bg-[position:0px_-172px]"
+        style={{
+          backgroundImage:
+            "url('https://artswisdom.com/wp-content/uploads/2025/04/leaves-8222919_1280-1.jpg')",
+          backgroundSize: "100% auto",
+        }}
+        aria-hidden="true"
+      />
+      <div
+        className="absolute inset-0 z-10 bg-[#070707]"
+        style={{ opacity: 0.57 }}
+        aria-hidden="true"
+      />
+
+      <div className="relative z-20 mx-auto flex w-full max-w-[1200px] justify-center px-4 pt-[60px]">
+        <img
+          src="https://artswisdom.com/wp-content/uploads/2025/04/222.png"
+          alt=""
+          className="h-auto w-full max-w-[552px]"
         />
-      </div>
-
-      {/* Dark Overlay */}
-      <div className="hero-overlay" />
-
-      {/* Content */}
-      <div className="container hero-content">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex flex-col items-center"
-        >
-          <span className="text-white/90 text-xl md:text-2xl font-light tracking-widest mb-4">
-            온 전 한 쉼
-          </span>
-          <h1
-            className="text-white text-5xl md:text-7xl lg:text-7xl font-serif font-medium tracking-wide hero-title-shadow"
-          >
-            HEALSOMA
-          </h1>
-        </motion.div>
       </div>
     </section>
   );

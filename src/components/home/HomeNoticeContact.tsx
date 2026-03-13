@@ -1,4 +1,3 @@
-import { Section } from "@/components/common";
 import { getNotices } from "@/lib/queries/notices";
 import { HomeContact } from "./HomeContact";
 import Link from "next/link";
@@ -16,12 +15,12 @@ export async function HomeNoticeContact() {
   };
 
   return (
-    <Section id="notice-contact" background="white" className="pt-12 pb-8 md:pt-[55px] md:px-5 md:pb-[30px]">
-      <div className="grid grid-cols-1 gap-10 md:gap-8 lg:grid-cols-[51.316%_43.671%] lg:gap-[4.649%]">
+    <section id="notice-contact" className="bg-[#FCF3EB] px-[10px] pb-[30px] pt-[10px] md:px-[20px] md:pb-[30px] md:pt-[55px]">
+      <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-[20px] md:grid-cols-[51.316%_43.671%] md:gap-[4.649%]">
         {/* Left Column: Notice */}
         <div className="flex flex-col">
-          <div className="mb-4 md:mb-5">
-            <h2 className="text-[24px] md:text-[35px] font-semibold leading-[1.6] md:leading-[2.2em] text-[#85544D] font-['Noto_Sans_KR','Apple_SD_Gothic_Neo','Malgun_Gothic',sans-serif]">
+          <div className="mb-[10px] md:mb-[10px]">
+            <h2 className="m-[10px] text-center font-['Noto_Sans_KR',sans-serif] text-[24px] text-[#242424] md:text-[24px]">
               공지사항
             </h2>
           </div>
@@ -63,14 +62,14 @@ export async function HomeNoticeContact() {
 
         {/* Right Column: Contact */}
         <div className="flex flex-col">
-          <div className="mb-4 md:mb-5">
-            <h2 className="text-[24px] md:text-[35px] font-semibold leading-[1.6] md:leading-[2.2em] text-[#85544D] font-['Noto_Sans_KR','Apple_SD_Gothic_Neo','Malgun_Gothic',sans-serif]">
+          <div className="mb-[10px] md:mb-[10px]">
+            <h2 className="m-[10px] text-center font-['Noto_Sans_KR',sans-serif] text-[24px] text-[#242424] md:text-[24px]">
               문의하기
             </h2>
           </div>
           <HomeContact />
         </div>
       </div>
-    </Section>
+    </section>
   );
 }

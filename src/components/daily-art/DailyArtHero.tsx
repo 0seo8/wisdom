@@ -1,44 +1,28 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Image from "next/image";
-
 export function DailyArtHero() {
   return (
     <>
-      {/* Hero Image Section */}
-      <section className="hero-section">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src={"https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/daily-art/muniman-performance-4.png"}
-            alt="Arts of Living"
-            fill
-            className="object-cover"
-            priority
-            quality={90}
-          />
+      <section className="relative overflow-hidden pb-[400px] md:pb-[450px]">
+        <div
+          className="absolute inset-0 z-0 bg-cover bg-no-repeat"
+          style={{
+            backgroundImage:
+              "url('http://artswisdom.com/wp-content/uploads/2023/10/무늬만-공연-4.png')",
+          }}
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 z-10 bg-black/50" aria-hidden="true" />
+        <div className="relative z-20 mx-auto w-full max-w-full text-center">
+          <h1 className="hero-font-times translate-y-[230px] text-[40px] font-semibold leading-none text-[#EFEDE1] md:translate-y-[235px] md:text-[100px]">
+            Arts of Living
+          </h1>
         </div>
-        <div className="hero-overlay" />
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="relative z-20 text-5xl md:text-7xl lg:text-7xl font-serif text-white italic hero-font-georgia hero-title-shadow"
-        >
-          Arts of Living
-        </motion.h1>
       </section>
 
-      {/* Intro Text Section */}
       <section className="py-16 md:py-20 bg-[#C8BFA9]">
         <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center space-y-4"
-          >
+          <div className="max-w-3xl mx-auto text-center space-y-4">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
               예술이 힐링이 되는 곳!
             </h2>
@@ -51,7 +35,7 @@ export function DailyArtHero() {
               <br />
               쉽고 편하고 안전한 리허설 공간을 만들어 드립니다.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
     </>

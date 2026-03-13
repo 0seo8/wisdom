@@ -1,8 +1,6 @@
 "use client";
 
-import Image from "next/image";
-import { Button } from "@/components/common";
-import { images } from "@/constants/images";
+import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useCallback, useEffect, useState } from "react";
@@ -11,28 +9,32 @@ const slides = [
   {
     title: "일상의 예술",
     subtitle: "Arts of Living",
-    cta: "/daily-art",
-    image: images.hero.slide1,
+    href: "/일상의예술",
+    image: "https://artswisdom.com/wp-content/uploads/2025/09/1.jpg",
+    overlay: "#05050570",
   },
   {
-    title: "온전한 쉼",
+    title: "온전한 쉼'",
     subtitle: "Healsoma",
-    cta: "/healsoma",
-    image: images.hero.slide2,
+    href: "/힐소마",
+    image: "https://artswisdom.com/wp-content/uploads/2025/09/2.jpg",
+    overlay: "#05050570",
   },
   {
-    title: "소매틱랩",
+    title: "몸과 마음을 연구",
     subtitle: "Somatic Laboratory",
-    cta: "/somatic-lab",
-    image: images.hero.slide3,
+    href: "/소매틱랩",
+    image: "https://artswisdom.com/wp-content/uploads/2025/09/제목-없음.png",
+    overlay: "#05050570",
   },
   {
-    title: "기업교육 및 행사",
-    subtitle: "Educational Event",
-    cta: "/business",
-    image: images.hero.main,
+    title: "지속 가능한 ESG 실천",
+    subtitle: "Sustainable Growth",
+    href: "/기업교육-및-행사",
+    image: "https://artswisdom.com/wp-content/uploads/2025/09/3.jpg",
+    overlay: "#0505053D",
   },
-];
+] as const;
 
 export function Hero() {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -64,48 +66,38 @@ export function Hero() {
   );
 
   return (
-    <section className="relative w-full h-screen overflow-hidden">
+    <section className="relative h-[400px] w-full overflow-hidden md:h-[850px]">
       <div className="h-full" ref={emblaRef}>
         <div className="flex h-full">
           {slides.map((slide, index) => (
-            <div
-              key={index}
-              className="relative flex-[0_0_100%] min-w-0 h-full"
-            >
-              <Image
-                src={slide.image}
-                alt={slide.title}
-                fill
-                className="object-cover"
-                priority={index === 0}
-                sizes="100vw"
+            <div key={index} className="relative h-full min-w-0 flex-[0_0_100%]">
+              <div
+                className="absolute inset-0 bg-cover bg-no-repeat"
+                style={{ backgroundImage: `url('${slide.image}')` }}
+                aria-hidden="true"
+              />
+              <div
+                className="absolute inset-0"
+                style={{ backgroundColor: slide.overlay }}
+                aria-hidden="true"
               />
 
-              <div className="hero-overlay" />
-
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="hero-content px-4 sm:px-6 max-w-4xl mx-auto">
+                <div className="mx-auto w-full max-w-full px-4 text-center md:max-w-[65%]">
                   {selectedIndex === index && (
-                    <div className="animate-fade-in space-y-6">
-                      <h1
-                        className="text-5xl md:text-7xl lg:text-7xl font-bold text-white leading-tight font-serif hero-title-shadow"
-                      >
+                    <div className="animate-fade-in text-center">
+                      <h1 className="home-slider-title mb-[10px] text-[30px] md:text-[65px]">
                         {slide.title}
                       </h1>
-                      <p
-                        className="text-4xl md:text-6xl text-white/95 italic leading-none hero-font-libre hero-subtitle-shadow"
-                      >
+                      <p className="home-slider-subtitle hero-font-alex-brush mb-[35px] text-[25px] md:text-[65px]">
                         {slide.subtitle}
                       </p>
-                      <div className="pt-8">
-                        <Button 
-                          href={slide.cta} 
-                          size="lg"
-                          className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[var(--color-primary)] transition-all duration-300 min-w-[200px]"
-                        >
-                          자세히 보기
-                        </Button>
-                      </div>
+                      <Link
+                        href={slide.href}
+                        className="home-slider-button inline-flex items-center justify-center px-5 py-2 text-[12px] md:px-8 md:py-3 md:text-[20px]"
+                      >
+                        바로가기
+                      </Link>
                     </div>
                   )}
                 </div>
@@ -115,17 +107,16 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Dot Indicators */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 flex gap-4">
+      <div className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 gap-3 md:bottom-12 md:gap-4">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => scrollTo(index)}
             aria-label={`${index + 1}번 슬라이드로 이동`}
-            className={`w-3 h-3 rounded-full transition-all duration-500 focus:outline-none ${
+            className={`h-2.5 w-2.5 rounded-full transition-all duration-500 focus:outline-none md:h-3 md:w-3 ${
               selectedIndex === index
-                ? "bg-white scale-125"
-                : "bg-white/40 hover:bg-white/60"
+                ? "scale-125 bg-[#EFEDE1]"
+                : "bg-white/45 hover:bg-white/65"
             }`}
           />
         ))}

@@ -1,82 +1,105 @@
-import Image from "next/image";
-import { Section } from "@/components/common";
-import { images } from "@/constants/images";
 import { getTimeline } from "@/lib/queries";
 
-function getTimelineImage(year: number): string {
-  const key = year as keyof typeof images.timeline;
-  const image = images.timeline[key];
-  return typeof image === "string" ? image : images.hero.main;
+const TIMELINE_IMAGES: Record<number, string> = {
+  2017: "https://artswisdom.com/wp-content/uploads/2023/10/타임라인사진01.png",
+  2018: "https://artswisdom.com/wp-content/uploads/2023/11/타임라인사진_바이올린2018.jpg",
+  2019: "https://artswisdom.com/wp-content/uploads/2023/11/히스토리-353x1024.jpg",
+  2020: "https://artswisdom.com/wp-content/uploads/2023/10/타임라인사진2022.jpg",
+  2021: "https://artswisdom.com/wp-content/uploads/2023/10/타임라인사진2021.jpg",
+  2022: "https://artswisdom.com/wp-content/uploads/2023/11/히스토리2.jpg",
+  2023: "https://artswisdom.com/wp-content/uploads/2024/01/히스토리2024_이미지수정.jpg",
+  2024: "https://artswisdom.com/wp-content/uploads/2026/01/2024-copy.jpg",
+  2025: "https://artswisdom.com/wp-content/uploads/2025/12/2323.png",
+};
+
+function formatTimelineItem(month: number | null, title: string) {
+  if (!month) {
+    return title;
+  }
+
+  return `${String(month).padStart(2, "0")}. ${title}`;
 }
 
 export async function Timeline() {
   const timeline = await getTimeline();
-
-  const timelineByYear = timeline.reduce<Record<number, typeof timeline>>((acc, item) => {
+  const entries = timeline.reduce<Record<number, { title: string; month: number | null }[]>>((acc, item) => {
     if (!acc[item.year]) {
       acc[item.year] = [];
     }
-    acc[item.year].push(item);
+
+    acc[item.year].push({
+      title: item.title,
+      month: item.month,
+    });
+
     return acc;
   }, {});
 
-  const years = Object.keys(timelineByYear)
+  const years = Object.keys(entries)
     .map(Number)
-    .sort((a, b) => b - a)
-    .slice(0, 8);
+    .sort((a, b) => a - b);
 
   return (
-    <Section id="history" background="gray" className="py-20 md:py-32">
-      <div className="text-center mb-12 md:mb-20">
-        <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#8c5a5a] tracking-wide mb-2">
-          Timeline of Artswisdom
-        </h2>
-        <div className="w-16 h-1 bg-[#8c5a5a] mx-auto mt-4 opacity-70"></div>
-      </div>
+    <>
+      <section className="bg-[#FCF3EB] px-4 pb-5 pt-0 md:px-0">
+        <div className="mx-auto max-w-[1200px]">
+          <h2 className="hero-font-times text-center text-[25px] font-semibold text-[#85544D] md:text-[40px]">
+            Timeline of Artswisdom
+          </h2>
+        </div>
+      </section>
 
-      <div className="max-w-[1400px] mx-auto px-4 mt-12 md:mt-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          {years.map((year) => {
-            const items = timelineByYear[year]
-              .slice()
-              .sort((a, b) => {
-                const monthDiff = (b.month ?? 0) - (a.month ?? 0);
-                if (monthDiff !== 0) return monthDiff;
-                return a.order - b.order;
-              });
-
-            return (
-              <article key={year} className="flex flex-col">
-                <div className="relative w-full aspect-[4/3] mb-6 overflow-hidden rounded-lg bg-white shadow-md border border-gray-100">
-                  <Image
-                    src={getTimelineImage(year)}
-                    alt={`${year}년 연혁`}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute top-0 left-0 bg-[#8c5a5a] text-white px-5 py-2 font-bold text-xl shadow-md">
-                    {year}
-                  </div>
-                </div>
-
-                <ul className="space-y-2 px-1">
-                  {items.map((item) => (
-                    <li
-                      key={item.id}
-                      className="text-gray-700 text-[15px] leading-relaxed break-keep flex items-start gap-2"
-                    >
-                      <span className="text-[#8c5a5a] font-semibold min-w-[2.2rem]">
-                        {item.month ? `${item.month}월` : "-"}
-                      </span>
-                      <span>{item.title}</span>
+      <section className="hidden bg-[#FCF3EB] px-4 pb-0 md:block">
+        <div className="mx-auto max-w-[1300px] overflow-x-auto">
+          <div className="grid min-w-[1300px] grid-cols-9 gap-6">
+            {years.map((year) => (
+              <article key={year} className="text-left">
+                <h3 className="mb-4 hero-font-times text-center text-[30px] font-semibold text-[#85544D]">
+                  {year}
+                </h3>
+                <img
+                  src={TIMELINE_IMAGES[year]}
+                  alt=""
+                  className="mb-4 w-full"
+                  loading="lazy"
+                />
+                <ul className="space-y-2 text-[15px] text-[#5B5B5B]">
+                  {entries[year].map((item) => (
+                    <li key={`${year}-${item.month}-${item.title}`}>
+                      {formatTimelineItem(item.month, item.title)}
                     </li>
                   ))}
                 </ul>
               </article>
-            );
-          })}
+            ))}
+          </div>
         </div>
-      </div>
-    </Section>
+      </section>
+
+      <section className="bg-[#FCF3EB] px-4 pb-0 md:hidden">
+        <div className="mx-auto max-w-[560px] space-y-10">
+          {years.map((year) => (
+            <article key={year}>
+              <h3 className="mb-4 hero-font-times text-center text-[30px] font-semibold text-[#85544D]">
+                {year}
+              </h3>
+              <img
+                src={TIMELINE_IMAGES[year]}
+                alt=""
+                className="mb-4 w-full"
+                loading="lazy"
+              />
+              <ul className="space-y-2 text-[14px] text-[#5B5B5B]">
+                {entries[year].map((item) => (
+                  <li key={`${year}-${item.month}-${item.title}`}>
+                    {formatTimelineItem(item.month, item.title)}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
+    </>
   );
 }
