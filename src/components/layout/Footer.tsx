@@ -6,6 +6,29 @@ import { usePathname } from "next/navigation";
 import { companyInfo } from "@/constants/navigation";
 import { images } from "@/constants/images";
 
+const socialLinks = [
+  {
+    href: "https://www.youtube.com/channel/UCR8ZIwOtV1cAFgMaXe8EO6g",
+    icon: images.social.youtube,
+    label: "YouTube",
+  },
+  {
+    href: "https://blog.naver.com/artswisdom",
+    icon: images.social.naver,
+    label: "Blog",
+  },
+  {
+    href: "https://www.instagram.com/artswisdom_official/",
+    icon: images.social.instagram,
+    label: "Instagram",
+  },
+  {
+    href: "https://www.facebook.com/artswisdom/",
+    icon: images.social.facebook,
+    label: "Facebook",
+  },
+] as const;
+
 export function Footer() {
   const pathname = usePathname();
 
@@ -15,43 +38,27 @@ export function Footer() {
 
   return (
     <footer
-      className="border-t border-black/5 bg-[#f2ddcc] pt-20"
+      className="border-t border-black/5 bg-[#f2ddcc] pt-6 md:pt-[25px]"
       style={{
         paddingBottom:
           "calc(2.5rem + var(--brochure-banner-safe-space) + env(safe-area-inset-bottom, 0px))",
       }}
     >
-      <div className="container max-w-[1300px] mx-auto px-4">
+      <div className="container mx-auto max-w-[800px] px-4">
         
-        {/* Social Icons Section - Centered */}
-        <div className="flex justify-center gap-6 mb-16">
-          <SocialLink
-            href="https://www.youtube.com/channel/UCR8ZIwOtV1cAFgMaXe8EO6g"
-            icon={images.social.youtube}
-            label="YouTube"
-          />
-          <SocialLink
-            href="https://blog.naver.com/artswisdom"
-            icon={images.social.naver}
-            label="Blog"
-          />
-          <SocialLink
-            href="https://www.instagram.com/artswisdom_official/"
-            icon={images.social.instagram}
-            label="Instagram"
-          />
-          <SocialLink
-            href="https://www.facebook.com/artswisdom/"
-            icon={images.social.facebook}
-            label="Facebook"
-          />
+        <div className="mx-auto mb-10 grid max-w-[420px] grid-cols-4 items-center md:mb-12">
+          {socialLinks.map((item) => (
+            <div key={item.label} className="flex items-center justify-center py-2 md:py-3">
+              <SocialLink href={item.href} icon={item.icon} label={item.label} />
+            </div>
+          ))}
         </div>
 
         {/* Logo & Info Section */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-12 text-center md:text-left">
+        <div className="mx-auto flex max-w-[520px] flex-col items-center justify-center gap-8 text-center md:grid md:max-w-[560px] md:grid-cols-[140px_minmax(0,1fr)] md:items-center md:gap-x-8 md:gap-y-0 md:text-left">
             
             {/* Center: Large Box Logo */}
-            <div className="md:order-1">
+            <div className="md:justify-self-center">
                  <Link href="/" className="inline-block">
                     <Image 
                       src={images.logo.vertical}
@@ -64,7 +71,7 @@ export function Footer() {
             </div>
 
             {/* Right: Company Details (will appear on right on desktop) */}
-            <div className="md:order-2 space-y-1.5 text-[14px] text-gray-700 font-medium">
+            <div className="space-y-1.5 text-center text-[12px] text-[#2b2b2b] md:text-left md:text-[14px]">
                 <p>대표 : {companyInfo.ceo}</p>
                 <p>주소 : {companyInfo.address}</p>
                 <p>전화 : 070-8264-6477 | Fax : 0504-387-6477</p>
@@ -91,10 +98,10 @@ function SocialLink({ href, icon, label }: SocialLinkProps) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="w-8 h-8 flex items-center justify-center transition-transform hover:scale-110"
+      className="flex h-8 w-full items-center justify-center md:h-9"
       aria-label={label}
     >
-      <img src={icon} alt={label} className="w-full h-full object-contain" />
+      <img src={icon} alt={label} className="max-h-full w-auto object-contain" />
     </a>
   );
 }

@@ -1,0 +1,7 @@
+ALTER TABLE notices
+ADD COLUMN IF NOT EXISTS author_name TEXT,
+ADD COLUMN IF NOT EXISTS vote_count INTEGER DEFAULT 0,
+ADD COLUMN IF NOT EXISTS source_uid INTEGER,
+ADD COLUMN IF NOT EXISTS is_notice BOOLEAN DEFAULT false;
+
+CREATE INDEX IF NOT EXISTS idx_notices_source_uid ON notices(source_uid);
