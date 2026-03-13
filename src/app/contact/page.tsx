@@ -1,76 +1,71 @@
 import type { Metadata } from "next";
+import { MailOpen } from "lucide-react";
 import { ContactHero, ContactForm } from "@/components/contact";
 
 export const metadata: Metadata = {
   title: "문의하기",
-  description:
-    "지혜의밭에 궁금한 점이 있으시면 언제든 문의해 주세요. 프로그램, 기업교육, 협업 등 다양한 문의를 환영합니다.",
+  description: "문화예술 프로그램을 활용한 워크숍, 교육, 공연, 차별화된 행사 기획이 필요하다면 문의주세요.",
   openGraph: {
     title: "문의하기 | 지혜의밭",
-    description:
-      "지혜의밭에 궁금한 점이 있으시면 언제든 문의해 주세요.",
+    description: "문화예술 프로그램을 활용한 워크숍, 교육, 공연, 차별화된 행사 기획이 필요하다면 문의주세요.",
   },
 };
 
 export default function ContactPage() {
   return (
-    <div className="bg-[#fcf3eb]">
+    <main className="bg-[#fcf3eb]">
       <ContactHero />
 
-      {/* Quote Section */}
-      <section className="pb-10 pt-12 text-center md:pb-12 md:pt-20">
-        <div className="container px-4">
-          <div className="flex justify-center mb-8">
-            <img 
-              src="https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/contact/quote.png" 
-              alt="Quote" 
-              className="h-10 opacity-70"
-            />
+      <section className="bg-[#fcf3eb]">
+        <div className="h-[45px]" aria-hidden="true" />
+        <div className="mx-auto max-w-[1200px] px-6 text-center md:px-8">
+          <div className="flex justify-center text-[#85544D]">
+            <span className="font-serif text-[42px] leading-none md:text-[50px]" aria-hidden="true">
+              “
+            </span>
           </div>
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8 tracking-tight">
+          <h2 className="mt-1 text-[29px] font-semibold leading-[1.45] text-[#2B2B2B] md:text-[32px]">
             경험을 통한 성장, 지금 시작해 보세요!
           </h2>
-          <div className="max-w-3xl mx-auto space-y-1 text-gray-600 text-[15px] md:text-[16px] leading-loose">
-            <p>지혜의밭에서는 기업 및 기관의 요구에 따른 맞춤형 콘텐츠를 통해</p>
-            <p>워크숍, 공연, 교육, 행사의 기획부터 진행까지 만족도 높은 서비스를 제공합니다.</p>
-            <p>아래 문의사항을 남겨주시면 친절히 안내해 드리겠습니다.</p>
+          <div className="mt-[20px] text-[15px] leading-[2] text-[#5B5B5B] md:text-[16px]">
+            <div className="hidden md:block">
+              <p>지혜의밭에서는 기업 및 기관의 요구에 따른 맞춤형 콘텐츠를 통해</p>
+              <p>워크숍, 공연, 교육, 행사의 기획부터 진행까지 만족도 높은 서비스를 제공합니다.</p>
+              <p>아래 문의사항을 남겨주시면 친절히 안내해 드리겠습니다.</p>
+            </div>
+            <div className="md:hidden">
+              <p>지혜의밭에서는 기업 및 기관의 요구에 따른</p>
+              <p>맞춤형 콘텐츠를 통해</p>
+              <p>워크숍, 공연, 교육, 행사의 기획부터 진행까지</p>
+              <p>만족도 높은 서비스를 제공합니다.</p>
+              <p>아래 문의 사항 남겨주시면</p>
+              <p>친절히 안내해 드리겠습니다.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Separator with Icon */}
-      <div className="relative py-8 md:py-12">
-        <div className="max-w-[1300px] mx-auto px-10">
-          <div className="relative flex items-center justify-center">
-            <div className="absolute inset-0 flex items-center" aria-hidden="true">
-              <div className="w-full border-t border-[#8c5a5a] opacity-30"></div>
+      <section className="bg-[#fcf3eb]">
+        <div className="mx-auto max-w-[1106px] px-4 sm:px-6 md:px-8">
+          <div className="flex items-center justify-center py-[16px]">
+            <div className="h-[1.7px] flex-1 bg-[#85544D]" aria-hidden="true" />
+            <div className="bg-[#fcf3eb] px-5 text-[#85544D]">
+              <MailOpen className="h-[31px] w-[31px]" strokeWidth={1.75} aria-hidden="true" />
             </div>
-            <div className="relative bg-[#fcf3eb] px-4">
-                <div className="w-14 h-14 border border-[#8c5a5a] rounded-sm rotate-45 flex items-center justify-center overflow-hidden bg-white">
-                   <div className="-rotate-45">
-                      <svg className="w-8 h-8 text-[#8c5a5a]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                      </svg>
-                   </div>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Content Section - Now Centered Form */}
-      <section className="pb-20 md:pb-32">
-        <div className="container">
-          <div className="max-w-2xl mx-auto">
-             <div className="text-center mb-12">
-                <h3 className="text-2xl font-bold text-gray-800 mb-2">문의하기</h3>
-             </div>
-             <ContactForm />
+            <div className="h-[1.7px] flex-1 bg-[#85544D]" aria-hidden="true" />
           </div>
         </div>
       </section>
 
-    </div>
+      <section className="bg-[#fcf3eb]">
+        <div className="mx-auto max-w-[522px] px-4">
+          <div className="pb-8 text-center">
+            <h2 className="text-[32px] font-semibold leading-[1.4] text-black">문의하기</h2>
+          </div>
+          <ContactForm />
+        </div>
+        <div className="h-[50px]" aria-hidden="true" />
+      </section>
+    </main>
   );
 }

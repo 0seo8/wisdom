@@ -260,6 +260,162 @@ h6 {
   display: none;
 }
 
+.contact-wpforms .wpforms-form {
+  width: 100%;
+}
+
+.contact-wpforms .wpforms-field-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-wpforms .wpforms-label-hide {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.contact-wpforms .wpforms-field-label {
+  display: block;
+  margin-bottom: 10px;
+  color: #444;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.contact-wpforms input[type="text"],
+.contact-wpforms input[type="email"],
+.contact-wpforms textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #666;
+  font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+}
+
+.contact-wpforms input[type="text"],
+.contact-wpforms input[type="email"] {
+  min-height: 46px;
+  padding: 10px 14px;
+}
+
+.contact-wpforms textarea {
+  min-height: 180px;
+  padding: 12px 14px;
+  resize: vertical;
+}
+
+.contact-wpforms input::placeholder,
+.contact-wpforms textarea::placeholder {
+  color: #666;
+}
+
+.contact-wpforms input[type="text"]:focus,
+.contact-wpforms input[type="email"]:focus,
+.contact-wpforms textarea:focus {
+  border-color: #999;
+}
+
+.contact-wpforms .wpforms-uploader {
+  position: relative;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+.contact-wpforms .dz-message {
+  display: flex;
+  min-height: 146px;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 24px;
+  text-align: center;
+}
+
+.contact-wpforms .modern-title {
+  color: #777;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.contact-wpforms .dropzone-input {
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0) !important;
+  height: 1px !important;
+  width: 1px !important;
+  border: 0 !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.contact-wpforms .wpforms-field-checkbox ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-wpforms .wpforms-field-checkbox li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.contact-wpforms .wpforms-field-checkbox input[type="checkbox"] {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.contact-wpforms .wpforms-field-label-inline {
+  color: #000;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.contact-wpforms .wpforms-submit-container {
+  margin-top: 22px;
+}
+
+.contact-wpforms .wpforms-submit {
+  border: 1px solid #ccc;
+  background: #eee;
+  color: #444;
+  font-size: 16px;
+  line-height: 1;
+  padding: 11px 24px;
+  transition: background-color 0.2s ease;
+}
+
+.contact-wpforms .wpforms-submit:hover {
+  background: #e5e5e5;
+}
+
+.contact-wpforms .wpforms-submit:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.contact-wpforms .wpforms-field-error {
+  margin-top: 6px;
+  color: #d63638;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
 /* Hero typography utilities (replace inline styles) */
 .hero-font-libre {
   font-family: var(--font-libre-baskerville), "Times New Roman", serif;
