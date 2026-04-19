@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const BUCKET = 'https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public';
+const BUCKET = 'https://hazrjfxlzlhymyfghhme.supabase.co/storage/v1/object/public';
 
 function replaceInFile(filePath) {
   const content = fs.readFileSync(filePath, 'utf8');

@@ -61,12 +61,12 @@ export const metadata: Metadata = {
   authors: [{ name: "㈜지혜의밭" }],
   icons: {
     icon: [
-      { url: "https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/logo/logo-symbol.png" },
-      { url: "https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/logo/logo-symbol.png", sizes: "32x32" },
-      { url: "https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/logo/logo-symbol.png", sizes: "192x192" },
+      { url: "https://hazrjfxlzlhymyfghhme.supabase.co/storage/v1/object/public/images/logo/logo-symbol.png" },
+      { url: "https://hazrjfxlzlhymyfghhme.supabase.co/storage/v1/object/public/images/logo/logo-symbol.png", sizes: "32x32" },
+      { url: "https://hazrjfxlzlhymyfghhme.supabase.co/storage/v1/object/public/images/logo/logo-symbol.png", sizes: "192x192" },
     ],
     shortcut: "/favicon.ico",
-    apple: "https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/logo/logo-symbol.png",
+    apple: "https://hazrjfxlzlhymyfghhme.supabase.co/storage/v1/object/public/images/logo/logo-symbol.png",
   },
   openGraph: {
     type: "website",
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
       "몸과 마음을 잇는, 사람과 사람을 잇는 보다 건강하고 아름다운 사회를 만듭니다.",
     images: [
       {
-        url: "https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/logo/logo-vertical.png",
+        url: "https://hazrjfxlzlhymyfghhme.supabase.co/storage/v1/object/public/images/logo/logo-vertical.png",
         width: 1200,
         height: 630,
         alt: "지혜의밭 로고 이미지",
@@ -127,7 +127,7 @@ export default function RootLayout({
               name: "지혜의밭",
               alternateName: "Artswisdom",
               url: "https://artswisdom.com",
-              logo: "https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/logo/logo-square.png",
+              logo: "https://hazrjfxlzlhymyfghhme.supabase.co/storage/v1/object/public/images/logo/logo-square.png",
               description:
                 "예술의 힘으로 본래의 인간성을 회복하여 삶의 터전을 지혜롭게 가꾸는 소셜벤처·사회적기업",
               address: {
