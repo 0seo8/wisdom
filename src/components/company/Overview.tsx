@@ -14,7 +14,7 @@ const companyInfo = [
 
 export function Overview() {
   return (
-    <Section id="overview" background="gray">
+    <Section id="overview" background="gray" className="scroll-mt-[76px]">
       <SectionTitle
         title="회사개요"
         subtitle="지혜의밭을 소개합니다"

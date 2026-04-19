@@ -5,7 +5,7 @@ import { images } from "@/constants/images";
 
 export function ArticleSection() {
   return (
-    <section id="article" className="bg-[#fcf3eb] py-16 md:py-24">
+    <section id="article" className="bg-[#fcf3eb] py-16 md:py-24 scroll-mt-[76px]">
       <div className="container px-4 md:hidden">
         <div className="relative mx-auto mb-8 aspect-[787/478] w-full max-w-[560px]">
           <Image

@@ -5,7 +5,7 @@ import { images } from "@/constants/images";
 
 export function EffectSection() {
   return (
-    <section id="effect" className="bg-[#fcf3eb]">
+    <section id="effect" className="bg-[#fcf3eb] scroll-mt-[76px]">
       <div className="container px-4 pt-10 md:px-6 md:pt-16">
         <div className="mx-auto h-px w-1/2 bg-[#85544d]" />
       </div>

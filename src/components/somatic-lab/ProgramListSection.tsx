@@ -23,7 +23,7 @@ export function ProgramListSection({ programs }: ProgramListSectionProps) {
   };
 
   return (
-    <section id="program">
+    <section id="program" className="scroll-mt-[76px]">
       <div className="hero-section hero-section--fixed hero-section--mobile-tall">
         <div
           className="absolute inset-0 z-0 hidden bg-cover bg-no-repeat md:block"

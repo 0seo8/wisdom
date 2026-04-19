@@ -7,7 +7,7 @@ import { images } from "@/constants/images";
 
 export function Greeting() {
   return (
-    <Section id="greeting" background="white">
+    <Section id="greeting" background="white" className="scroll-mt-[76px]">
       <SectionTitle
         title="인사말"
         subtitle="대표이사 인사말씀"

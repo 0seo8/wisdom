@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export function Greeting() {
   return (
-    <Section id="greeting" className="relative bg-[#FCF3EB] pb-16 pt-12 md:py-20 lg:py-28">
+    <Section id="greeting" className="relative bg-[#FCF3EB] pb-16 pt-12 md:py-20 lg:py-28 scroll-mt-[76px]">
       <div className="flex flex-col md:flex-row items-center max-w-[1140px] mx-auto">
         {/* Left: CEO Portrait */}
         <motion.div

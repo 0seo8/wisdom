@@ -51,7 +51,7 @@ export function OverviewSection() {
   ];
 
   return (
-    <section id="overview" className="somatic-section">
+    <section id="overview" className="somatic-section scroll-mt-[76px]">
       {/* 소매틱연구전담부서 */}
       <div className="py-20 md:py-24">
         <div className="container">

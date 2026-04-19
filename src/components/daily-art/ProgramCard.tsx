@@ -25,6 +25,7 @@ interface ProgramCardProps {
 }
 
 export function ProgramCard({
+  id,
   englishTitle,
   title,
   description,
@@ -35,7 +36,7 @@ export function ProgramCard({
   reviewBgImage,
 }: ProgramCardProps) {
   return (
-    <div>
+    <div id={id} className="scroll-mt-[76px]">
       {/* Program Intro - Title + Description + Collage Image */}
       <section className="bg-white">
         <div className="container py-16 md:py-20">

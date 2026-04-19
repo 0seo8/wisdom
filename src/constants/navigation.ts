@@ -44,9 +44,9 @@ export const navigation: NavItem[] = [
     label: "일상의 예술",
     href: "/daily-art",
     children: [
-      { label: "소통", href: "/daily-art#communication" },
-      { label: "공감", href: "/daily-art#sympathy" },
-      { label: "해소", href: "/daily-art#reduce" },
+      { label: "소통", href: "/daily-art#muniman" },
+      { label: "공감", href: "/daily-art#nukduri" },
+      { label: "해소", href: "/daily-art#navichoom" },
     ],
   },
   {

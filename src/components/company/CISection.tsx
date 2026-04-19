@@ -59,7 +59,7 @@ const CI_COLORS = [
 
 export function CISection() {
   return (
-    <section id="ci" className="bg-[#FCF3EB] px-4 pb-0 pt-[30px] md:px-0">
+    <section id="ci" className="bg-[#FCF3EB] px-4 pb-0 pt-[30px] md:px-0 scroll-mt-[76px]">
       <div className="mx-auto max-w-[900px]">
         <h2 className="mb-[30px] text-center font-['Times_New_Roman',serif] text-[22px] text-[#85544D] md:text-[40px]">
           C.I

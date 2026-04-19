@@ -10,7 +10,7 @@ export function EventSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="event" ref={ref} className="py-16 md:py-20 bg-[#fcf3eb] overflow-hidden">
+    <section id="event" ref={ref} className="py-16 md:py-20 bg-[#fcf3eb] overflow-hidden scroll-mt-[76px]">
       <div className="container px-4 mx-auto max-w-[1400px]">
         {/* Main Content Layout */}
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center mb-16 lg:mb-20">

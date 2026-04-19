@@ -69,7 +69,7 @@ export function Hero() {
   );
 
   return (
-    <section className="relative h-[400px] w-full overflow-hidden md:h-[850px]">
+    <section className="relative h-[400px] w-full overflow-hidden md:h-[1090px]">
       <div className="h-full" ref={emblaRef}>
         <div className="flex h-full">
           {slides.map((slide, index) => (

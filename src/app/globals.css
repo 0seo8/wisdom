@@ -558,6 +558,10 @@ h6 {
   line-height: 1.9;
 }
 
+.somatic-lab-page #people .somatic-body {
+  color: #ffffff;
+}
+
 .somatic-lab-page .somatic-section {
   background-color: #fcf3eb;
 }

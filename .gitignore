@@ -44,5 +44,16 @@ next-env.d.ts
 .mcp.json
 .moai/
 .idea/
+.omc/
 
 password.md
+
+# scripts (migration, one-time use)
+scripts/
+
+# uploaded images
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp

@@ -42,7 +42,7 @@ const certifications = [
 
 export function Certification() {
   return (
-    <Section id="certification" className="py-20 md:py-[80px] bg-[#FCF3EB] relative">
+    <Section id="certification" className="py-20 md:py-[80px] bg-[#FCF3EB] relative scroll-mt-[76px]">
       <div className="max-w-[1300px] mx-auto px-4 md:px-0">
         <h2 className="text-center text-[36px] md:text-[40px] font-bold text-[#85544D] mb-[60px] tracking-tight">
           인증 및 지식재산권

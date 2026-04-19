@@ -52,7 +52,7 @@ const sdgsGoals = [
 
 export function SDGsSection() {
   return (
-    <Section id="sdgs" background="white">
+    <Section id="sdgs" background="white" className="scroll-mt-[100px]">
       <SectionTitle
         title="SDGs 경영"
         subtitle="지혜의밭은 UN 지속가능발전목표(SDGs) 달성을 위해 노력합니다"

@@ -9,12 +9,12 @@ interface ResearchersSectionProps {
 
 export function ResearchersSection({ researchers }: ResearchersSectionProps) {
   return (
-    <section id="people" className="bg-[#fcf3eb] py-16 md:py-24">
+    <section id="people" className="bg-[#85544D] py-16 md:py-24 scroll-mt-[76px]">
       <div className="container px-4 md:px-6">
-        <h2 className="text-center text-[30px] text-[#85544d] hero-font-times font-semibold md:text-[45px]">
+        <h2 className="text-center text-[30px] text-white hero-font-times font-semibold md:text-[45px]">
           Somatics Researcher
         </h2>
-        <div className="mx-auto mt-6 max-w-[900px] text-center somatic-body text-[16px] leading-[1.9] md:text-[17px]">
+        <div className="mx-auto mt-6 max-w-[900px] text-center somatic-body text-[16px] leading-[1.9] md:text-[17px] text-white">
           <p className="hidden md:block">
             발레 전공, 한국 무용 전공, 표현 예술 심리상담 전공, 물리 치료 전공, 요가, 명상 전공, 통합 예술 치유 전공,
             <br />
@@ -40,11 +40,11 @@ export function ResearchersSection({ researchers }: ResearchersSectionProps) {
                   className="object-contain"
                 />
               </div>
-              <p className="text-[20px] text-[#541404] hero-font-times font-semibold md:text-[26px]">
+              <p className="text-[20px] text-white hero-font-times font-semibold md:text-[26px]">
                 {researcher.name}
               </p>
-              <p className="-mt-1 text-[15px] text-[#541404]">{researcher.specialty}</p>
-              <div className="mt-3 text-left somatic-body text-[13px] leading-[1.8] md:text-[15px]">
+              <p className="-mt-1 text-[15px] text-white">{researcher.specialty}</p>
+              <div className="mt-3 text-left somatic-body text-[13px] leading-[1.8] md:text-[15px] text-white">
                 {(researcher.qualifications || []).map((qual, i) => (
                   <p key={`q-${i}`}>- {qual}</p>
                 ))}

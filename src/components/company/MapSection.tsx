@@ -4,7 +4,7 @@ import { Bus, MapPin, Phone, Train } from "lucide-react";
 
 export function MapSection() {
   return (
-    <section id="map" className="bg-[#FCF3EB] px-4 pb-[20px] pt-0 md:px-0">
+    <section id="map" className="bg-[#FCF3EB] px-4 pb-[20px] pt-0 md:px-0 scroll-mt-[76px]">
       <div className="mx-auto max-w-[1200px]">
         <h2 className="mb-[20px] text-center font-['Noto_Sans_KR',sans-serif] text-[22px] font-semibold leading-[2em] text-[#85544D] md:text-[35px] md:leading-[2.2em]">
           오시는 길
