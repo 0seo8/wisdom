@@ -3,11 +3,7 @@
 export function IntroSection() {
   return (
     <section
-      className="bg-[#B6C2AE] bg-cover bg-center px-5 pb-5 pt-10 text-center md:px-0 md:pb-0 md:pt-[60px] lg:bg-fixed"
-      style={{
-        backgroundImage:
-          "url('http://bobospia.cafe24.com/wp-content/uploads/2020/05/공연관객2-1.png')",
-      }}
+      className="bg-[#B6C2AE] px-5 pb-5 pt-10 text-center md:px-0 md:pb-0 md:pt-[60px]"
     >
       <div className="mx-auto max-w-[1200px]">
         <div>

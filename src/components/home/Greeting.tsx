@@ -26,7 +26,7 @@ export function Greeting() {
               height={961}
               className="w-full h-full object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
-              priority={false}
+              priority
             />
           </div>
         </motion.div>

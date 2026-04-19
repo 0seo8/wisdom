@@ -1,5 +1,8 @@
 "use client";
 
+const bucketUrl =
+  process.env.NEXT_PUBLIC_SUPABASE_URL + "/storage/v1/object/public/images";
+
 export function HealsomaHero() {
   return (
     <section className="hero-section hero-section--logo">
@@ -7,7 +10,7 @@ export function HealsomaHero() {
         className="absolute inset-0 z-0 bg-no-repeat bg-center lg:bg-[position:0px_-172px] lg:bg-fixed"
         style={{
           backgroundImage:
-            "url('https://artswisdom.com/wp-content/uploads/2025/04/leaves-8222919_1280-1.jpg')",
+            `url('${bucketUrl}/healsoma/bg-leaves.jpg')`,
           backgroundSize: "100% auto",
         }}
         aria-hidden="true"
@@ -20,7 +23,7 @@ export function HealsomaHero() {
 
       <div className="container hero-content px-4">
         <img
-          src="https://artswisdom.com/wp-content/uploads/2025/04/222.png"
+          src={`${bucketUrl}/healsoma/hero-banner.png`}
           alt=""
           className="h-auto w-full max-w-[320px] md:max-w-[552px]"
         />

@@ -1,3 +1,6 @@
+const bucketUrl =
+  process.env.NEXT_PUBLIC_SUPABASE_URL + "/storage/v1/object/public/images";
+
 const SDGS_ITEMS = [
   "국민 건강 불평등 해소를 위해 웰니스 문화에 앞장선다.",
   "지속 가능한 지구를 위해 일회용품 사용을 자제한다.",
@@ -18,7 +21,7 @@ export function SDGs() {
 
         <div className="flex justify-center">
           <img
-            src="https://artswisdom.com/wp-content/uploads/2023/11/UN-SDGs_수정-1024x543.png"
+            src={`${bucketUrl}/sdgs/un-sdgs.png`}
             alt=""
             className="w-full max-w-[1024px] md:w-[70%]"
             loading="lazy"

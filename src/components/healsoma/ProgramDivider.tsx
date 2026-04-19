@@ -1,5 +1,8 @@
 "use client";
 
+const bucketUrl =
+  process.env.NEXT_PUBLIC_SUPABASE_URL + "/storage/v1/object/public/images";
+
 export function ProgramDivider() {
   return (
     <section className="relative overflow-hidden px-5 pb-5 pt-10 md:px-0 md:py-[60px] lg:bg-fixed">
@@ -8,7 +11,7 @@ export function ProgramDivider() {
         style={{
           backgroundColor: "#3A3735",
           backgroundImage:
-            "url('https://artswisdom.com/wp-content/uploads/2025/04/harmony-5154766_1280.jpg')",
+            `url('${bucketUrl}/healsoma/bg-harmony.jpg')`,
         }}
         aria-hidden="true"
       />

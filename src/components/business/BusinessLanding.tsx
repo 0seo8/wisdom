@@ -1,78 +1,58 @@
+const bucketUrl =
+  process.env.NEXT_PUBLIC_SUPABASE_URL + "/storage/v1/object/public/images";
+
 const originalBusinessAssets = {
-  introBackground:
-    "https://bobospia.cafe24.com/wp-content/uploads/2020/05/%EA%B3%B5%EC%97%B0%EA%B4%80%EA%B0%9D2-1.png",
-  corporatePrimary:
-    "https://artswisdom.com/wp-content/uploads/2023/11/123456-1150x1536.png",
-  corporateSecondary:
-    "https://artswisdom.com/wp-content/uploads/2023/11/20230513_193104995_23-1024x768.jpg",
-  corporateMobile:
-    "https://artswisdom.com/wp-content/uploads/2025/03/%EA%B8%B0%EC%97%851.png",
-  corporatePresentDesktop:
-    "https://artswisdom.com/wp-content/uploads/2023/10/20230513_193104995_19-scaled.jpg",
-  corporatePresentMobile:
-    "https://artswisdom.com/wp-content/uploads/2023/10/20230513_193104995_19-768x576.jpg",
-  corporateReviewDesktop:
-    "https://artswisdom.com/wp-content/uploads/2023/11/IMG_7974-scaled.jpg",
-  corporateReviewMobile:
-    "https://artswisdom.com/wp-content/uploads/2023/11/11111111111.jpg",
-  eventPrimary:
-    "https://artswisdom.com/wp-content/uploads/2023/11/Untitled-2-1.jpg",
-  eventSecondary:
-    "https://artswisdom.com/wp-content/uploads/2023/11/%ED%96%89%EC%82%AC%EA%B8%B0%ED%9A%8D-1.jpg",
-  eventPresentDesktop:
-    "https://artswisdom.com/wp-content/uploads/2023/11/%ED%96%89%EC%82%AC%EA%B8%B0%ED%9A%8D-present.jpg",
-  eventPresentMobile:
-    "https://artswisdom.com/wp-content/uploads/2025/03/%EA%B8%B0%EC%97%852-1.png",
-  eventReviewDesktop:
-    "https://artswisdom.com/wp-content/uploads/2023/10/20210615_113153-2.png",
-  eventReviewTablet:
-    "https://artswisdom.com/wp-content/uploads/2023/11/20210615_112135.png",
-  eventReviewMobile:
-    "https://artswisdom.com/wp-content/uploads/2024/02/%EB%AA%A8%EB%B0%94%EC%9D%BC-%EB%B0%B0%EA%B2%BD%ED%99%94%EB%A9%B4.jpg",
+  introBackground: `${bucketUrl}/business/legacy_business_1.png`,
+  corporatePrimary: `${bucketUrl}/business/123456-1150x1536.png`,
+  corporateSecondary: `${bucketUrl}/business/20230513_193104995_23-1024x768.jpg`,
+  corporateMobile: `${bucketUrl}/business/education-main.png`,
+  corporatePresentDesktop: `${bucketUrl}/business/20230513_193104995_19-scaled.jpg`,
+  corporatePresentMobile: `${bucketUrl}/business/20230513_193104995_19-768x576.jpg`,
+  corporateReviewDesktop: `${bucketUrl}/business/IMG_7974-scaled.jpg`,
+  corporateReviewMobile: `${bucketUrl}/business/legacy_business_11.jpg`,
+  eventPrimary: `${bucketUrl}/business/Untitled-2-1.jpg`,
+  eventSecondary: `${bucketUrl}/business/legacy_business_9.jpg`,
+  eventPresentDesktop: `${bucketUrl}/business/legacy_business_7.jpg`,
+  eventPresentMobile: `${bucketUrl}/business/legacy_business_12.png`,
+  eventReviewDesktop: `${bucketUrl}/business/20210615_113153-2.png`,
+  eventReviewTablet: `${bucketUrl}/business/20210615_112135.png`,
+  eventReviewMobile: `${bucketUrl}/business/legacy_business_13.png`,
 } as const;
 
 const corporateRecommendations = [
   {
-    image:
-      "https://artswisdom.com/wp-content/uploads/2023/11/%ED%96%89%EC%82%AC%EA%B8%B0%ED%9A%8D-%EC%B6%94%EC%B2%9C-%EC%9D%B4%EB%AF%B8%EC%A7%804.jpg",
+    image: `${bucketUrl}/business/recommend-partnership.jpg`,
     text: "새롭고 참신한 방법으로 행사의 퀄리티를\n높이고 싶은 조직",
   },
   {
-    image:
-      "https://artswisdom.com/wp-content/uploads/2023/11/%ED%96%89%EC%82%AC%EA%B8%B0%ED%9A%8D-%EC%B6%94%EC%B2%9C-%EC%9D%B4%EB%AF%B8%EC%A7%803.jpg",
+    image: `${bucketUrl}/business/recommend-onestop.jpg`,
     text: "행사의 목적에 부합하는 전문적인 결과를 내고 싶은 조직",
   },
   {
-    image:
-      "https://artswisdom.com/wp-content/uploads/2023/11/%ED%96%89%EC%82%AC%EA%B8%B0%ED%9A%8D-%EC%B6%94%EC%B2%9C-%EC%9D%B4%EB%AF%B8%EC%A7%802.jpg",
+    image: `${bucketUrl}/business/recommend-professional.jpg`,
     text: "One-Stop으로 편리하게 서비스를 받고\n싶은 조직 및 공동체",
   },
   {
-    image:
-      "https://artswisdom.com/wp-content/uploads/2023/11/%ED%96%89%EC%82%AC%EA%B8%B0%ED%9A%8D-%EC%B6%94%EC%B2%9C-%EC%9D%B4%EB%AF%B8%EC%A7%8011.jpg",
+    image: `${bucketUrl}/business/recommend-quality.jpg`,
     text: "일회성 행사에 그치지 않고 섬김과 존중을\n받고 싶은 조직 및 공동체",
   },
 ] as const;
 
 const eventRecommendations = [
   {
-    image:
-      "https://artswisdom.com/wp-content/uploads/2023/11/%ED%96%89%EC%82%AC2.jpg",
+    image: `${bucketUrl}/business/event-recommend-1.jpg`,
     text: "새롭고 참신한 방법으로 행사의 퀄리티를\n높이고 싶은 조직",
   },
   {
-    image:
-      "https://artswisdom.com/wp-content/uploads/2023/11/%ED%96%89%EC%82%AC1.jpg",
+    image: `${bucketUrl}/business/event-recommend-2.jpg`,
     text: "행사의 목적에 부합하는 전문적인 결과를 내고 싶은 조직",
   },
   {
-    image:
-      "https://artswisdom.com/wp-content/uploads/2023/11/%ED%96%89%EC%82%AC3.jpg",
+    image: `${bucketUrl}/business/event-recommend-3.jpg`,
     text: "One-Stop으로 편리하게 서비스를 받고\n싶은 조직 및 공동체",
   },
   {
-    image:
-      "https://artswisdom.com/wp-content/uploads/2023/11/%ED%96%89%EC%82%AC4.jpg",
+    image: `${bucketUrl}/business/event-recommend-4.jpg`,
     text: "일회성 행사에 그치지 않고 섬김과 존중을\n받고 싶은 조직 및 공동체",
   },
 ] as const;
@@ -275,8 +255,7 @@ export function BusinessLanding() {
   return (
     <>
       <section
-        className="bg-[#fcf3ea] bg-cover bg-center px-0 pb-0 pt-0 md:bg-fixed"
-        style={{ backgroundImage: `url('${originalBusinessAssets.introBackground}')` }}
+        className="bg-[#fcf3ea] px-0 pb-0 pt-0"
       >
         <div className="mx-auto max-w-[1300px] pt-[55px] text-center">
           <h2

@@ -6,7 +6,7 @@ import { images } from "@/constants/images";
 const MINI_LOGO_URL = images.logo.brochure;
 const COVER_VIDEO_URL = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/images/brochure/coverv.mp4`;
 const COVER_IMAGE_URL =
-  "https://artswisdom.com/wp-content/uploads/2023/12/메인-브로슈어_수정1202.png";
+  `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/images/brochure/main-brochure.png`;
 
 export function BrochureHero() {
   return (

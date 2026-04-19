@@ -1,27 +1,30 @@
 import { getTimeline } from "@/lib/queries";
 
+const bucketUrl =
+  process.env.NEXT_PUBLIC_SUPABASE_URL + "/storage/v1/object/public/images";
+
 const DESKTOP_TIMELINE_IMAGES: Record<number, string> = {
-  2017: "https://artswisdom.com/wp-content/uploads/2023/10/타임라인사진01.png",
-  2018: "https://artswisdom.com/wp-content/uploads/2023/11/타임라인사진_바이올린2018.jpg",
-  2019: "https://artswisdom.com/wp-content/uploads/2023/11/히스토리-353x1024.jpg",
-  2020: "https://artswisdom.com/wp-content/uploads/2023/10/타임라인사진2022.jpg",
-  2021: "https://artswisdom.com/wp-content/uploads/2023/10/타임라인사진2021.jpg",
-  2022: "https://artswisdom.com/wp-content/uploads/2023/11/히스토리2.jpg",
-  2023: "https://artswisdom.com/wp-content/uploads/2024/01/히스토리2024_이미지수정.jpg",
-  2024: "https://artswisdom.com/wp-content/uploads/2026/01/2024-copy.jpg",
-  2025: "https://artswisdom.com/wp-content/uploads/2025/12/2323.png",
+  2017: `${bucketUrl}/timeline/2020-desktop.png`,
+  2018: `${bucketUrl}/timeline/2018-desktop.jpg`,
+  2019: `${bucketUrl}/timeline/2019-desktop.jpg`,
+  2020: `${bucketUrl}/timeline/2020-desktop.png`,
+  2021: `${bucketUrl}/timeline/2021-desktop.jpg`,
+  2022: `${bucketUrl}/timeline/2022-desktop.jpg`,
+  2023: `${bucketUrl}/timeline/history-2.jpg`,
+  2024: `${bucketUrl}/timeline/2024-desktop.jpg`,
+  2025: `${bucketUrl}/misc/2323.png`,
 };
 
 const MOBILE_TIMELINE_IMAGES: Record<number, string> = {
-  2017: "https://artswisdom.com/wp-content/uploads/2023/11/2017타임라인-모바일용.jpg",
-  2018: "https://artswisdom.com/wp-content/uploads/2023/11/2018타임라인-모바일용.jpg",
-  2019: "https://artswisdom.com/wp-content/uploads/2023/11/2019타임라인-모바일용.jpg",
-  2020: "https://artswisdom.com/wp-content/uploads/2023/11/2020타임라인-모바일용1.jpg",
-  2021: "https://artswisdom.com/wp-content/uploads/2023/11/2021타임라인-모바일용.jpg",
-  2022: "https://artswisdom.com/wp-content/uploads/2023/11/2022타임라인-모바일용.jpg",
-  2023: "https://artswisdom.com/wp-content/uploads/2024/01/히스토리2024_핸드폰8.jpg",
-  2024: "https://artswisdom.com/wp-content/uploads/2026/01/20241-1-scaled.jpg",
-  2025: "https://artswisdom.com/wp-content/uploads/2026/01/2025-1-scaled.jpg",
+  2017: `${bucketUrl}/timeline/2017-mobile.jpg`,
+  2018: `${bucketUrl}/timeline/2018-mobile.jpg`,
+  2019: `${bucketUrl}/timeline/2019-mobile.jpg`,
+  2020: `${bucketUrl}/timeline/2020-mobile.jpg`,
+  2021: `${bucketUrl}/timeline/2021-mobile.jpg`,
+  2022: `${bucketUrl}/timeline/2022-mobile.jpg`,
+  2023: `${bucketUrl}/timeline/history-tall.jpg`,
+  2024: `${bucketUrl}/timeline/2024-mobile.jpg`,
+  2025: `${bucketUrl}/timeline/2025-desktop.jpg`,
 };
 
 function formatTimelineItem(month: number | null, title: string) {
