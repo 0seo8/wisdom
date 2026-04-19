@@ -1,3 +1,6 @@
+const bucketUrl =
+  process.env.NEXT_PUBLIC_SUPABASE_URL + "/storage/v1/object/public/images";
+
 type ProgramEntry = {
   id: string;
   title: string;
@@ -19,8 +22,7 @@ const PROGRAMS: readonly ProgramEntry[] = [
   {
     id: "bodyfulness",
     title: "Bodyfulness(소매틱스)",
-    image:
-      "https://artswisdom.com/wp-content/uploads/2025/04/%EB%AA%B8%EC%89%BC.png",
+    image: `${bucketUrl}/healsoma/program-bodyfulness.png`,
     desktopGridColumns: "10.444% 39.556% 39.345% 10.638%",
     desktopTextTop: "120px",
     desktopTextLines: [
@@ -44,8 +46,7 @@ const PROGRAMS: readonly ProgramEntry[] = [
     id: "mindfulness",
     title: "Mindfulness(명상)",
     desktopTitle: "Mindfulness (명상)",
-    image:
-      "https://artswisdom.com/wp-content/uploads/2025/04/%EC%86%8C%EB%A6%AC%EB%AA%85%EC%83%81-1.png",
+    image: `${bucketUrl}/healsoma/program-mindfulness.png`,
     desktopGridColumns: "10.514% 39.486% 39.275% 10.708%",
     desktopTextTop: "100px",
     desktopTextLines: [
@@ -72,8 +73,7 @@ const PROGRAMS: readonly ProgramEntry[] = [
   {
     id: "therapy",
     title: "Therapy(치유)",
-    image:
-      "https://artswisdom.com/wp-content/uploads/2025/04/%ED%9E%90%EC%86%8C%EB%A7%88-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-%EC%9D%B4%EB%AF%B8%EC%A7%80_%ED%85%8C%EB%9D%BC%ED%94%BC1.png",
+    image: `${bucketUrl}/healsoma/program-therapy.png`,
     desktopGridColumns: "10.367% 39.673% 39.242% 10.718%",
     desktopTextTop: "100px",
     desktopTextLines: [
@@ -99,8 +99,7 @@ const PROGRAMS: readonly ProgramEntry[] = [
   {
     id: "expressive",
     title: "Expressive Art(표현 예술)",
-    image:
-      "https://artswisdom.com/wp-content/uploads/2025/04/%ED%9E%90%EC%86%8C%EB%A7%88-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-%EC%9D%B4%EB%AF%B8%EC%A7%80_%EC%98%88%EC%88%A0.png",
+    image: `${bucketUrl}/healsoma/program-expressive-art.png`,
     desktopGridColumns: "9.246% 40.641% 39.534% 10.579%",
     desktopTextTop: "100px",
     desktopTextLines: [
@@ -133,8 +132,7 @@ const PROGRAMS: readonly ProgramEntry[] = [
   {
     id: "group",
     title: "Group Counseling(집단 상담)",
-    image:
-      "https://artswisdom.com/wp-content/uploads/2025/04/%EC%8B%AC%EB%A6%AC%EC%83%81%EB%8B%B4.png",
+    image: `${bucketUrl}/healsoma/program-group-counseling.png`,
     desktopGridColumns: "9.038% 40.863% 39.941% 10.158%",
     desktopTextTop: "130px",
     desktopTextLines: [
@@ -161,8 +159,7 @@ const PROGRAMS: readonly ProgramEntry[] = [
   {
     id: "creative",
     title: "Creative Drama(연극놀이)",
-    image:
-      "https://artswisdom.com/wp-content/uploads/2025/04/%ED%9E%90%EC%86%8C%EB%A7%88-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-%EC%9D%B4%EB%AF%B8%EC%A7%80_%EC%97%B0%EA%B7%B9%EB%86%80%EC%9D%B4.png",
+    image: `${bucketUrl}/healsoma/program-creative-drama.png`,
     desktopGridColumns: "8.828% 41.13% 40.023% 10.019%",
     desktopTextTop: "110px",
     desktopTextLines: [

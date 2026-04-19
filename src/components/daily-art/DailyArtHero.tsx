@@ -1,24 +1,18 @@
 "use client";
 
-const HERO_BG_URL =
-  "http://artswisdom.com/wp-content/uploads/2023/10/무늬만-공연-4.png";
+const bucketUrl =
+  process.env.NEXT_PUBLIC_SUPABASE_URL + "/storage/v1/object/public/images";
+
+const HERO_BG_URL = `${bucketUrl}/daily-art/daily-art-hero.png`;
 
 export function DailyArtHero() {
   return (
     <>
       <section className="hero-section hero-section--fixed hero-section--mobile-tall">
-        <div
-          className="absolute inset-0 z-0 hidden bg-cover bg-no-repeat md:block"
-          style={{
-            backgroundImage: `url('${HERO_BG_URL}')`,
-          }}
-          aria-hidden="true"
-        />
-        <div
-          className="absolute inset-0 z-0 bg-cover bg-no-repeat bg-top md:hidden"
-          style={{
-            backgroundImage: `url('${HERO_BG_URL}')`,
-          }}
+        <img
+          src={HERO_BG_URL}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
           aria-hidden="true"
         />
         <div

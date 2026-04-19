@@ -330,7 +330,7 @@ export function OverviewSection() {
               className="relative w-full aspect-square md:aspect-[1099/1178]"
             >
               <Image
-                src="https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/somatic1.jpg"
+                src="https://hazrjfxlzlhymyfghhme.supabase.co/storage/v1/object/public/images/somatic1.jpg"
                 alt="소매틱스가 독특하고 효과적인 이유"
                 fill
                 className="object-contain"

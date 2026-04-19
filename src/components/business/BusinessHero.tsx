@@ -1,3 +1,6 @@
+const bucketUrl =
+  process.env.NEXT_PUBLIC_SUPABASE_URL + "/storage/v1/object/public/images";
+
 export function BusinessHero() {
   return (
     <>
@@ -5,7 +8,7 @@ export function BusinessHero() {
         className="relative hidden overflow-hidden pb-[452px] md:block"
         style={{
           backgroundImage:
-            "url('https://artswisdom.com/wp-content/uploads/2023/10/20210615_112010.png')",
+            `url('${bucketUrl}/business/20210615_112010.png')`,
           backgroundPosition: "center center",
           backgroundSize: "cover",
         }}
@@ -22,7 +25,7 @@ export function BusinessHero() {
         className="relative mt-[40px] overflow-hidden px-0 py-[60px] md:hidden"
         style={{
           backgroundImage:
-            "url('https://artswisdom.com/wp-content/uploads/2023/11/%ED%96%89%EC%82%AC1.jpg')",
+            `url('${bucketUrl}/business/event-recommend-2.jpg')`,
           backgroundPosition: "top center",
           backgroundSize: "cover",
         }}

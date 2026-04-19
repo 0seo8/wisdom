@@ -1,7 +1,10 @@
+const bucketUrl =
+  process.env.NEXT_PUBLIC_SUPABASE_URL + "/storage/v1/object/public/images";
+
 const CI_ITEMS = [
   {
     title: "< 심볼마크 >",
-    image: "https://artswisdom.com/wp-content/uploads/elementor/thumbs/지혜의밭_로고심볼-1-qdoxk9d58qnbazg4lsyscc67jevb1bk3avlr0v3ges.png",
+    image: `${bucketUrl}/logo/logo-symbol.png`,
     items: [
       "키워드 : 밭 전(田), 지혜의 밭(ㅈ, ㅎ, ㅇ, ㅂ)",
       "디자인 : 삶의 터전이자 긍정적인 결실을 맺는 수확의 공간을 의미하는 밭에서 모티브를 얻어 ‘밭전(田)’자를 단순화 하였으며, 지혜의밭 자음(ㅈ, ㅎ, ㅇ, ㅂ)활용",
@@ -9,25 +12,25 @@ const CI_ITEMS = [
   },
   {
     title: "< 기본형 로고 >",
-    image: "https://artswisdom.com/wp-content/uploads/elementor/thumbs/지혜의밭_기본형로고-qdoxk8fb1wm0zdhhrak5rueqy0zxtmgcyqy9jl4utw.png",
+    image: `${bucketUrl}/logo/logo-default.png`,
     items: [
-      "‘밭 전(田)’자를 단순화 하였고 지혜의밭 자음(ㅈ, ㅎ, ㅇ, ㅂ) 활용",
+      "’밭 전(田)’자를 단순화 하였고 지혜의밭 자음(ㅈ, ㅎ, ㅇ, ㅂ) 활용",
       "지혜의밭에서 추구하는 ‘소통, 공감, 공연, 치유’의 키워드를 담은 그래픽 모티브 사용",
     ],
   },
   {
     title: "< 그래픽 모티브 >",
-    image: "https://artswisdom.com/wp-content/uploads/elementor/thumbs/지혜의밭_그래픽확장형1-qdoxk6jmo8jgc5k829qwmuvtr997e88wahnal17mxq.png",
+    image: `${bucketUrl}/logo/logo-graphic.png`,
     items: ["소통의 ‘대화’", "공감의 ‘어깨동무’", "예술의 ‘춤과 공연’", "치유의 ‘꽃’"],
   },
   {
     title: "< 시그니춰 로고 >",
-    image: "https://artswisdom.com/wp-content/uploads/2024/02/브로슈어-로고0228.png",
+    image: `${bucketUrl}/logo/logo-brochure.png`,
     items: ["가로형 로고 심볼과 ‘소통·공감·해소·통섭’ 레터마크 혼합형"],
   },
   {
     title: "< 한글 레터마크 >",
-    image: "https://artswisdom.com/wp-content/uploads/elementor/thumbs/지혜의밭_국문레터마크-1-qdoxk6jmo8jgc5k829qwmuvtr997e88wahnal17mdg.png",
+    image: `${bucketUrl}/logo/logo-lettermark-ko.png`,
     items: [
       "심볼의 정사각형 조형을 바탕으로 한글 로고타입 디자인",
       "모던라이프의 Light 폰트를 바탕으로 지혜의밭만의 한글 로고타입",
@@ -37,19 +40,19 @@ const CI_ITEMS = [
 
 const CI_COLORS = [
   {
-    image: "https://artswisdom.com/wp-content/uploads/elementor/thumbs/CI_컬러yellow-qdoxkf06dqv18n7xovejraqz3q3ibi6hbninwiv372.png",
+    image: `${bucketUrl}/ci/color-yellow.png`,
     desc: ["긍정의 에너지", "(Bright Yellow)", "CMYK 0 20 100 0"],
   },
   {
-    image: "https://artswisdom.com/wp-content/uploads/elementor/thumbs/CI_컬러orange-qdoxke2c6wtqx19auczx6sziic853t2qziv6f8whda.png",
+    image: `${bucketUrl}/ci/color-orange.png`,
     desc: ["따뜻한 온정", "(Warm Orange)", "CMYK 0 85 100 0"],
   },
   {
-    image: "https://artswisdom.com/wp-content/uploads/elementor/thumbs/CI_컬러green-qdoxkd4i02sglfanzulamb81wycrw3z0ne7oxyxvji.png",
+    image: `${bucketUrl}/ci/color-green.png`,
     desc: ["마음의 안정", "(Calm Green)", "CMYK 45 10 100 0"],
   },
   {
-    image: "https://artswisdom.com/wp-content/uploads/elementor/thumbs/CI_컬러blue-qdoxkd4i02sglfanzulamb81wycrw3z0ne7oxyxvji.png",
+    image: `${bucketUrl}/ci/color-blue.png`,
     desc: ["내면의 치유", "(Deep Blue)", "CMYK 100 100 0 15"],
   },
 ] as const;

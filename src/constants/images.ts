@@ -39,19 +39,27 @@ export const images = {
 
   // Timeline / History
   timeline: {
-    2017: `${bucketUrl}/timeline/2017-mobile.jpg`,
-    2018: `${bucketUrl}/timeline/2018-mobile.jpg`,
-    2019: `${bucketUrl}/timeline/2019-mobile.jpg`,
-    2020: `${bucketUrl}/timeline/2020-mobile.jpg`,
-    2021: `${bucketUrl}/timeline/2021-mobile.jpg`,
-    2022: `${bucketUrl}/timeline/2022-mobile.jpg`,
-    2024: `${bucketUrl}/timeline/2024-desktop.jpg`,
-    2025: `${bucketUrl}/timeline/2025-desktop.jpg`,
     desktop: {
-      photo01: `${bucketUrl}/timeline/2020-desktop.png`,
-      violin2018: `${bucketUrl}/timeline/2018-desktop.jpg`,
-      photo2021: `${bucketUrl}/timeline/2021-desktop.jpg`,
-      photo2022: `${bucketUrl}/timeline/2022-desktop.jpg`,
+      2017: `${bucketUrl}/timeline/2020-desktop.png`,
+      2018: `${bucketUrl}/timeline/2018-desktop.jpg`,
+      2019: `${bucketUrl}/timeline/2019-desktop.jpg`,
+      2020: `${bucketUrl}/timeline/2020-desktop.png`,
+      2021: `${bucketUrl}/timeline/2021-desktop.jpg`,
+      2022: `${bucketUrl}/timeline/2022-desktop.jpg`,
+      2023: `${bucketUrl}/timeline/history-2.jpg`,
+      2024: `${bucketUrl}/timeline/2024-desktop.jpg`,
+      2025: `${bucketUrl}/misc/2323.png`,
+    },
+    mobile: {
+      2017: `${bucketUrl}/timeline/2017-mobile.jpg`,
+      2018: `${bucketUrl}/timeline/2018-mobile.jpg`,
+      2019: `${bucketUrl}/timeline/2019-mobile.jpg`,
+      2020: `${bucketUrl}/timeline/2020-mobile.jpg`,
+      2021: `${bucketUrl}/timeline/2021-mobile.jpg`,
+      2022: `${bucketUrl}/timeline/2022-mobile.jpg`,
+      2023: `${bucketUrl}/timeline/history-tall.jpg`,
+      2024: `${bucketUrl}/timeline/2024-mobile.jpg`,
+      2025: `${bucketUrl}/timeline/2025-desktop.jpg`,
     },
   },
 
@@ -60,12 +68,27 @@ export const images = {
     main: `${bucketUrl}/sdgs/un-sdgs.png`,
   },
 
-  // CI Colors
+  // CI logos
   ci: {
+    symbolMark: `${bucketUrl}/logo/logo-symbol.png`,
+    basicLogo: `${bucketUrl}/logo/logo-default.png`,
+    graphicMotif: `${bucketUrl}/logo/logo-graphic.png`,
+    signatureLogo: `${bucketUrl}/logo/logo-brochure.png`,
+    koreanLettermark: `${bucketUrl}/logo/logo-lettermark-ko.png`,
     yellow: `${bucketUrl}/ci/color-yellow.png`,
     orange: `${bucketUrl}/ci/color-orange.png`,
     green: `${bucketUrl}/ci/color-green.png`,
     blue: `${bucketUrl}/ci/color-blue.png`,
+  },
+
+  // Partners
+  partners: {
+    environment: `${bucketUrl}/sdgs/environment.png`,
+    abstract: `${bucketUrl}/sdgs/abstract-bg.png`,
+    earthDay: `${bucketUrl}/sdgs/earth-day.png`,
+    blogLogo: `${bucketUrl}/misc/annotation-1.png`,
+    partnerLogo: `${bucketUrl}/misc/annotation-2.png`,
+    logo: `${bucketUrl}/misc/naver-cafe-logo.png`,
   },
 
   // Social Media Icons
@@ -102,6 +125,7 @@ export const images = {
     hero: `${bucketUrl}/healsoma/hero-bg.jpg`,
     bgHarmony: `${bucketUrl}/healsoma/bg-harmony.jpg`,
     bgLeaves: `${bucketUrl}/healsoma/bg-leaves.jpg`,
+    heroBanner: `${bucketUrl}/healsoma/hero-banner.png`,
     bodyfulness: `${bucketUrl}/healsoma/program-bodyfulness.png`,
     mindfulness: `${bucketUrl}/healsoma/program-mindfulness.png`,
     therapy: `${bucketUrl}/healsoma/program-therapy.png`,
@@ -194,15 +218,40 @@ export const images = {
     },
   },
 
+  // Notice page
+  notice: {
+    hero: `${bucketUrl}/notice/hero-bg.jpg`,
+  },
+
+  // Brochure page
+  brochure: {
+    coverImage: `${bucketUrl}/brochure/main-brochure.png`,
+  },
+
   // Business page
   business: {
     hero: `${bucketUrl}/business/hero-bg.png`,
+    heroDesktop: `${bucketUrl}/business/20210615_112010.png`,
     educationMain: `${bucketUrl}/business/education-main.png`,
     trainingSession: `${bucketUrl}/business/training-session.jpg`,
     workshopActivity: `${bucketUrl}/business/workshop-activity.jpg`,
     workshopActivitySm: `${bucketUrl}/business/workshop-activity-sm.jpg`,
     corporateShowcase: `${bucketUrl}/business/corporate-showcase.png`,
+    corporatePrimary: `${bucketUrl}/business/123456-1150x1536.png`,
+    corporateSecondary: `${bucketUrl}/business/20230513_193104995_23-1024x768.jpg`,
+    corporateMobile: `${bucketUrl}/business/education-main.png`,
+    corporatePresentDesktop: `${bucketUrl}/business/20230513_193104995_19-scaled.jpg`,
+    corporatePresentMobile: `${bucketUrl}/business/20230513_193104995_19-768x576.jpg`,
+    corporateReviewDesktop: `${bucketUrl}/business/IMG_7974-scaled.jpg`,
+    corporateReviewMobile: `${bucketUrl}/business/legacy_business_11.jpg`,
     eventService: `${bucketUrl}/business/event-service.png`,
+    eventPrimary: `${bucketUrl}/business/Untitled-2-1.jpg`,
+    eventSecondary: `${bucketUrl}/business/legacy_business_9.jpg`,
+    eventPresentDesktop: `${bucketUrl}/business/legacy_business_7.jpg`,
+    eventPresentMobile: `${bucketUrl}/business/legacy_business_12.png`,
+    eventReviewDesktop: `${bucketUrl}/business/20210615_113153-2.png`,
+    eventReviewTablet: `${bucketUrl}/business/20210615_112135.png`,
+    eventReviewMobile: `${bucketUrl}/business/legacy_business_13.png`,
     eventActivity: `${bucketUrl}/business/event-activity.jpg`,
     eventEngagement: `${bucketUrl}/business/event-engagement.jpg`,
     eventShowcase: `${bucketUrl}/business/event-showcase.jpg`,

@@ -63,7 +63,7 @@ export function EventSection() {
               className="ml-auto w-[85%] md:w-[75%] aspect-[4/3] z-0 overflow-hidden rounded-sm shadow-xl relative"
             >
               <Image
-                src="https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/business/legacy_business_23.jpg"
+                src="https://hazrjfxlzlhymyfghhme.supabase.co/storage/v1/object/public/images/business/legacy_business_23.jpg"
                 alt="Event detail"
                 fill
                 className="object-cover"
@@ -78,7 +78,7 @@ export function EventSection() {
               className="absolute left-0 top-[15%] w-[55%] md:w-[45%] aspect-[3/4] z-10 shadow-[-7px_20px_50px_0px_rgba(0,0,0,0.48)] overflow-hidden rounded-sm"
             >
               <Image
-                src="https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/business/legacy_business_9.jpg"
+                src="https://hazrjfxlzlhymyfghhme.supabase.co/storage/v1/object/public/images/business/legacy_business_9.jpg"
                 alt="Main Event Scene"
                 fill
                 className="object-cover"
@@ -96,7 +96,7 @@ export function EventSection() {
         >
           <div className="w-full md:w-1/2 relative aspect-[4/3] rounded-sm overflow-hidden shadow-lg">
             <Image
-              src="https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/business/legacy_business_24.jpg"
+              src="https://hazrjfxlzlhymyfghhme.supabase.co/storage/v1/object/public/images/business/legacy_business_24.jpg"
               alt="Event present scene"
               fill
               className="object-cover"
@@ -138,10 +138,10 @@ export function EventSection() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { img: "https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/business/legacy_business_25.jpg", text: "새롭고 참신한 방법으로 행사의 퀄리티를 높이고 싶은 조직" },
-              { img: "https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/business/legacy_business_26.jpg", text: "행사의 목적에 부합하는 전문적인 결과를 내고 싶은 조직" },
-              { img: "https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/business/legacy_business_27.jpg", text: "One-Stop으로 편리하게 서비스를 받고 싶은 조직 및 공동체" },
-              { img: "https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/business/legacy_business_28.jpg", text: "일회성 행사에 그치지 않고 섬김과 존중을 받고 싶은 조직 및 공동체" }
+              { img: "https://hazrjfxlzlhymyfghhme.supabase.co/storage/v1/object/public/images/business/legacy_business_25.jpg", text: "새롭고 참신한 방법으로 행사의 퀄리티를 높이고 싶은 조직" },
+              { img: "https://hazrjfxlzlhymyfghhme.supabase.co/storage/v1/object/public/images/business/legacy_business_26.jpg", text: "행사의 목적에 부합하는 전문적인 결과를 내고 싶은 조직" },
+              { img: "https://hazrjfxlzlhymyfghhme.supabase.co/storage/v1/object/public/images/business/legacy_business_27.jpg", text: "One-Stop으로 편리하게 서비스를 받고 싶은 조직 및 공동체" },
+              { img: "https://hazrjfxlzlhymyfghhme.supabase.co/storage/v1/object/public/images/business/legacy_business_28.jpg", text: "일회성 행사에 그치지 않고 섬김과 존중을 받고 싶은 조직 및 공동체" }
             ].map((card, idx) => (
               <motion.div
                 key={idx}
@@ -178,7 +178,7 @@ export function EventSection() {
         <div 
           className="absolute inset-0 z-0 bg-fixed bg-center bg-cover"
           style={{ 
-            backgroundImage: "url('https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/business/event-documentation.jpg')",
+            backgroundImage: "url('https://hazrjfxlzlhymyfghhme.supabase.co/storage/v1/object/public/images/business/event-documentation.jpg')",
           }}
         >
           <div className="absolute inset-0 bg-black/70" />

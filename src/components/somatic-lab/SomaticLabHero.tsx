@@ -1,5 +1,8 @@
 "use client";
 
+const bucketUrl =
+  process.env.NEXT_PUBLIC_SUPABASE_URL + "/storage/v1/object/public/images";
+
 export function SomaticLabHero() {
   return (
     <section className="hero-section hero-section--fixed hero-section--mobile-banner">
@@ -7,7 +10,7 @@ export function SomaticLabHero() {
         className="absolute inset-0 z-0 bg-cover bg-no-repeat bg-top md:bg-[position:center_-80px]"
         style={{
           backgroundImage:
-            "url('http://artswisdom.com/wp-content/uploads/2023/12/library-869061_1280.jpg')",
+            `url('${bucketUrl}/somatic-lab/hero-bg.jpg')`,
         }}
         aria-hidden="true"
       />

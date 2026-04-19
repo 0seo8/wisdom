@@ -39,7 +39,7 @@ const extendedDataMap: Record<string, {
   "nukduri": {
     englishTitle: "Nukduri",
     collageImage: images.dailyArt.performanceGeneric,
-    presentImage: "https://refxscvyacxtohfjxysh.supabase.co/storage/v1/object/public/images/daily-art/nukduri-present.jpg",
+    presentImage: "https://hazrjfxlzlhymyfghhme.supabase.co/storage/v1/object/public/images/daily-art/nukduri-present.jpg",
     recommendItems: [
       { image: images.dailyArt.nukduri.recommend1, caption: "개인의 성장이 사회의 성장과 연결되어 있음을 아는 공동체" },
       { image: images.dailyArt.nukduri.recommend2, caption: "구성원들의 모멘텀을 위해 차별화된 Refresh가 필요한 조직" },

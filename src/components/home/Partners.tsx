@@ -5,29 +5,32 @@ import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 
+const bucketUrl =
+  process.env.NEXT_PUBLIC_SUPABASE_URL + "/storage/v1/object/public/images";
+
 const PARTNER_LOGOS = [
   {
-    src: "https://artswisdom.com/wp-content/uploads/elementor/thumbs/environment-3751682_1920-e1586679519394-qdoxj8pgg4nahj9tbpoocf9euo5dwexaudwm6h6wi8.png",
+    src: `${bucketUrl}/sdgs/environment.png`,
     alt: "environment-3751682_1920",
   },
   {
-    src: "https://artswisdom.com/wp-content/uploads/elementor/thumbs/abstract-1751248-qdoxj6ts2gkpubcjmovf7fqhnwenh0pu64ln7x9ouo.png",
+    src: `${bucketUrl}/sdgs/abstract-bg.png`,
     alt: "abstract-1751248",
   },
   {
-    src: "https://artswisdom.com/wp-content/uploads/elementor/thumbs/Earth-Day-blue-rectangle-logo-1-e1586675775975-qdoxj7rm9am05xb6h7a1rxhy9aa0optki994p78aog.png",
+    src: `${bucketUrl}/sdgs/earth-day.png`,
     alt: "Earth-Day-blue-rectangle-logo-1",
   },
   {
-    src: "https://artswisdom.com/wp-content/uploads/elementor/thumbs/주석_2020-04-12_143549-removebg-preview-1-qdoxj9namyokt58g683awx0vg20r44116ik3nr5ic0.png",
+    src: `${bucketUrl}/misc/annotation-1.png`,
     alt: "blog",
   },
   {
-    src: "https://artswisdom.com/wp-content/uploads/elementor/thumbs/2040957195_JTQOnsMu_64a79c3a9e3cc58cd65618598ca7f3e0bd7e4ef5-qdoxj6ts2gkpubcjmovf7fqhnwenh0pu64ln7x9ouo.png",
+    src: `${bucketUrl}/misc/annotation-2.png`,
     alt: "2040957195_JTQOnsMu_64a79c3a9e3cc58cd65618598ca7f3e0bd7e4ef5",
   },
   {
-    src: "https://artswisdom.com/wp-content/uploads/elementor/thumbs/logo-qdoxj9namyokt58g683awx0vg20r44116ik3nr5ic0.png",
+    src: `${bucketUrl}/misc/naver-cafe-logo.png`,
     alt: "logo",
   },
 ] as const;

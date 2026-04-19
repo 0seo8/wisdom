@@ -5,33 +5,36 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useCallback, useEffect, useState } from "react";
 
+const bucketUrl =
+  process.env.NEXT_PUBLIC_SUPABASE_URL + "/storage/v1/object/public/images";
+
 const slides = [
   {
     title: "일상의 예술",
     subtitle: "Arts of Living",
     href: "/일상의예술",
-    image: "https://artswisdom.com/wp-content/uploads/2025/09/1.jpg",
+    image: `${bucketUrl}/hero/main-1.jpg`,
     overlay: "#05050570",
   },
   {
     title: "온전한 쉼'",
     subtitle: "Healsoma",
     href: "/힐소마",
-    image: "https://artswisdom.com/wp-content/uploads/2025/09/2.jpg",
+    image: `${bucketUrl}/hero/main-2.jpg`,
     overlay: "#05050570",
   },
   {
     title: "몸과 마음을 연구",
     subtitle: "Somatic Laboratory",
     href: "/소매틱랩",
-    image: "https://artswisdom.com/wp-content/uploads/2025/09/제목-없음.png",
+    image: `${bucketUrl}/hero/hero-bg.jpg`,
     overlay: "#05050570",
   },
   {
     title: "지속 가능한 ESG 실천",
     subtitle: "Sustainable Growth",
     href: "/기업교육-및-행사",
-    image: "https://artswisdom.com/wp-content/uploads/2025/09/3.jpg",
+    image: `${bucketUrl}/hero/main-3.jpg`,
     overlay: "#0505053D",
   },
 ] as const;

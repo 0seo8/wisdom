@@ -1,22 +1,25 @@
 "use client";
 
+const bucketUrl =
+  process.env.NEXT_PUBLIC_SUPABASE_URL + "/storage/v1/object/public/images";
+
 const coreValues = [
   {
-    imageSrc: "https://artswisdom.com/wp-content/uploads/2023/10/차별성.png",
+    imageSrc: `${bucketUrl}/values/differentiation.png`,
     title: "차별성",
     description: "디테일의 차이가 감동으로 이어진다.",
     imageWidthClass: "w-[194px] md:w-[97%]",
     imageMarginClass: "mb-[22px]",
   },
   {
-    imageSrc: "https://artswisdom.com/wp-content/uploads/2023/10/포용성.png",
+    imageSrc: `${bucketUrl}/values/inclusion.png`,
     title: "포용성",
     description: "지속 가능한 성장을 위하여 변화를 수용한다.",
     imageWidthClass: "w-[200px] md:w-full",
     imageMarginClass: "mb-[15px]",
   },
   {
-    imageSrc: "https://artswisdom.com/wp-content/uploads/2023/10/연결성.png",
+    imageSrc: `${bucketUrl}/values/connection.png`,
     title: "연결성",
     description: "모든 에너지는 서로 연결되어 있으므로 우리는 하나다.",
     imageWidthClass: "w-[200px] md:w-full",
